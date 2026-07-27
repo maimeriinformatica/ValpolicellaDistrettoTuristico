@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: distretto-turistico-valpolicella
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
