@@ -2,5 +2,6 @@ services:
   - type: web
     name: distretto-turistico-valpolicella
     runtime: static
-    buildCommand: ""
-    staticPublishPath: .
+    buildCommand: "echo Sito statico, nessuna build necessaria"
+    staticPublishPath: ./
+    pullRequestPreviewsEnabled: false
