@@ -178,6 +178,52 @@ da `||`: vince il primo con immagine). Per aggiungere o correggere una voce bast
 quell'attributo; usare sempre titoli univoci o già disambiguati, per non rischiare la foto
 di un luogo omonimo.
 
+### Contatti da OpenStreetMap e foto Wikipedia per le attività (gratuiti, senza chiave)
+
+Oltre a Google (facoltativo, con chiave), le sezioni **Cibo e vino** e **Dove dormire**
+usano due fonti libere che non richiedono alcuna chiave né registrazione:
+
+- **OpenStreetMap** (API Overpass): all'apertura delle sezioni il sito fa **una sola
+  richiesta** e integra **telefono, sito web e — dove mappata — l'e-mail** delle attività,
+  confrontando i nomi con un criterio prudente (in caso di dubbio non abbina nulla).
+  I dati inseriti a mano non vengono mai toccati: OSM riempie solo i campi vuoti.
+  Attribuzione «© contributori OpenStreetMap (ODbL)» già nel piè di pagina.
+- **Wikipedia**: le cantine e dimore storiche che hanno una voce (Masi, Allegrini,
+  Quintarelli, Serego Alighieri, Villa della Torre, Guerrieri Rizzardi…) mostrano la foto
+  principale della voce, come già i Luoghi. Si aggiungono con l'attributo `data-wiki`
+  sulla card.
+
+Se una card riceve sia la foto Google sia quella Wikipedia, vale la prima arrivata
+(le due integrazioni non si sovrascrivono). Il limite da sapere: **per B&B e piccole
+attività senza voce Wikipedia non esiste una fonte di foto libera e automatica** —
+lì le foto arrivano da Google (con chiave) o dalla gestione manuale/backend.
+
+### Collegamento alle schede Google Business (facoltativo)
+
+Le sezioni **Cibo e vino** e **Dove dormire** possono arricchirsi da sole con la scheda
+Google di ogni attività: **foto principale**, **telefono**, **sito web**, valutazione ★ e
+il collegamento «Google ↗» alla scheda. Serve una chiave della **Google Maps Platform**:
+
+1. Su [console.cloud.google.com](https://console.cloud.google.com) crea un progetto,
+   attiva la **fatturazione** e abilita **Places API (New)**.
+2. Crea una **chiave API** e, in *Restrizioni della chiave*, limita l'uso ai referrer HTTP
+   del tuo dominio (es. `distrettovalpolicella.it/*`, più il dominio onrender.com):
+   la chiave sta nel sito pubblico, la restrizione impedisce che altri la usino.
+3. In `index.html` cerca `GOOGLE_PLACES` e incolla la chiave in `key: ''`.
+
+Come lavora: carica i dati **solo per le schede che il visitatore vede davvero**
+(mai tutte e 180 insieme) e si ferma a `maxPerVisit` schede per visita (predefinito 40),
+così i consumi restano dentro le quote gratuite mensili di Google; le soglie esatte sono
+sulla [pagina prezzi di Google Maps Platform](https://mapsplatform.google.com/pricing/).
+Le foto arrivano in diretta dai server Google come richiedono i loro termini (non vengono
+copiate nel sito) e il titolare della scheda resta citato. Dove il portale ha già telefono
+o sito, **i dati curati a mano non vengono toccati**: Google integra solo ciò che manca.
+Se per un'attività Google trovasse la scheda sbagliata, si può fissare quella giusta
+aggiungendo alla sua card l'attributo `data-gplace="PLACE_ID"`.
+
+**Nota sull'e-mail:** le schede Google Business non espongono l'indirizzo e-mail (il dato
+non esiste nella loro API): le e-mail si raccolgono con il modulo di adesione.
+
 ## Personalizzazione
 
 Tutto si modifica in `index.html`:

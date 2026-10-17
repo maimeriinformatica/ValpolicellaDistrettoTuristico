@@ -515,11 +515,11 @@
   @media (max-width:720px){.photo-band{height:150px;margin-bottom:22px;border-radius:5px}}
 
   /* ---------- foto da Wikipedia nelle schede Luoghi ---------- */
-  .card-img .wiki-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-  .wiki-badge{position:absolute;right:10px;bottom:10px;z-index:2;font-family:"Spline Sans Mono";
+  .card-img .wiki-img,.card-img .gb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .wiki-badge,.gb-badge{position:absolute;right:10px;bottom:10px;z-index:2;font-family:"Spline Sans Mono";
     font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(241,238,228,.94);
     color:var(--ink);padding:4px 8px;border-radius:2px;border:1px solid var(--line);text-decoration:none}
-  .wiki-badge:hover{color:var(--garnet);border-color:var(--garnet)}
+  .wiki-badge:hover,.gb-badge:hover{color:var(--garnet);border-color:var(--garnet)}
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -1366,7 +1366,7 @@
       <span><i class="n"></i> Operatore non aderente — resta comunque consultabile</span>
     </div>
     <div class="cards" id="cantine-cards" data-page="12">
-      <article class="card" data-c="cantina negrar completa" data-k="cantina valpolicella negrar / domìni veneti via ca&#x27; salgari 2 cantina negrar di valpolicella" data-name="Cantina Valpolicella Negrar / Domìni Veneti" data-loc="Via Ca&#x27; Salgari 2" data-cat="cantina">
+      <article class="card" data-c="cantina negrar completa" data-k="cantina valpolicella negrar / domìni veneti via ca&#x27; salgari 2 cantina negrar di valpolicella" data-wiki="Cantina Valpolicella Negrar" data-name="Cantina Valpolicella Negrar / Domìni Veneti" data-loc="Via Ca&#x27; Salgari 2" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1381,7 +1381,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="az. agr. quintarelli giuseppe via cerè 1 cantina negrar di valpolicella" data-name="Az. Agr. Quintarelli Giuseppe" data-loc="Via Cerè 1" data-cat="cantina">
+      <article class="card" data-c="cantina negrar completa" data-k="az. agr. quintarelli giuseppe via cerè 1 cantina negrar di valpolicella" data-wiki="Giuseppe Quintarelli" data-name="Az. Agr. Quintarelli Giuseppe" data-loc="Via Cerè 1" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1396,7 +1396,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="tenuta santa maria di gaetano bertani – villa mosconi novare, arbizzano cantina negrar di valpolicella" data-name="Tenuta Santa Maria di Gaetano Bertani – Villa Mosconi" data-loc="Novare, Arbizzano" data-cat="cantina">
+      <article class="card" data-c="cantina negrar completa" data-k="tenuta santa maria di gaetano bertani – villa mosconi novare, arbizzano cantina negrar di valpolicella" data-wiki="Villa Mosconi Bertani||Villa Mosconi" data-name="Tenuta Santa Maria di Gaetano Bertani – Villa Mosconi" data-loc="Novare, Arbizzano" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1411,7 +1411,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="guerrieri rizzardi (wine shop) villa rizzardi, loc. pojega cantina negrar di valpolicella" data-name="Guerrieri Rizzardi (wine shop)" data-loc="Villa Rizzardi, loc. Pojega" data-cat="cantina">
+      <article class="card" data-c="cantina negrar completa" data-k="guerrieri rizzardi (wine shop) villa rizzardi, loc. pojega cantina negrar di valpolicella" data-wiki="Guerrieri Rizzardi" data-name="Guerrieri Rizzardi (wine shop)" data-loc="Villa Rizzardi, loc. Pojega" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1681,7 +1681,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="santa sofia via ca&#x27; dedè 61, pedemonte cantina san pietro in cariano" data-name="Santa Sofia" data-loc="Via Ca&#x27; Dedè 61, Pedemonte" data-cat="cantina">
+      <article class="card" data-c="cantina sanpietro completa" data-k="santa sofia via ca&#x27; dedè 61, pedemonte cantina san pietro in cariano" data-wiki="Villa Serego" data-name="Santa Sofia" data-loc="Via Ca&#x27; Dedè 61, Pedemonte" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2371,7 +2371,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="allegrini via giare 9/11 cantina fumane" data-name="Allegrini" data-loc="Via Giare 9/11" data-cat="cantina">
+      <article class="card" data-c="cantina fumane completa" data-k="allegrini via giare 9/11 cantina fumane" data-wiki="Allegrini" data-name="Allegrini" data-loc="Via Giare 9/11" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2386,7 +2386,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="villa della torre allegrini via della torre 25 cantina fumane" data-name="Villa della Torre Allegrini" data-loc="Via della Torre 25" data-cat="cantina">
+      <article class="card" data-c="cantina fumane completa" data-k="villa della torre allegrini via della torre 25 cantina fumane" data-wiki="Villa Della Torre" data-name="Villa della Torre Allegrini" data-loc="Via della Torre 25" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2401,7 +2401,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="gerardo cesari via progni 81 cantina fumane" data-name="Gerardo Cesari" data-loc="Via Progni 81" data-cat="cantina">
+      <article class="card" data-c="cantina fumane completa" data-k="gerardo cesari via progni 81 cantina fumane" data-wiki="Gerardo Cesari" data-name="Gerardo Cesari" data-loc="Via Progni 81" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2611,7 +2611,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina santambrogio completa" data-k="masi agricola via monteleone 26, gargagnago cantina sant&#x27;ambrogio di valpolicella" data-name="Masi Agricola" data-loc="Via Monteleone 26, Gargagnago" data-cat="cantina">
+      <article class="card" data-c="cantina santambrogio completa" data-k="masi agricola via monteleone 26, gargagnago cantina sant&#x27;ambrogio di valpolicella" data-wiki="Masi Agricola" data-name="Masi Agricola" data-loc="Via Monteleone 26, Gargagnago" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2626,7 +2626,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina santambrogio completa" data-k="serego alighieri (rivendita/foresteria) via giare 277, gargagnago cantina sant&#x27;ambrogio di valpolicella" data-name="Serego Alighieri (rivendita/foresteria)" data-loc="Via Giare 277, Gargagnago" data-cat="cantina">
+      <article class="card" data-c="cantina santambrogio completa" data-k="serego alighieri (rivendita/foresteria) via giare 277, gargagnago cantina sant&#x27;ambrogio di valpolicella" data-wiki="Serego Alighieri||Villa Serego Alighieri" data-name="Serego Alighieri (rivendita/foresteria)" data-loc="Via Giare 277, Gargagnago" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -3219,7 +3219,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="hotel sanpietro" data-k="hotel villa giona via v. pasetto 8 hotel &amp; relais san pietro in cariano" data-name="Hotel Villa Giona" data-loc="Via V. Pasetto 8" data-cat="hotel">
+      <article class="card" data-c="hotel sanpietro" data-k="hotel villa giona via v. pasetto 8 hotel &amp; relais san pietro in cariano" data-wiki="Villa Giona" data-name="Hotel Villa Giona" data-loc="Via V. Pasetto 8" data-cat="hotel">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#DED2E0"/><rect x="88" y="46" width="124" height="72" fill="#C9B8CE"/><g fill="#1C6E31" opacity=".8"><rect x="100" y="58" width="16" height="16"/><rect x="142" y="58" width="16" height="16"/><rect x="184" y="58" width="16" height="16"/><rect x="100" y="86" width="16" height="16"/><rect x="184" y="86" width="16" height="16"/><rect x="138" y="86" width="24" height="32"/></g><path d="M82 46 L150 24 L218 46 Z" fill="#8A6D93"/><path d="M0 122 L300 122 L300 150 L0 150 Z" fill="#52702C" opacity=".3"/></svg>
         </div>
@@ -3399,7 +3399,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="hotel santambrogio cantina" data-k="foresteria serego alighieri via giare 277, gargagnago hotel &amp; relais sant&#x27;ambrogio di valpolicella" data-name="Foresteria Serego Alighieri" data-loc="Via Giare 277, Gargagnago" data-cat="hotel">
+      <article class="card" data-c="hotel santambrogio cantina" data-k="foresteria serego alighieri via giare 277, gargagnago hotel &amp; relais sant&#x27;ambrogio di valpolicella" data-wiki="Serego Alighieri||Villa Serego Alighieri" data-name="Foresteria Serego Alighieri" data-loc="Via Giare 277, Gargagnago" data-cat="hotel">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#DED2E0"/><rect x="88" y="46" width="124" height="72" fill="#C9B8CE"/><g fill="#1C6E31" opacity=".8"><rect x="100" y="58" width="16" height="16"/><rect x="142" y="58" width="16" height="16"/><rect x="184" y="58" width="16" height="16"/><rect x="100" y="86" width="16" height="16"/><rect x="184" y="86" width="16" height="16"/><rect x="138" y="86" width="24" height="32"/></g><path d="M82 46 L150 24 L218 46 Z" fill="#8A6D93"/><path d="M0 122 L300 122 L300 150 L0 150 Z" fill="#52702C" opacity=".3"/></svg>
         </div>
@@ -5071,7 +5071,7 @@
     <div class="foot-bottom">
       <span>© 2026 Distretto Turistico della Valpolicella — prototipo</span>
       <span>45°32′N · 10°55′E</span>
-          <span>Fotografie d’ambiente: Magnific / Freepik (wirestock, muhammad.abdullah) · Immagini dei luoghi: Wikipedia / Wikimedia Commons, con licenza dei rispettivi autori</span>
+          <span>Fotografie d’ambiente: Magnific / Freepik (wirestock, muhammad.abdullah) · Immagini dei luoghi: Wikipedia / Wikimedia Commons, con licenza dei rispettivi autori · Foto e dati delle attività: schede Google dei rispettivi titolari · Contatti integrati da OpenStreetMap (© contributori OSM, ODbL)</span>
     </div>
   </div>
 </footer>
@@ -5137,6 +5137,196 @@
   // stato iniziale delle griglie paginate
   document.querySelectorAll('.cards[data-page]').forEach(t=>applyFilters(t));
 
+
+
+
+  // ====== CONTATTI DA OPENSTREETMAP (gratuito, senza chiave) ======
+  // Una sola richiesta per visita all'API Overpass: integra telefono, sito ed e-mail
+  // SOLO dove mancano, confrontando i nomi. Se l'API non risponde, non cambia nulla.
+  (function(){
+    if(!window.fetch||!('IntersectionObserver' in window))return;
+    var grids=['cantine-cards','hotel-cards'].map(function(id){return document.getElementById(id);}).filter(Boolean);
+    if(!grids.length)return;
+    var STOP={'cantina':1,'cantine':1,'azienda':1,'agricola':1,'viticoltori':1,'vini':1,'vino':1,
+      'villa':1,'hotel':1,'relais':1,'agriturismo':1,'tenuta':1,'tenute':1,'winery':1,'wine':1,
+      'della':1,'delle':1,'dalla':1,'degli':1,'casa':1,'borgo':1,'societa':1,'appartamenti':1};
+    function sig(t){
+      return (t||'').toLowerCase()
+        .replace(/[àáâ]/g,'a').replace(/[èéê]/g,'e').replace(/[ìíî]/g,'i')
+        .replace(/[òóô]/g,'o').replace(/[ùúû]/g,'u')
+        .replace(/[^a-z0-9 ]/g,' ').split(/\s+/)
+        .filter(function(w){return w.length>3&&!STOP[w];});
+    }
+    function match(a,b){
+      var A=sig(a),B=sig(b);
+      if(!A.length||!B.length)return false;
+      var n=A.filter(function(w){return B.indexOf(w)>=0;}).length;
+      return n>=2||(n>=1&&Math.min(A.length,B.length)===1);
+    }
+    function tag(t,k){return t[k]||t['contact:'+k]||'';}
+    function applica(card,tags){
+      var meta=card.querySelector('.card-meta'); if(!meta)return;
+      var tel=tag(tags,'phone');
+      if(tel&&!meta.querySelector('a[href^="tel:"]')){
+        var s1=document.createElement('span'),a1=document.createElement('a');
+        a1.href='tel:'+tel.replace(/[^+0-9]/g,''); a1.textContent='☏ '+tel;
+        s1.appendChild(a1); meta.insertBefore(s1,meta.firstChild);
+      }
+      var web=tag(tags,'website');
+      if(web&&!meta.querySelector('a[href^="http"]')){
+        try{
+          if(!/^https?:/i.test(web))web='https://'+web;
+          var host=new URL(web).host.replace(/^www\./,'');
+          var s2=document.createElement('span'),a2=document.createElement('a');
+          a2.href=web; a2.target='_blank'; a2.rel='noopener'; a2.textContent=host+' ↗';
+          s2.appendChild(a2); meta.appendChild(s2);
+        }catch(e){}
+      }
+      var mail=tag(tags,'email');
+      if(mail&&mail.indexOf('@')>0&&!meta.querySelector('a[href^="mailto:"]')){
+        var s3=document.createElement('span'),a3=document.createElement('a');
+        a3.href='mailto:'+mail; a3.textContent='✉ '+mail;
+        s3.appendChild(a3); meta.appendChild(s3);
+      }
+    }
+    var fatto=false;
+    function carica(){
+      if(fatto)return; fatto=true;
+      var bbox='45.42,10.72,45.74,11.06';
+      var q='[out:json][timeout:25];('
+        +'nwr["craft"="winery"]('+bbox+');'
+        +'nwr["shop"="wine"]('+bbox+');'
+        +'nwr["tourism"~"^(hotel|guest_house|apartment|chalet|motel)$"]('+bbox+');'
+        +'nwr["amenity"="restaurant"]('+bbox+');'
+        +');out tags;';
+      fetch('https://overpass-api.de/api/interpreter',{method:'POST',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:'data='+encodeURIComponent(q)})
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(d){
+        var els=(d&&d.elements||[]).filter(function(e){
+          return e.tags&&e.tags.name&&(tag(e.tags,'phone')||tag(e.tags,'website')||tag(e.tags,'email'));
+        });
+        if(!els.length)return;
+        grids.forEach(function(g){
+          g.querySelectorAll('article.card').forEach(function(c){
+            var nome=c.dataset.name; if(!nome)return;
+            for(var i=0;i<els.length;i++){
+              if(match(nome,els[i].tags.name)){applica(c,els[i].tags);break;}
+            }
+          });
+        });
+      }).catch(function(){});
+    }
+    var io=new IntersectionObserver(function(es){
+      if(es.some(function(e){return e.isIntersecting;})){io.disconnect();carica();}
+    },{rootMargin:'600px 0px'});
+    grids.forEach(function(g){io.observe(g);});
+  })();
+
+  // ====== COLLEGAMENTO A GOOGLE BUSINESS (facoltativo) ======
+  // Incolla qui la chiave di Google Maps Platform con "Places API (New)" abilitata.
+  // Con la chiave vuota questa funzione resta spenta e il portale funziona come sempre.
+  var GOOGLE_PLACES = window.GOOGLE_PLACES || {
+    key: '',          // <-- la tua chiave API, es. 'AIzaSy...'
+    maxPerVisit: 40   // schede arricchite al massimo per ogni visita (controllo dei costi)
+  };
+  (function(){
+    var K=((GOOGLE_PLACES&&GOOGLE_PLACES.key)||'').trim();
+    if(!K||!window.fetch||!('IntersectionObserver' in window))return;
+    var COMUNI={dolce:'Dolcè',fumane:'Fumane',marano:'Marano di Valpolicella',
+      negrar:'Negrar di Valpolicella',pescantina:'Pescantina',sanpietro:'San Pietro in Cariano',
+      santambrogio:"Sant'Ambrogio di Valpolicella",santanna:"Sant'Anna d'Alfaedo"};
+    var budget=Math.max(1,(GOOGLE_PLACES.maxPerVisit|0)||40), fatte=0;
+    var FM_S='places.id,places.displayName,places.photos,places.nationalPhoneNumber,places.internationalPhoneNumber,places.websiteUri,places.googleMapsUri,places.rating';
+    var FM_D='id,displayName,photos,nationalPhoneNumber,internationalPhoneNumber,websiteUri,googleMapsUri,rating';
+    function parole(t){return (t||'').toLowerCase().replace(/[^a-zà-ÿ0-9 ]/g,' ').split(/\s+/).filter(function(w){return w.length>3;});}
+    function compatibile(a,b){var pa=parole(a),pb=parole(b);return pa.some(function(w){return pb.indexOf(w)>=0;});}
+    function arricchisci(card,place){
+      var box=card.querySelector('.card-img');
+      var foto=place.photos&&place.photos[0];
+      if(box&&foto&&foto.name&&!box.querySelector('.gb-img')&&!box.querySelector('.wiki-img')){
+        var attr=(foto.authorAttributions&&foto.authorAttributions[0]&&foto.authorAttributions[0].displayName)||'';
+        var img=new Image();
+        img.className='gb-img'; img.loading='lazy'; img.decoding='async';
+        img.alt=(card.dataset.name||'')+' — foto dalla scheda Google';
+        if(attr)img.title='Foto: '+attr+' · Google';
+        img.onload=function(){
+          if(place.googleMapsUri&&!box.querySelector('.gb-badge')){
+            var a=document.createElement('a');
+            a.className='gb-badge'; a.href=place.googleMapsUri; a.target='_blank'; a.rel='noopener';
+            a.textContent='Google ↗';
+            a.title='Scheda su Google'+(attr?' · foto di '+attr:'');
+            a.addEventListener('click',function(e){e.stopPropagation();});
+            box.appendChild(a);
+          }
+        };
+        img.onerror=function(){img.remove();};
+        img.src='https://places.googleapis.com/v1/'+foto.name+'/media?maxWidthPx=640&key='+encodeURIComponent(K);
+        box.appendChild(img);
+      }
+      var meta=card.querySelector('.card-meta');
+      if(meta){
+        var tel=place.nationalPhoneNumber;
+        if(tel&&!meta.querySelector('a[href^="tel:"]')){
+          var sp=document.createElement('span');
+          var a1=document.createElement('a');
+          a1.href='tel:'+((place.internationalPhoneNumber||tel).replace(/\s+/g,''));
+          a1.textContent='☏ '+tel;
+          sp.appendChild(a1); meta.insertBefore(sp,meta.firstChild);
+        }
+        if(place.websiteUri&&!meta.querySelector('a[href^="http"]')){
+          try{
+            var host=new URL(place.websiteUri).host.replace(/^www\./,'');
+            var sp2=document.createElement('span'); var a2=document.createElement('a');
+            a2.href=place.websiteUri; a2.target='_blank'; a2.rel='noopener'; a2.textContent=host+' ↗';
+            sp2.appendChild(a2); meta.appendChild(sp2);
+          }catch(e){}
+        }
+        if(place.rating&&meta.textContent.indexOf('★')<0){
+          var sp3=document.createElement('span'); sp3.className='gb-rating';
+          sp3.textContent='★ '+String(place.rating).replace('.',',');
+          meta.appendChild(sp3);
+        }
+      }
+    }
+    function porta(d){var p=d&&d.places&&d.places[0];return p||d&&d.id&&d||null;}
+    function carica(card){
+      var hdr={'Content-Type':'application/json','X-Goog-Api-Key':K};
+      var pid=card.dataset.gplace;
+      var req;
+      if(pid){
+        hdr['X-Goog-FieldMask']=FM_D;
+        req=fetch('https://places.googleapis.com/v1/places/'+encodeURIComponent(pid)+'?languageCode=it',{headers:hdr});
+      }else{
+        hdr['X-Goog-FieldMask']=FM_S;
+        var slug=(card.dataset.c||'').split(' ').filter(function(t){return COMUNI[t];})[0];
+        req=fetch('https://places.googleapis.com/v1/places:searchText',{
+          method:'POST',headers:hdr,
+          body:JSON.stringify({textQuery:card.dataset.name+', '+(COMUNI[slug]||'Valpolicella')+' VR',
+                               languageCode:'it',regionCode:'IT',pageSize:1})
+        });
+      }
+      req.then(function(r){return r.ok?r.json():null;}).then(function(d){
+        var p=porta(d); if(!p)return;
+        var nomeG=(p.displayName&&p.displayName.text)||'';
+        if(pid||compatibile(card.dataset.name,nomeG))arricchisci(card,p);
+      }).catch(function(){});
+    }
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var c=e.target; io.unobserve(c);
+        if(c.dataset.gbDone||fatte>=budget)return;
+        c.dataset.gbDone='1'; fatte++;
+        carica(c);
+      });
+    },{rootMargin:'200px 0px'});
+    ['cantine-cards','hotel-cards'].forEach(function(id){
+      var g=document.getElementById(id); if(!g)return;
+      g.querySelectorAll('article.card').forEach(function(c){io.observe(c);});
+    });
+  })();
 
   // ====== OPERATORI SOCI DEL DISTRETTO ======
   // ELENCO DIMOSTRATIVO: sostituire con l'elenco reale degli aderenti prima della pubblicazione.
@@ -5429,7 +5619,7 @@
 
   // foto principali da Wikipedia per le schede dei Luoghi (pievi, ville, borghi, paesaggi)
   (function(){
-    var cards=[].slice.call(document.querySelectorAll('#luoghi-cards article.card[data-wiki]'));
+    var cards=[].slice.call(document.querySelectorAll('article.card[data-wiki]'));
     if(!cards.length||!window.fetch)return;
     var titles=[]; cards.forEach(function(c){c.dataset.wiki.split('||').forEach(function(t){
       t=t.trim(); if(t&&titles.indexOf(t)<0)titles.push(t);});});
@@ -5450,7 +5640,7 @@
         var hit=null;
         c.dataset.wiki.split('||').some(function(t){hit=resolve(t.trim());return !!hit;});
         if(!hit)return;
-        var box=c.querySelector('.card-img'); if(!box)return;
+        var box=c.querySelector('.card-img'); if(!box||box.querySelector('.gb-img'))return;
         var img=new Image();
         img.alt=(c.dataset.name||'')+' — immagine da Wikipedia';
         img.loading='lazy'; img.decoding='async'; img.className='wiki-img';
