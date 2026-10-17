@@ -19,13 +19,12 @@ Realizzato da **MBR Servizi by Maimeri Informatica**.
 | Territorio | Gli 8 comuni, mappa e inquadramento della valle |
 | Progettualità | Missione, impegni, promozioni e idee territoriali |
 | Luoghi | 36 schede filtrabili per tipologia e per comune |
-| Cantine | Directory di 98 cantine con ricerca e micro-schede |
-| Dove dormire | 74 strutture ricettive con filtri e valutazioni |
+| Cibo e vino | 98 cantine e la ristorazione del territorio, in schede filtrabili |
+| Dove dormire | 74 strutture ricettive in schede filtrabili, con valutazioni |
 | Percorsi | 27 itinerari a piedi, in bici, MTB e a cavallo |
 | Pianifica | Costruttore di itinerari con mappa finale su Google Maps |
 | Storia | Cenni storici, arte, agricoltura e bibliografia |
 | Documenti | Mappe, tracce GPX e materiali scaricabili |
-| La rete | Associazioni del territorio e partner |
 | Card | Distretto Turistico Card: vantaggi e categorie |
 | Area soci | Adesioni e convenzioni |
 | Adesione | Modulo compilabile online e stampabile |
@@ -145,6 +144,39 @@ build non deve fare nulla, quindi il Build Command può restare vuoto.
 Comportamento normale del piano gratuito di Render dopo un periodo di inattività.
 
 ---
+
+## Fotografie
+
+Il portale usa 8 fotografie d'ambiente (vigneti, colline, cantina) prese dalla ricerca
+"Valpolicella" di [Magnific](https://www.magnific.com/it/foto-vettori-gratuito/valpolicella)
+(ex Freepik), tutte della categoria **gratuita**. Il meccanismo è a doppia sorgente:
+
+1. il sito cerca prima il file locale in `assets/img/` (es. `hero.jpg`);
+2. se non c'è, carica la stessa foto dall'indirizzo originale di Magnific;
+3. se non arriva nemmeno quella, il riquadro fotografico sparisce da solo, senza buchi.
+
+L'elenco dei file e degli originali è in `assets/img/LEGGIMI.txt`. **Consiglio:** scarica
+le foto con un account gratuito Magnific e mettile in `assets/img/`, così il sito non
+dipende da un servizio esterno. La licenza gratuita richiede l'attribuzione, già presente
+nel piè di pagina. Le foto sono d'ambiente (non scatti certificati della Valpolicella):
+quando il distretto avrà immagini proprie del territorio, basta sostituire gli 8 file
+mantenendo gli stessi nomi.
+
+---
+
+### Immagini dei luoghi da Wikipedia
+
+Le schede della sezione **Luoghi** (pievi, ville, borghi e paesaggi) caricano in automatico
+la fotografia principale della voce di Wikipedia corrispondente: all'apertura della pagina
+il sito interroga una sola volta l'API pubblica di Wikipedia in italiano e, dove la voce
+esiste e ha un'immagine, la mostra nella scheda con il collegamento «Wikipedia ↗» alla voce
+(da cui si risale ad autore e licenza dell'immagine). Se la voce manca, non ha foto o l'API
+non risponde, resta l'illustrazione disegnata: la pagina non si rompe mai.
+
+I titoli delle voci sono nell'attributo `data-wiki` di ciascuna scheda (più titoli separati
+da `||`: vince il primo con immagine). Per aggiungere o correggere una voce basta modificare
+quell'attributo; usare sempre titoli univoci o già disambiguati, per non rischiare la foto
+di un luogo omonimo.
 
 ## Personalizzazione
 

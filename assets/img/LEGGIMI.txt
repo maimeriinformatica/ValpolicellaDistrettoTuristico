@@ -1,0 +1,22 @@
+FOTOGRAFIE DEL PORTALE
+======================
+Il sito cerca qui 8 file JPG; se un file manca, carica automaticamente
+la stessa foto dal sito Magnific (ex Freepik). Per rendere il portale
+indipendente da servizi esterni, scarica le foto (serve un account
+gratuito Magnific) e salvale in questa cartella con questi nomi esatti:
+
+hero.jpg        bella-vista-di-un-vigneto-immerso-nel-verde-delle-colline-al-tramonto_13005915
+territorio.jpg  vista-aerea-di-rigogliosi-filari-di-vigneti-verdi-all-alba_427367987
+botte.jpg       botte-di-legno-accanto-a-vino-e-tapa_4885264
+dormire.jpg     colpo-di-alto-angolo-di-un-edificio-isolato-sulla-collina_8409183
+percorsi.jpg    colline-ondeggianti_8943605
+tramonto.jpg    sole-che-tramonta-dietro-le-montagne-e-copre-la-vigna_10186493
+uva.jpg         colpo-verticale-di-uve-nere-che-crescono-in-un-vigneto_28363302
+calice.jpg      foto-verticale-di-una-persona-che-tiene-un-bicchiere-di-vino_13338272
+
+Licenza gratuita Magnific/Freepik: è richiesta l'attribuzione, già
+presente nel piè di pagina del sito. Consiglio: ridimensiona a ~1400 px
+di larghezza e qualità JPG 70-75 per tenere il sito veloce.
+
+Quando il distretto avrà fotografie proprie del territorio, basta
+sostituire questi 8 file mantenendo gli stessi nomi.
