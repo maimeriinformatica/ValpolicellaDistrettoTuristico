@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aderisci — Distretto Turistico Valpolicella</title>
+<meta name="description" content="Il portale del Distretto Turistico Valpolicella APS: luoghi, cantine, ospitalità, percorsi e la Distretto Turistico Card negli 8 comuni della Valpolicella, in provincia di Verona.">
+<meta name="theme-color" content="#1C6E31">
+<meta name="author" content="Distretto Turistico Valpolicella APS">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://distrettovalpolicella.it/aderisci.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Distretto Turistico Valpolicella">
+<meta property="og:title" content="Distretto Turistico Valpolicella — Vivi la Valpolicella">
+<meta property="og:description" content="Paesaggio, cultura, tradizione, arte e architettura della Valpolicella: luoghi, cantine, ospitalità e percorsi degli 8 comuni.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Distretto Turistico Valpolicella">
+<meta name="twitter:description" content="Luoghi, cantine, ospitalità e percorsi degli 8 comuni della Valpolicella.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1EEE4;
+    --paper-2:#E7E3D6;
+    --panel:#F4F2EA;
+    --ink:#22271D;
+    --ink-soft:#5C6252;
+    --garnet:#1C6E31;
+    --garnet-deep:#0E3A1C;
+    --olive:#52702C;
+    --brass:#8C7A2E;
+    --line:rgba(34,40,30,.16);
+    --line-strong:rgba(34,40,30,.32);
+    --shadow:0 1px 0 rgba(34,40,30,.06),0 18px 40px -28px rgba(34,40,30,.5);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:74px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:17px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:"Spline Sans Mono",monospace}
+  .eyebrow{
+    font-family:"Spline Sans Mono",monospace;font-size:.72rem;font-weight:500;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--garnet);
+  }
+  .wrap{max-width:1160px;margin:0 auto;padding:0 26px}
+  .section{padding:92px 0;border-top:1px solid var(--line)}
+  .section-head{max-width:640px;margin-bottom:46px}
+  .section-head h2{font-size:clamp(2rem,4.4vw,3rem);margin:14px 0 12px}
+  .section-head p{color:var(--ink-soft)}
+
+  /* ---------- contour background ---------- */
+  .contours{position:absolute;inset:0;z-index:0;opacity:.5;pointer-events:none}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    background:rgba(241,238,228,.86);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1160px;margin:0 auto;padding:0 26px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Fraunces";font-weight:600;font-size:1.06rem;letter-spacing:-.01em}
+  .brand .glyph{width:26px;height:26px;flex:none}
+  .brand .glyph-img{height:34px;width:auto;flex:none}
+  .foot-logo{height:60px;width:auto;margin-bottom:16px;display:block}
+  .nav-links{display:flex;gap:19px;align-items:center}
+  .nav-links a{font-size:.85rem;color:var(--ink-soft);position:relative;padding:4px 0}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--garnet);transition:width .28s ease}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{border:1px solid var(--garnet);color:var(--garnet)!important;border-radius:2px;padding:8px 15px!important;font-weight:500;transition:.22s}
+  .nav-cta:hover{background:var(--garnet);color:var(--paper)!important}
+  .nav-cta::after{display:none}
+  .burger{display:none;background:none;border:1px solid var(--line-strong);border-radius:3px;width:42px;height:38px;cursor:pointer;flex-direction:column;gap:4px;align-items:center;justify-content:center}
+  .burger span{width:18px;height:1.6px;background:var(--ink)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:150px 0 96px;overflow:hidden}
+  .hero .wrap{position:relative;z-index:2}
+  .hero-coords{display:flex;gap:22px;flex-wrap:wrap;color:var(--ink-soft);font-size:.74rem;margin-bottom:22px}
+  .hero-coords span{display:flex;gap:7px;align-items:center}
+  .hero h1{font-size:clamp(2.9rem,8vw,6.1rem);line-height:.94;font-weight:600;max-width:12ch}
+  .hero h1 em{font-style:italic;color:var(--garnet);font-weight:500}
+  .hero-lead{max-width:52ch;margin:26px 0 34px;font-size:1.12rem;color:var(--ink-soft)}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:2px;font-weight:500;font-size:.94rem;cursor:pointer;transition:.22s;border:1px solid transparent}
+  .btn-primary{background:var(--garnet);color:var(--paper)}
+  .btn-primary:hover{background:var(--garnet-deep)}
+  .btn-ghost{border-color:var(--line-strong);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink);background:rgba(34,40,30,.04)}
+  .hero-strip{display:flex;gap:0;margin-top:64px;border-top:1px solid var(--line-strong);flex-wrap:wrap}
+  .hero-strip div{flex:1;min-width:150px;padding:20px 22px 0 0}
+  .hero-strip .n{font-family:"Fraunces";font-size:1.9rem;color:var(--garnet)}
+  .hero-strip .l{font-size:.82rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;font-family:"Spline Sans Mono";margin-top:2px}
+
+  /* ---------- map / signature ---------- */
+  .map-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .map-frame{background:var(--panel);border:1px solid var(--line-strong);border-radius:4px;padding:22px;box-shadow:var(--shadow);position:relative}
+  .map-frame svg{width:100%;height:auto;display:block}
+  .zone-path{transition:.3s;cursor:pointer}
+  .zone-classica{fill:rgba(28,110,49,.16);stroke:var(--garnet);stroke-width:1.4}
+  .zone-classica.on,.zone-classica:hover{fill:rgba(28,110,49,.4)}
+  .zone-estesa{fill:rgba(82,112,44,.10);stroke:var(--olive);stroke-width:1.2;stroke-dasharray:4 3}
+  .zone-estesa.on,.zone-estesa:hover{fill:rgba(82,112,44,.28)}
+  .map-label{font-family:"Spline Sans Mono";font-size:8.5px;fill:var(--ink);letter-spacing:.02em}
+  .map-toggle{display:inline-flex;border:1px solid var(--line-strong);border-radius:3px;overflow:hidden;margin-bottom:20px}
+  .map-toggle button{background:none;border:none;padding:9px 15px;font:inherit;font-size:.84rem;cursor:pointer;color:var(--ink-soft)}
+  .map-toggle button.active{background:var(--garnet);color:var(--paper)}
+  .valley-list{list-style:none;display:flex;flex-direction:column;gap:2px;margin-top:20px}
+  .valley-list li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+  .valley-list .badge{font-family:"Spline Sans Mono";font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:2px}
+  .badge-c{background:rgba(28,110,49,.14);color:var(--garnet)}
+  .badge-e{background:rgba(82,112,44,.16);color:var(--olive)}
+
+  /* ---------- cards ---------- */
+  .filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px}
+  .chip{border:1px solid var(--line-strong);background:none;border-radius:40px;padding:8px 16px;font:inherit;font-size:.85rem;color:var(--ink-soft);cursor:pointer;transition:.2s}
+  .chip:hover{border-color:var(--ink)}
+  .chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:20px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:.28s;box-shadow:var(--shadow)}
+  .card:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+  .card-img{height:150px;position:relative;overflow:hidden}
+  .card-img svg{position:absolute;inset:0;width:100%;height:100%}
+  .card-tag{position:absolute;top:12px;left:12px;z-index:2;font-family:"Spline Sans Mono";font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;background:var(--paper);color:var(--ink);padding:4px 9px;border-radius:2px;border:1px solid var(--line)}
+  .card-tag.c{color:var(--garnet)}
+  .card-body{padding:18px 19px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .card-body h3{font-size:1.24rem;font-weight:600}
+  .card-kicker{font-family:"Spline Sans Mono";font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+  .card-body p{font-size:.92rem;color:var(--ink-soft);flex:1}
+  .card-meta{display:flex;gap:14px;flex-wrap:wrap;font-family:"Spline Sans Mono";font-size:.74rem;color:var(--ink-soft);padding-top:6px;border-top:1px solid var(--line)}
+  .card-meta span{display:flex;gap:5px;align-items:center}
+  .sl-link{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:6px 11px;
+    border:1px solid var(--garnet);border-radius:40px;color:var(--garnet);
+    font-family:"Spline Sans Mono";font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;
+    transition:.22s;align-self:flex-start}
+  .sl-link:hover{background:var(--garnet);color:var(--paper)}
+  .sl-link .dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+  .sl-note{display:flex;gap:10px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);
+    border-left:3px solid var(--garnet);border-radius:3px;padding:14px 16px;margin-top:24px;font-size:.86rem;color:var(--ink-soft)}
+
+  /* ---------- routes ---------- */
+  .routes{display:grid;gap:14px}
+  .route{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:20px 24px;transition:.25s}
+  .route:hover{border-color:var(--garnet)}
+  .route-icon{width:46px;height:46px;border-radius:50%;border:1px solid var(--line-strong);display:grid;place-items:center;color:var(--garnet)}
+  .route h3{font-size:1.2rem}
+  .route-sub{font-size:.9rem;color:var(--ink-soft)}
+  .route-stats{display:flex;gap:24px;text-align:right}
+  .route-stats div{display:flex;flex-direction:column}
+  .route-stats .v{font-family:"Fraunces";font-size:1.15rem;color:var(--ink)}
+  .route-stats .k{font-family:"Spline Sans Mono";font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* ---------- history timeline ---------- */
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .timeline{list-style:none;position:relative;padding-left:26px}
+  .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--line-strong)}
+  .timeline li{position:relative;padding:0 0 26px}
+  .timeline li::before{content:"";position:absolute;left:-23px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--garnet);border:2px solid var(--paper)}
+  .timeline .yr{font-family:"Spline Sans Mono";font-size:.78rem;color:var(--garnet);letter-spacing:.06em}
+  .timeline h4{font-size:1.12rem;margin:3px 0 4px}
+  .timeline p{font-size:.92rem;color:var(--ink-soft)}
+  .biblio{list-style:none}
+  .biblio li{padding:15px 0;border-bottom:1px solid var(--line);font-size:.92rem;display:flex;gap:14px}
+  .biblio .num{font-family:"Spline Sans Mono";color:var(--brass);font-size:.8rem;flex:none;padding-top:2px}
+  .biblio em{color:var(--ink);font-style:italic}
+  .biblio span{color:var(--ink-soft)}
+
+  /* ---------- documents ---------- */
+  .doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+  .doc{display:flex;gap:15px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:18px 19px;transition:.24s;cursor:pointer}
+  .doc:hover{border-color:var(--garnet);transform:translateY(-2px)}
+  .doc-ic{width:40px;height:40px;flex:none;border:1px solid var(--line-strong);border-radius:3px;display:grid;place-items:center;color:var(--garnet)}
+  .doc h4{font-family:"Instrument Sans";font-weight:600;font-size:.98rem;line-height:1.3}
+  .doc small{font-family:"Spline Sans Mono";font-size:.68rem;color:var(--ink-soft);letter-spacing:.05em}
+
+  /* ---------- soci / convenzioni ---------- */
+  .soci{background:var(--garnet);color:var(--paper);position:relative;overflow:hidden}
+  .soci .contours{opacity:.14}
+  .soci .section-head p,.soci .eyebrow{color:rgba(241,238,228,.8)}
+  .soci .eyebrow{color:#E7C7A8}
+  .soci-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;position:relative;z-index:2}
+  .benefit{display:flex;gap:15px;padding:18px 0;border-bottom:1px solid rgba(241,238,228,.2)}
+  .benefit .bn{font-family:"Fraunces";font-size:1.4rem;color:#E7C7A8;flex:none}
+  .benefit h4{font-size:1.1rem;margin-bottom:3px}
+  .benefit p{font-size:.9rem;color:rgba(241,238,228,.8)}
+  .unicatt-box{background:rgba(241,238,228,.08);border:1px solid rgba(241,238,228,.28);border-radius:5px;padding:28px}
+  .unicatt-box h3{font-size:1.5rem;margin-bottom:10px}
+  .unicatt-box p{color:rgba(241,238,228,.85);font-size:.96rem;margin-bottom:18px}
+  .btn-paper{background:var(--paper);color:var(--garnet)}
+  .btn-paper:hover{background:#fff}
+  .btn-line{border-color:rgba(241,238,228,.5);color:var(--paper)}
+  .btn-line:hover{background:rgba(241,238,228,.12)}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--garnet-deep);color:rgba(241,238,228,.75);padding:64px 0 34px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;margin-bottom:40px}
+  footer h5{font-family:"Spline Sans Mono";font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#E7C7A8;margin-bottom:14px}
+  footer a{color:rgba(241,238,228,.75);font-size:.9rem;display:block;padding:4px 0;transition:.2s}
+  footer a:hover{color:var(--paper)}
+  .foot-brand{font-family:"Fraunces";font-size:1.3rem;color:var(--paper);margin-bottom:10px}
+  .foot-brand+p{font-size:.9rem;max-width:34ch}
+  .foot-bottom{border-top:1px solid rgba(241,238,228,.18);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:rgba(241,238,228,.55);font-family:"Spline Sans Mono"}
+
+  /* ---------- progettualità ---------- */
+  .mission{display:grid;grid-template-columns:.92fr 1.08fr;gap:52px;align-items:start}
+  .mission-quote{font-family:"Fraunces";font-size:clamp(1.4rem,2.6vw,1.85rem);line-height:1.28;font-weight:500}
+  .mission-quote em{color:var(--garnet);font-style:italic}
+  .mission-sign{font-family:"Spline Sans Mono";font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:20px}
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pillar{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:22px 22px 24px;transition:.26s}
+  .pillar:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+  .pillar .pk{font-family:"Spline Sans Mono";font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:flex;gap:9px;align-items:center;margin-bottom:9px}
+  .pillar .pk svg{color:var(--garnet)}
+  .pillar h3{font-size:1.16rem;margin-bottom:6px}
+  .pillar>p{font-size:.9rem;color:var(--ink-soft)}
+  .pillar ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:7px}
+  .pillar li{font-size:.86rem;color:var(--ink-soft);padding-left:16px;position:relative}
+  .pillar li::before{content:"—";position:absolute;left:0;color:var(--garnet)}
+
+  /* ---------- associazioni ---------- */
+  .assoc-sub{font-family:"Spline Sans Mono";font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--garnet);margin:8px 0 18px}
+  .assoc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(214px,1fr));gap:16px;margin-bottom:40px}
+  .assoc{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:20px;display:flex;flex-direction:column;gap:7px;transition:.24s}
+  .assoc:hover{border-color:var(--garnet);transform:translateY(-3px)}
+  .assoc .crest{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);display:grid;place-items:center;color:var(--garnet);font-family:"Fraunces";font-weight:600;font-size:1.05rem;margin-bottom:4px}
+  .assoc h4{font-family:"Instrument Sans";font-weight:600;font-size:1rem;line-height:1.25}
+  .assoc>p{font-size:.85rem;color:var(--ink-soft);flex:1}
+  .assoc-tag{font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;padding:3px 8px;border-radius:2px;align-self:flex-start;margin-top:4px}
+  .tag-terr{background:rgba(28,110,49,.12);color:var(--garnet)}
+  .tag-part{background:rgba(82,112,44,.16);color:var(--olive)}
+
+
+  /* ---------- Distretto Turistico Card ---------- */
+  .cardsec{background:var(--panel)}
+  .card-top{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px;align-items:center;margin-bottom:56px}
+  .cardface{position:relative;aspect-ratio:1.586/1;border-radius:14px;overflow:hidden;
+    background:linear-gradient(135deg,#2E9E3A 0%,#0E3A1C 62%,#0A2B14 100%);
+    box-shadow:0 26px 50px -24px rgba(34,40,30,.72);color:var(--paper);padding:26px 28px;
+    display:flex;flex-direction:column;justify-content:space-between}
+  .cardface svg.rings{position:absolute;right:-70px;top:-70px;width:290px;height:290px;opacity:.22;pointer-events:none}
+  .cardface .cf-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2}
+  .cardface .cf-brand{font-family:"Fraunces";font-size:1.42rem;font-weight:600;line-height:1.05}
+  .cardface .cf-sub{font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#E8C9AE;margin-top:5px}
+  .cardface .cf-chip{width:42px;height:32px;border-radius:5px;background:linear-gradient(135deg,#E6C79E,#C9A06C);position:relative;flex:none}
+  .cardface .cf-chip::after{content:"";position:absolute;inset:7px 9px;border:1px solid rgba(78,18,32,.45);border-radius:2px}
+  .cardface .cf-num{font-family:"Spline Sans Mono";font-size:.94rem;letter-spacing:.16em;position:relative;z-index:2}
+  .cardface .cf-foot{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2}
+  .cardface .cf-foot span{font-family:"Spline Sans Mono";font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(241,238,228,.72)}
+  .cardface .cf-logo{font-family:"Spline Sans Mono";font-size:.58rem;letter-spacing:.14em;color:#E8C9AE}
+  .btypes{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 26px}
+  .btype{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);background:var(--paper);
+    border-radius:40px;padding:8px 15px;font-family:"Spline Sans Mono";font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+  .btype b{color:var(--garnet)}
+  .ben-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:18px}
+  .ben{background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:22px 22px 24px;transition:.26s;display:flex;flex-direction:column;gap:9px}
+  .ben:hover{border-color:var(--garnet);transform:translateY(-3px);box-shadow:var(--shadow)}
+  .ben .bi{width:44px;height:44px;border-radius:50%;background:rgba(28,110,49,.09);color:var(--garnet);display:grid;place-items:center}
+  .ben h4{font-family:"Fraunces";font-size:1.12rem;font-weight:600}
+  .ben>p{font-size:.88rem;color:var(--ink-soft);flex:1}
+  .ben ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:2px}
+  .ben li{font-size:.83rem;color:var(--ink-soft);padding-left:15px;position:relative}
+  .ben li::before{content:"›";position:absolute;left:0;color:var(--garnet);font-weight:700}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:22px}
+  .step .sn{width:34px;height:34px;border-radius:50%;background:var(--garnet);color:var(--paper);
+    display:grid;place-items:center;font-family:"Fraunces";font-weight:600;font-size:1rem;margin-bottom:11px}
+  .step h4{font-size:1.05rem;margin-bottom:5px}
+  .step p{font-size:.88rem;color:var(--ink-soft)}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+  .split-box{border:1px solid var(--line);border-radius:5px;padding:24px;background:var(--paper)}
+  .split-box.dark{background:var(--garnet);border-color:var(--garnet);color:var(--paper)}
+  .split-box.dark li,.split-box.dark p{color:rgba(241,238,228,.85)}
+  .split-box h3{font-size:1.24rem;margin-bottom:10px}
+  .split-box ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:12px}
+  .split-box li{font-size:.9rem;color:var(--ink-soft);padding-left:17px;position:relative}
+  .split-box li::before{content:"—";position:absolute;left:0;color:var(--brass)}
+  .split-box.dark li::before{color:#E8C9AE}
+  @media (max-width:900px){.card-top,.split{grid-template-columns:1fr;gap:32px}.steps{grid-template-columns:1fr}}
+
+  /* ---------- directory cantine ---------- */
+  .dir-tools{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap;margin-bottom:26px}
+  .dirfilters{margin-bottom:0}
+  .dir-search{border:1px solid var(--line-strong);background:var(--panel);border-radius:40px;
+    padding:10px 18px;font:inherit;font-size:.9rem;color:var(--ink);min-width:250px;flex:1;max-width:320px}
+  .dir-search:focus{outline:none;border-color:var(--garnet)}
+  .dir-group{margin-bottom:34px}
+  .dir-head{display:flex;align-items:baseline;gap:14px;padding-bottom:10px;margin-bottom:6px;border-bottom:1px solid var(--line-strong)}
+  .dir-head h3{font-size:1.3rem}
+  .dir-count{font-family:"Spline Sans Mono";font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+  .dir-row{display:grid;grid-template-columns:1.5fr 1.4fr auto;gap:18px;align-items:center;
+    padding:12px 10px;border-bottom:1px solid var(--line);transition:.18s}
+  .dir-row:hover{background:var(--panel)}
+  .dir-name{font-weight:600;font-size:.97rem}
+  .dir-loc{font-size:.88rem;color:var(--ink-soft)}
+  .dir-tel{font-family:"Spline Sans Mono";font-size:.85rem;color:var(--garnet);white-space:nowrap}
+  .dir-tel:hover{text-decoration:underline}
+  .dir-tel.muted{color:var(--ink-soft);opacity:.6}
+  .dir-empty{padding:30px 0;color:var(--ink-soft);font-size:.95rem}
+  @media (max-width:640px){
+    .dir-row{grid-template-columns:1fr;gap:3px;padding:14px 8px}
+    .dir-search{max-width:none}
+  }
+
+  /* ---------- micro-schede cantine ---------- */
+  details.dir-row{display:block;padding:0;border-bottom:1px solid var(--line)}
+  details.dir-row>summary{display:grid;grid-template-columns:1.5fr 1.4fr auto;gap:18px;align-items:center;
+    padding:12px 10px;cursor:pointer;list-style:none;transition:.18s}
+  details.dir-row>summary::-webkit-details-marker{display:none}
+  details.dir-row>summary:hover{background:var(--panel)}
+  details.dir-row[open]>summary{background:var(--panel)}
+  details.dir-row>summary::after{content:"▾";color:var(--garnet);font-size:.8rem;margin-left:4px}
+  details.dir-row[open]>summary::after{content:"▴"}
+  .dir-card{padding:6px 12px 20px;background:var(--panel);border-top:1px dashed var(--line-strong)}
+  .dc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;padding:16px 0}
+  .dc-grid small{display:block;font-family:"Spline Sans Mono";font-size:.64rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--brass);margin-bottom:4px}
+  .dc-grid span{font-size:.9rem;color:var(--ink)}
+  .dc-grid a{color:var(--garnet)}
+  .dc-grid a:hover{text-decoration:underline}
+  .dc-grid .muted{color:var(--ink-soft);opacity:.65;font-style:italic}
+  .dc-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .mapbtn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--garnet);color:var(--garnet);
+    border-radius:40px;padding:8px 16px;font-family:"Spline Sans Mono";font-size:.7rem;
+    letter-spacing:.06em;text-transform:uppercase;transition:.2s}
+  .mapbtn:hover{background:var(--garnet);color:var(--paper)}
+  .mapbtn.alt{border-color:var(--olive);color:var(--olive)}
+  .mapbtn.alt:hover{background:var(--olive);color:var(--paper)}
+  @media (max-width:640px){details.dir-row>summary{grid-template-columns:1fr;gap:3px;padding:14px 8px}}
+
+  .dc-desc{font-size:.92rem;color:var(--ink-soft);line-height:1.6;padding:14px 0 2px;max-width:74ch}
+  details.dir-row.done>summary .dir-name::before{content:"●";color:var(--olive);font-size:.6rem;
+    vertical-align:middle;margin-right:7px}
+
+  /* ---------- modulo di adesione ---------- */
+  .form-wrap{background:var(--panel);border:1px solid var(--line-strong);border-radius:6px;padding:32px;box-shadow:var(--shadow)}
+  .fstep{border-top:1px solid var(--line);padding-top:22px;margin-top:26px}
+  .fstep:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .fstep h3{font-size:1.18rem;margin-bottom:4px;display:flex;align-items:center;gap:11px}
+  .fstep h3 .fn{width:28px;height:28px;border-radius:50%;background:var(--garnet);color:var(--paper);
+    display:grid;place-items:center;font-family:"Spline Sans Mono";font-size:.78rem;flex:none}
+  .fstep>p{font-size:.88rem;color:var(--ink-soft);margin:0 0 16px 39px}
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .fld{display:flex;flex-direction:column;gap:5px}
+  .fld.wide{grid-column:1/-1}
+  .fld label{font-family:"Spline Sans Mono";font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+  .fld input,.fld select,.fld textarea{
+    border:1px solid var(--line-strong);background:var(--paper);border-radius:3px;padding:10px 12px;
+    font:inherit;font-size:.92rem;color:var(--ink);width:100%}
+  .fld textarea{resize:vertical;min-height:88px;line-height:1.55}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--garnet)}
+  .fld small{font-size:.74rem;color:var(--ink-soft)}
+  .fchecks{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:4px}
+  .fchecks label{display:flex;align-items:center;gap:7px;font-size:.88rem;color:var(--ink);
+    font-family:"Instrument Sans";letter-spacing:0;text-transform:none}
+  .fchecks input{width:auto}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:var(--ink-soft);margin-top:6px}
+  .consent input{width:auto;margin-top:3px}
+  .factions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+  #form-out{display:none;margin-top:22px;background:var(--paper);border:1px solid var(--line-strong);
+    border-left:3px solid var(--olive);border-radius:4px;padding:20px}
+  #form-out h4{font-family:"Instrument Sans";font-size:.95rem;margin-bottom:10px}
+  #form-out pre{white-space:pre-wrap;font-family:"Spline Sans Mono";font-size:.8rem;line-height:1.65;
+    color:var(--ink);max-height:320px;overflow:auto;background:var(--panel);padding:14px;border-radius:3px}
+  @media print{
+    .nav,footer,.section:not(#adesione),.factions,#form-out{display:none!important}
+    .form-wrap{border:none;box-shadow:none;padding:0}
+  }
+
+  /* ---------- pianificatore ---------- */
+  .pl-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+  .pl-box{background:var(--panel);border:1px solid var(--line-strong);border-radius:6px;padding:24px;box-shadow:var(--shadow)}
+  .pl-box h3{font-size:1.16rem;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+  .pl-box h3 .fn{width:26px;height:26px;border-radius:50%;background:var(--garnet);color:var(--paper);
+    display:grid;place-items:center;font-family:"Spline Sans Mono";font-size:.74rem;flex:none}
+  .pl-box>p{font-size:.86rem;color:var(--ink-soft);margin:0 0 16px 36px}
+  .pl-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+  .pl-list{max-height:430px;overflow:auto;border:1px solid var(--line);border-radius:4px;background:var(--paper)}
+  .pl-item{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;
+    padding:11px 13px;border-bottom:1px solid var(--line)}
+  .pl-item:last-child{border-bottom:none}
+  .pl-item .pl-kind{font-family:"Spline Sans Mono";font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;
+    padding:3px 7px;border-radius:2px;background:rgba(28,110,49,.1);color:var(--garnet);white-space:nowrap}
+  .pl-item .pl-kind.k2{background:rgba(82,112,44,.14);color:var(--olive)}
+  .pl-item .pl-kind.k3{background:rgba(154,124,52,.16);color:var(--brass)}
+  .pl-nm{font-size:.92rem;font-weight:600;line-height:1.3}
+  .pl-sub{font-size:.78rem;color:var(--ink-soft)}
+  .pl-add{border:1px solid var(--garnet);background:none;color:var(--garnet);border-radius:50%;
+    width:28px;height:28px;font:inherit;font-size:1rem;line-height:1;cursor:pointer;flex:none;transition:.2s}
+  .pl-add:hover{background:var(--garnet);color:var(--paper)}
+  .pl-add.on{background:var(--olive);border-color:var(--olive);color:var(--paper)}
+  .pl-step{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;
+    padding:11px 13px;border-bottom:1px solid var(--line)}
+  .pl-num{width:26px;height:26px;border-radius:50%;background:var(--garnet);color:var(--paper);
+    display:grid;place-items:center;font-family:"Spline Sans Mono";font-size:.72rem;flex:none}
+  .pl-ctl{display:flex;gap:4px}
+  .pl-ctl button{border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);
+    border-radius:3px;width:26px;height:26px;font:inherit;font-size:.8rem;cursor:pointer;line-height:1}
+  .pl-ctl button:hover{border-color:var(--garnet);color:var(--garnet)}
+  .pl-empty{padding:26px 16px;color:var(--ink-soft);font-size:.9rem;text-align:center}
+  .pl-sum{display:flex;gap:20px;flex-wrap:wrap;margin:14px 0 4px;font-family:"Spline Sans Mono";font-size:.76rem;color:var(--ink-soft)}
+  .pl-sum b{color:var(--garnet);font-size:1.05rem}
+  .pl-presets{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:8px}
+  .pl-preset{background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:18px;cursor:pointer;transition:.24s;text-align:left}
+  .pl-preset:hover{border-color:var(--garnet);transform:translateY(-3px);box-shadow:var(--shadow)}
+  .pl-preset h4{font-family:"Fraunces";font-size:1.06rem;font-weight:600;margin-bottom:5px}
+  .pl-preset p{font-size:.84rem;color:var(--ink-soft)}
+  .pl-preset span{font-family:"Spline Sans Mono";font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);display:block;margin-top:9px}
+  .pl-saved{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .pl-saved button{border:1px solid var(--line-strong);background:var(--paper);border-radius:40px;
+    padding:7px 14px;font:inherit;font-size:.82rem;color:var(--ink);cursor:pointer}
+  .pl-saved button:hover{border-color:var(--garnet);color:var(--garnet)}
+  @media (max-width:900px){.pl-grid,.pl-row{grid-template-columns:1fr}}
+
+  /* ---------- operatori soci / non soci ---------- */
+  .bsoc{display:inline-flex;align-items:center;gap:5px;font-family:"Spline Sans Mono";
+    font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;padding:3px 8px;border-radius:2px;
+    background:rgba(28,110,49,.12);color:var(--garnet);white-space:nowrap;margin-left:9px;vertical-align:middle}
+  .bsoc::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--garnet)}
+  .bnosoc{display:inline-flex;align-items:center;font-family:"Spline Sans Mono";font-size:.56rem;
+    letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:2px;
+    background:rgba(34,40,30,.06);color:var(--ink-soft);white-space:nowrap;margin-left:9px;vertical-align:middle}
+  details.dir-row.socio>summary{box-shadow:inset 3px 0 0 var(--garnet)}
+  details.dir-row.socio>summary .dir-name{color:var(--garnet)}
+  .dc-card-adv{display:flex;gap:10px;align-items:flex-start;background:rgba(28,110,49,.07);
+    border-left:3px solid var(--garnet);border-radius:3px;padding:12px 14px;margin:14px 0 2px;font-size:.87rem}
+  .dc-card-adv b{color:var(--garnet)}
+  .dc-invite{display:flex;gap:10px;align-items:flex-start;background:rgba(34,40,30,.04);
+    border-left:3px solid var(--line-strong);border-radius:3px;padding:12px 14px;margin:14px 0 2px;
+    font-size:.85rem;color:var(--ink-soft)}
+  .dc-invite a{color:var(--garnet);text-decoration:underline}
+  .soc-legend{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:0 0 18px;
+    font-size:.84rem;color:var(--ink-soft)}
+  .soc-legend span{display:flex;align-items:center;gap:7px}
+  .soc-legend i{width:10px;height:10px;border-radius:50%;background:var(--garnet);display:inline-block;font-style:normal}
+  .soc-legend i.n{background:rgba(34,40,30,.22)}
+
+  /* ---------- testi istituzionali ---------- */
+  .prose{max-width:74ch}
+  .prose p{margin-bottom:16px;color:var(--ink-soft)}
+  .prose p:last-child{margin-bottom:0}
+  .prose strong{color:var(--ink)}
+  .temi{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:8px}
+  .tema{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:24px}
+  .tema h3{font-size:1.2rem;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+  .tema h3 .ti{width:30px;height:30px;border-radius:50%;background:rgba(28,110,49,.1);
+    display:grid;place-items:center;color:var(--garnet);flex:none;font-size:.8rem}
+  .tema p{font-size:.9rem;color:var(--ink-soft);line-height:1.62}
+  .tema p+p{margin-top:12px}
+  .news{background:var(--garnet);color:var(--paper);border-radius:6px;padding:30px 32px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;margin-top:34px}
+  .news h3{font-size:1.4rem;margin-bottom:6px}
+  .news p{font-size:.92rem;color:rgba(241,238,228,.85)}
+  .news-form{display:flex;gap:9px;flex-wrap:wrap}
+  .news-form input{flex:1;min-width:180px;border:1px solid rgba(241,238,228,.45);background:rgba(241,238,228,.1);
+    border-radius:3px;padding:12px 14px;font:inherit;font-size:.95rem;color:var(--paper)}
+  .news-form input::placeholder{color:rgba(241,238,228,.6)}
+  .news-form input:focus{outline:none;border-color:var(--paper)}
+  @media (max-width:720px){.news{grid-template-columns:1fr;padding:24px 20px}.news-form input{font-size:16px}}
+
+  /* ---------- schede cibo&vino / dormire ---------- */
+  .card-foot{display:flex;gap:8px;flex-wrap:wrap;padding-top:10px;margin-top:auto}
+  .card-foot .mapbtn{flex:1;justify-content:center;padding:9px 10px;font-size:.66rem}
+  .card-meta a{color:var(--garnet)}
+  .card-meta a:hover{text-decoration:underline}
+  .card .bsoc,.card .bnosoc{margin-left:0;margin-top:2px}
+  .card h3 .bsoc,.card h3 .bnosoc{margin-left:8px;vertical-align:middle}
+  .card .dc-card-adv,.card .dc-invite{margin:6px 0 0;font-size:.82rem;padding:10px 12px}
+  .card.socio{border-color:var(--garnet);box-shadow:0 0 0 1px var(--garnet), var(--shadow)}
+  .more-wrap{display:flex;justify-content:center;margin-top:26px}
+  .more-wrap .btn[hidden]{display:none}
+  .tips{margin-top:30px;border:1px solid var(--line);border-radius:5px;background:var(--panel)}
+  .tips summary{cursor:pointer;padding:14px 18px;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+  .tips summary::-webkit-details-marker{display:none}
+  .tips summary::after{content:"▾";color:var(--garnet)}
+  .tips[open] summary::after{content:"▴"}
+  .tips ul{list-style:none;padding:4px 18px 16px;display:flex;flex-direction:column;gap:9px}
+  .tips li{font-size:.88rem;color:var(--ink-soft);padding-left:14px;position:relative}
+  .tips li::before{content:"◉";position:absolute;left:0;top:1px;font-size:.55rem;color:var(--garnet)}
+  .cards[data-page] .card{display:none}
+  .cards[data-page] .card.show{display:flex}
+  @media (max-width:720px){.card-foot .mapbtn{padding:11px 8px}.card .dc-card-adv,.card .dc-invite{font-size:.8rem}}
+
+  /* ---------- fotografie ---------- */
+  .photo-band{position:relative;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    margin:0 0 30px;height:clamp(170px,24vw,260px);background:var(--panel);box-shadow:var(--shadow)}
+  .photo-band img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo-band figcaption{position:absolute;left:12px;bottom:10px;z-index:2;
+    font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+    background:rgba(241,238,228,.92);color:var(--ink);padding:5px 10px;border-radius:2px;border:1px solid var(--line)}
+  .hero .wrap{position:relative}
+  .hero-photo{display:none}
+  @media (min-width:1080px){
+    .hero-photo{display:block;position:absolute;right:0;top:36px;width:370px;height:430px;
+      border:1px solid var(--line-strong);border-radius:6px;overflow:hidden;box-shadow:var(--shadow);
+      transform:rotate(1.2deg);background:var(--panel)}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-photo::after{content:"VALPOLICELLA · VIGNETI";position:absolute;left:12px;bottom:10px;
+      font-family:"Spline Sans Mono";font-size:.58rem;letter-spacing:.14em;color:var(--ink);
+      background:rgba(241,238,228,.92);padding:5px 10px;border-radius:2px;border:1px solid var(--line)}
+  }
+  @media (max-width:720px){.photo-band{height:150px;margin-bottom:22px;border-radius:5px}}
+
+  /* ---------- foto da Wikipedia nelle schede Luoghi ---------- */
+  .card-img .wiki-img,.card-img .gb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .wiki-badge,.gb-badge{position:absolute;right:10px;bottom:10px;z-index:2;font-family:"Spline Sans Mono";
+    font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(241,238,228,.94);
+    color:var(--ink);padding:4px 8px;border-radius:2px;border:1px solid var(--line);text-decoration:none}
+  .wiki-badge:hover,.gb-badge:hover{color:var(--garnet);border-color:var(--garnet)}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .map-grid,.story-grid,.soci-grid,.mission,.pillars{grid-template-columns:1fr;gap:34px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .nav-links{display:none}
+    .burger{display:flex}
+    .nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--line);padding:16px 26px;gap:6px}
+    .nav-links.open a{padding:9px 0}
+  }
+  @media (max-width:620px){
+    .route{grid-template-columns:auto 1fr;gap:16px}
+    .route-stats{grid-column:1/-1;justify-content:flex-start;text-align:left;border-top:1px solid var(--line);padding-top:12px}
+    .foot-grid{grid-template-columns:1fr}
+    .section{padding:66px 0}
+  }
+
+  /* ================= OTTIMIZZAZIONI MOBILE ================= */
+  @media (max-width:720px){
+
+    /* --- filtri: scorrimento orizzontale invece di righe su righe --- */
+    .filters{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;max-width:100%;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;
+      padding:2px 0 6px;scroll-snap-type:x proximity;-ms-overflow-style:none}
+    .filters::-webkit-scrollbar{display:none}
+    .filters .chip{flex:0 0 auto;scroll-snap-align:start;padding:10px 16px;font-size:.88rem}
+    .dir-tools{flex-direction:column;align-items:stretch;gap:10px;margin-bottom:18px}
+    .dirfilters{margin-bottom:0}
+    .dir-search{max-width:none;width:100%;min-width:0;padding:12px 18px;font-size:16px}
+
+    /* --- righe directory più compatte: nome sopra, luogo e telefono sotto --- */
+    details.dir-row>summary{grid-template-columns:1fr auto;gap:4px 10px;padding:13px 4px;align-items:baseline}
+    details.dir-row>summary .dir-name{grid-column:1/-1;font-size:.98rem;line-height:1.35}
+    details.dir-row>summary .dir-loc{grid-column:1;font-size:.82rem}
+    details.dir-row>summary .dir-tel{grid-column:2;justify-self:end;font-size:.86rem}
+    details.dir-row>summary::after{position:absolute;right:2px;top:14px}
+    details.dir-row>summary{position:relative;padding-right:22px}
+    .dir-head{flex-wrap:wrap;gap:6px}
+    .dir-card{padding:4px 6px 18px}
+    .dc-grid{gap:12px;padding:12px 0}
+    .dc-actions{gap:8px}
+    .dc-actions .mapbtn{flex:1;justify-content:center;padding:12px 10px}
+    .bsoc,.bnosoc{margin-left:7px}
+
+    /* --- badge e legenda --- */
+    .soc-legend{flex-direction:column;align-items:flex-start;gap:7px;font-size:.8rem;margin-bottom:14px}
+
+    /* --- aree toccabili più grandi --- */
+    .pl-add{width:40px;height:40px;font-size:1.15rem}
+    .pl-ctl button{width:36px;height:36px;font-size:.9rem}
+    .btn{padding:14px 20px}
+    .sl-link{padding:9px 14px}
+    a,button,summary{-webkit-tap-highlight-color:rgba(28,110,49,.12)}
+
+    /* --- moduli: 16px evita lo zoom automatico su iPhone --- */
+    .fld input,.fld select,.fld textarea{font-size:16px;padding:12px 13px}
+    .fchecks{gap:12px 18px}
+    .fchecks label{font-size:.92rem}
+    .fchecks input[type=checkbox]{width:20px;height:20px}
+    .consent input[type=checkbox]{width:20px;height:20px}
+    .form-wrap{padding:20px 16px}
+    .fstep>p{margin-left:0}
+    .factions .btn{flex:1 1 100%;justify-content:center}
+
+    /* --- pianificatore --- */
+    .pl-box{padding:18px 16px}
+    .pl-box>p{margin-left:0}
+    .pl-list{max-height:340px}
+    .pl-item,.pl-step{grid-template-columns:auto 1fr auto;gap:10px;padding:12px 10px}
+    .pl-item .pl-kind{font-size:.54rem;padding:3px 6px}
+    .pl-sum{gap:14px}
+
+    /* --- percorsi --- */
+    .route{padding:16px 16px}
+    .route-stats{gap:16px}
+
+    /* --- schede e testi --- */
+    .section{padding:54px 0}
+    .section-head{margin-bottom:30px}
+    .wrap{padding:0 20px}
+    .hero{padding:120px 0 70px}
+    .hero h1{font-size:clamp(2.4rem,10vw,3.2rem)}
+    .hero-lead{font-size:1.02rem}
+    .hero-strip div{min-width:44%}
+    .cards{grid-template-columns:1fr;gap:14px}
+    .card-img{height:118px}
+    .card-body{padding:14px 15px 16px;gap:6px}
+    .card-body h3{font-size:1.1rem}
+    .card-body p{font-size:.86rem;display:-webkit-box;-webkit-line-clamp:3;
+      -webkit-box-orient:vertical;overflow:hidden}
+    .card-meta{font-size:.7rem;gap:10px}
+    .card-kicker{font-size:.64rem}
+    .route{padding:14px 15px}
+    .route h3{font-size:1.06rem}
+    .route-sub{font-size:.82rem;display:-webkit-box;-webkit-line-clamp:2;
+      -webkit-box-orient:vertical;overflow:hidden}
+    .route-icon{width:38px;height:38px}
+    .route-stats .v{font-size:1rem}
+    .route-stats .k{font-size:.58rem}
+    .assoc-grid,.ben-grid,.doc-grid,.pl-presets{grid-template-columns:1fr}
+    .valley-list li{font-size:.9rem}
+    .timeline{padding-left:22px}
+    .biblio li{font-size:.88rem}
+
+    /* --- card del distretto --- */
+    .cardface{padding:20px 18px}
+    .cardface .cf-brand{font-size:1.22rem}
+    .btypes{gap:8px}
+
+    /* --- navigazione --- */
+    .nav-inner{padding:0 20px}
+    .brand{font-size:.88rem;gap:8px;min-width:0;flex:1 1 auto;line-height:1.2;
+      overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .burger{flex:0 0 auto;position:relative;z-index:3;margin-left:10px}
+    .nav-inner{gap:8px}
+    .brand .glyph-img{height:28px}
+    .nav-links.open{max-height:72vh;overflow-y:auto}
+    .nav-links.open a{padding:12px 0;font-size:1rem}
+
+    /* --- footer --- */
+    .foot-bottom{flex-direction:column;gap:8px}
+  }
+
+  @media (max-width:400px){
+    body{font-size:16px}
+    .wrap{padding:0 16px}
+    .hero-strip .n{font-size:1.6rem}
+    details.dir-row>summary .dir-tel{font-size:.8rem}
+  }
+
+  /* --- gruppi comune richiudibili su mobile --- */
+  @media (max-width:720px){
+    .dir-group.collapsed details.dir-row{display:none!important}
+    .dir-group.collapsed .sl-note{display:none}
+    .dir-head{cursor:pointer;position:relative;padding-right:30px;user-select:none}
+    .dir-head::after{content:"▾";position:absolute;right:4px;top:50%;transform:translateY(-60%);
+      color:var(--garnet);font-size:.85rem}
+    .dir-group.collapsed .dir-head::after{content:"▸"}
+    .dir-head:active{opacity:.7}
+  }
+
+  /* --- pulsante «torna su», solo su mobile --- */
+  .totop{position:fixed;right:16px;bottom:16px;z-index:70;width:46px;height:46px;border-radius:50%;
+    background:var(--garnet);color:var(--paper);border:none;font-size:1.1rem;line-height:1;cursor:pointer;
+    box-shadow:0 6px 18px -6px rgba(34,40,30,.6);opacity:0;pointer-events:none;transition:opacity .25s;
+    display:none}
+  .totop.on{opacity:1;pointer-events:auto}
+  @media (max-width:720px){.totop{display:block}}
+  @media print{.totop{display:none!important}}
+
+
+  .hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:10px}
+  a.assoc{display:block;text-decoration:none;color:inherit}
+  a.assoc:hover{border-color:var(--garnet)}
+  a.assoc .go{font-family:"Spline Sans Mono";font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--garnet);display:block;margin-top:10px}
+  .nav-links a.on{color:var(--garnet);font-weight:600}
+</style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<script>
+  // fotografie: prova il file locale, poi l'originale online; se mancano entrambi, nasconde il riquadro
+  function fotoErr(img){
+    if(!img.dataset.done && img.dataset.remote){
+      img.dataset.done='1';
+      img.src=img.dataset.remote;
+    }else{
+      var box=img.closest('.photo-band, .hero-photo');
+      if(box)box.style.display='none';
+    }
+  }
+</script>
+</head>
+<body>
+
+<button class="totop" id="totop" aria-label="Torna su">↑</button>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img class="glyph-img" src="assets/logo.png" alt="Distretto Turistico Valpolicella">
+      Distretto Turistico Valpolicella
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="territorio.html">Territorio</a>
+      <a href="progetti.html">Progetti</a>
+      <a href="luoghi.html">Luoghi</a>
+      <a href="cibo-e-vino.html">Cibo e vino</a>
+      <a href="dormire.html">Dormire</a>
+      <a href="percorsi.html">Percorsi</a>
+      <a href="pianifica.html">Pianifica</a>
+      <a href="card.html">Card</a>
+      <a class="nav-cta" href="aderisci.html">Aderisci</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main><section class="section" id="adesione">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <h2>Modulo di adesione al distretto</h2>
+      <p>Compila i campi: il modulo genera un riepilogo che puoi inviare via e-mail o stampare. Con gli stessi dati creiamo la tua scheda sul portale e attiviamo il vantaggio della Distretto Turistico Card.</p>
+    </div>
+
+    <div class="form-wrap">
+      <form id="adform" novalidate>
+
+        <div class="fstep">
+          <h3><span class="fn">1</span> Dati dell'azienda</h3>
+          <p>Come compare nei documenti ufficiali e come vuoi essere chiamato sul portale.</p>
+          <div class="fgrid">
+            <div class="fld"><label for="f-rs">Ragione sociale *</label><input id="f-rs" required></div>
+            <div class="fld"><label for="f-nome">Nome commerciale</label><input id="f-nome" placeholder="come apparirà sul portale"></div>
+            <div class="fld"><label for="f-tipo">Tipologia *</label>
+              <select id="f-tipo" required>
+                <option value="">— seleziona —</option>
+                <option>Cantina</option><option>Hotel, relais o B&amp;B</option><option>Agriturismo</option>
+                <option>Ristorante, trattoria o osteria</option><option>Attività commerciale / bottega</option>
+                <option>Esperienze, guide e sport</option><option>Mobilità e noleggi</option>
+                <option>Museo, villa o luogo visitabile</option><option>Altro</option>
+              </select></div>
+            <div class="fld"><label for="f-com">Comune *</label>
+              <select id="f-com" required>
+                <option value="">— seleziona —</option>
+                <option>Dolcè</option><option>Fumane</option><option>Marano di Valpolicella</option>
+                <option>Negrar di Valpolicella</option><option>Pescantina</option>
+                <option>San Pietro in Cariano</option><option>Sant'Ambrogio di Valpolicella</option>
+                <option>Sant'Anna d'Alfaedo</option>
+              </select></div>
+            <div class="fld"><label for="f-ind">Indirizzo e località *</label><input id="f-ind" required placeholder="via, numero civico, frazione"></div>
+            <div class="fld"><label for="f-piva">Partita IVA / C.F.</label><input id="f-piva"></div>
+          </div>
+        </div>
+
+        <div class="fstep">
+          <h3><span class="fn">2</span> Contatti</h3>
+          <p>Un riferimento diretto per il distretto e i recapiti pubblici da mostrare ai turisti.</p>
+          <div class="fgrid">
+            <div class="fld"><label for="f-ref">Referente *</label><input id="f-ref" required></div>
+            <div class="fld"><label for="f-tel">Telefono *</label><input id="f-tel" type="tel" required></div>
+            <div class="fld"><label for="f-mail">E-mail *</label><input id="f-mail" type="email" required></div>
+            <div class="fld"><label for="f-web">Sito web</label><input id="f-web" placeholder="www."></div>
+            <div class="fld"><label for="f-soc">Social</label><input id="f-soc" placeholder="Facebook, Instagram"></div>
+          </div>
+        </div>
+
+        <div class="fstep">
+          <h3><span class="fn">3</span> La tua scheda sul portale</h3>
+          <p>Questi contenuti finiscono direttamente nella scheda pubblica: più sono curati, meglio racconti la tua realtà.</p>
+          <div class="fgrid">
+            <div class="fld wide"><label for="f-desc">Descrizione breve *</label>
+              <textarea id="f-desc" required placeholder="Chi siete, dove siete, cosa vi rende riconoscibili. Circa 400 caratteri."></textarea>
+              <small>Storia, anno di fondazione, ettari, cru, famiglia: i dettagli concreti sono i più apprezzati.</small></div>
+            <div class="fld"><label for="f-anno">Anno di fondazione</label><input id="f-anno"></div>
+            <div class="fld"><label for="f-orari">Orari di apertura</label><input id="f-orari" placeholder="es. lun–sab 9–18"></div>
+            <div class="fld"><label for="f-vis">Visite e degustazioni</label><input id="f-vis" placeholder="su prenotazione, durata, prezzo indicativo"></div>
+            <div class="fld"><label for="f-lin">Lingue parlate</label><input id="f-lin" placeholder="italiano, inglese, tedesco"></div>
+            <div class="fld wide"><label>Servizi disponibili</label>
+              <div class="fchecks" id="f-serv">
+                <label><input type="checkbox" value="Parcheggio"> Parcheggio</label>
+                <label><input type="checkbox" value="Accessibile"> Accessibile</label>
+                <label><input type="checkbox" value="Animali ammessi"> Animali ammessi</label>
+                <label><input type="checkbox" value="Gruppi"> Gruppi</label>
+                <label><input type="checkbox" value="Area camper"> Area camper</label>
+                <label><input type="checkbox" value="Wine shop"> Wine shop</label>
+                <label><input type="checkbox" value="Ospitalità"> Ospitalità</label>
+                <label><input type="checkbox" value="Ristorazione"> Ristorazione</label>
+                <label><input type="checkbox" value="Bike friendly"> Bike friendly</label>
+              </div></div>
+          </div>
+        </div>
+
+        <div class="fstep">
+          <h3><span class="fn">4</span> Distretto Turistico Card</h3>
+          <p>Il vantaggio che offri a chi mostra la card. Lo scegli liberamente tu, e puoi cambiarlo comunicandolo al distretto.</p>
+          <div class="fgrid">
+            <div class="fld"><label for="f-vtipo">Tipo di vantaggio *</label>
+              <select id="f-vtipo" required>
+                <option value="">— seleziona —</option>
+                <option>Sconto in percentuale</option><option>Gratuità</option>
+                <option>Gadget o omaggio</option><option>Combinazione</option>
+              </select></div>
+            <div class="fld"><label for="f-vper">Entità (es. 10%)</label><input id="f-vper"></div>
+            <div class="fld"><label for="f-vval">Periodo di validità</label><input id="f-vval" placeholder="es. tutto l'anno, esclusi festivi"></div>
+            <div class="fld wide"><label for="f-vdesc">Descrizione del vantaggio *</label>
+              <textarea id="f-vdesc" required placeholder="es. 10% sull'acquisto in cantina e calice del distretto in omaggio"></textarea></div>
+            <div class="fld wide"><label for="f-vcond">Condizioni e limiti</label>
+              <textarea id="f-vcond" placeholder="es. non cumulabile, su prenotazione, massimo 4 persone"></textarea></div>
+          </div>
+        </div>
+
+        <div class="fstep">
+          <h3><span class="fn">5</span> Adesione e consensi</h3>
+          <div class="fgrid">
+            <div class="fld wide">
+              <label class="consent"><input type="checkbox" id="f-c1" required>
+                <span>Chiedo di aderire al <strong>Distretto Turistico Valpolicella APS</strong> e accetto il regolamento del circuito e della Distretto Turistico Card.</span></label>
+              <label class="consent"><input type="checkbox" id="f-c2" required>
+                <span>Autorizzo la pubblicazione dei dati e dei materiali forniti sul portale e sui canali del distretto.</span></label>
+              <label class="consent"><input type="checkbox" id="f-c3" required>
+                <span>Ho letto l'informativa privacy e acconsento al trattamento dei dati ai sensi del Reg. UE 2016/679.</span></label>
+            </div>
+            <div class="fld"><label for="f-luogo">Luogo e data</label><input id="f-luogo"></div>
+            <div class="fld"><label for="f-firma">Firma (nome e cognome)</label><input id="f-firma"></div>
+          </div>
+        </div>
+
+        <div class="factions">
+          <button type="button" class="btn btn-primary" id="f-gen">Genera riepilogo →</button>
+          <button type="button" class="btn btn-ghost" id="f-mail-btn">Invia via e-mail</button>
+          <button type="button" class="btn btn-ghost" id="f-print">Stampa il modulo</button>
+        </div>
+
+        <div id="form-out">
+          <h4>Riepilogo della richiesta</h4>
+          <pre id="form-pre"></pre>
+          <div class="factions" style="border:none;padding-top:14px;margin-top:0">
+            <button type="button" class="btn btn-ghost" id="f-copy">Copia il testo</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="news">
+      <div>
+        <h3>Iscriviti alle nostre news</h3>
+        <p>Resta connesso con le nostre novità: eventi, aperture, nuovi itinerari e vantaggi del circuito.</p>
+      </div>
+      <div class="news-form">
+        <input id="news-mail" type="email" placeholder="La tua e-mail" aria-label="Indirizzo e-mail">
+        <button type="button" class="btn btn-paper" id="news-go">Iscriviti ora</button>
+      </div>
+    </div>
+    <div class="sl-note">
+      <span style="color:var(--garnet);font-weight:600">◉</span>
+      <span>Il portale è un sito statico: il modulo <strong>non invia dati a un server</strong>, ma prepara il riepilogo da spedire via e-mail o da stampare e consegnare. Con un'area soci dotata di backend, gli invii arriveranno direttamente in un gestionale.</span>
+    </div>
+  </div>
+</section></main>
+
+<footer id="contatti">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img class="foot-logo" src="assets/logo-white.png" alt="Distretto Turistico Valpolicella">
+        <div class="foot-brand">Distretto Turistico Valpolicella APS</div>
+        <p>L'atlante del territorio: luoghi, cantine, ospitalità e percorsi degli 8 comuni della Valpolicella geografica, di cui 5 comuni del vino.</p>
+      </div>
+      <div>
+        <h5>Esplora</h5>
+        <a href="territorio.html">Territorio</a><a href="progetti.html">Progetti</a><a href="luoghi.html">Luoghi</a><a href="cibo-e-vino.html">Cibo e vino</a><a href="dormire.html">Dormire</a><a href="percorsi.html">Percorsi</a><a href="pianifica.html">Pianifica il percorso</a>
+      </div>
+      <div>
+        <h5>Risorse</h5>
+        <a href="card.html">Distretto Turistico Card</a><a href="storia.html">Storia</a><a href="documenti.html">Documenti</a><a href="storia.html">Bibliografia</a>
+      </div>
+      <div>
+        <h5>Contatti</h5>
+        <a href="#">info@valpolicelladistrettoturistico.it</a><a href="#">Verona · Veneto</a><a href="aderisci.html">Modulo di adesione</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Distretto Turistico Valpolicella — prototipo</span>
+      <span>45°32′N · 10°55′E</span>
+          <span>Fotografie d’ambiente: Magnific / Freepik (wirestock, muhammad.abdullah) · Immagini dei luoghi: Wikipedia / Wikimedia Commons, con licenza dei rispettivi autori · Foto e dati delle attività: schede Google dei rispettivi titolari · Contatti integrati da OpenStreetMap (© contributori OSM, ODbL)</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/config.js"></script>
+<script>
+
+  // mobile nav
+  const burger=document.getElementById('burger'),nl=document.getElementById('navlinks');
+  burger.addEventListener('click',()=>nl.classList.toggle('open'));
+  nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+
+  // card / route filters — più barre in AND, ricerca testuale e paginazione «mostra altre»
+  const PAGE={};
+  function applyFilters(target){
+    const bars=[...document.querySelectorAll('.filters')].filter(b=>b.dataset.target===target.id);
+    const active=bars.map(b=>{const c=b.querySelector('.chip.active');return c?c.dataset.f:'all';})
+                     .filter(f=>f&&f!=='all');
+    const inp=document.querySelector('[data-search-for="'+target.id+'"]');
+    const q=inp?(inp.value||'').trim().toLowerCase():'';
+    const paged=target.hasAttribute('data-page');
+    const step=paged?parseInt(target.dataset.page,10)||12:Infinity;
+    if(!(target.id in PAGE))PAGE[target.id]=step;
+    let match=0, shown=0;
+    target.querySelectorAll('[data-c]').forEach(el=>{
+      const tags=el.dataset.c.split(' ');
+      let ok=active.every(f=>tags.includes(f));
+      if(ok&&q){const k=(el.dataset.k||el.textContent).toLowerCase();ok=k.includes(q);}
+      if(!ok){el.style.display=paged?'':'none';el.classList.remove('show');return;}
+      match++;
+      if(paged){
+        if(shown<PAGE[target.id]){el.classList.add('show');shown++;}
+        else el.classList.remove('show');
+        el.style.display='';
+      }else{el.style.display='';}
+    });
+    const empty=document.getElementById(target.id+'-empty');
+    if(empty)empty.style.display=match?'none':'';
+    const cnt=document.getElementById(target.id+'-count');
+    if(cnt)cnt.innerHTML=match?('<span><b>'+(paged?Math.min(shown,match):match)+'</b> di <b>'+match+'</b></span>'):'';
+    const more=document.querySelector('[data-more-for="'+target.id+'"]');
+    if(more)more.hidden=!(paged&&match>shown);
+  }
+  document.querySelectorAll('.filters').forEach(bar=>{
+    const target=document.getElementById(bar.dataset.target);
+    if(!target)return;
+    bar.querySelectorAll('.chip').forEach(chip=>{
+      chip.addEventListener('click',()=>{
+        bar.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        PAGE[target.id]=parseInt(target.dataset.page,10)||12;
+        applyFilters(target);
+      });
+    });
+  });
+  document.querySelectorAll('[data-search-for]').forEach(inp=>{
+    const target=document.getElementById(inp.dataset.searchFor); if(!target)return;
+    inp.addEventListener('input',()=>{PAGE[target.id]=parseInt(target.dataset.page,10)||12;applyFilters(target);});
+  });
+  document.querySelectorAll('[data-more-for]').forEach(b=>{
+    const target=document.getElementById(b.dataset.moreFor); if(!target)return;
+    b.addEventListener('click',()=>{PAGE[target.id]+= (parseInt(target.dataset.page,10)||12);applyFilters(target);});
+  });
+  // stato iniziale delle griglie paginate
+  document.querySelectorAll('.cards[data-page]').forEach(t=>applyFilters(t));
+
+
+
+
+  // ====== CONTATTI DA OPENSTREETMAP (gratuito, senza chiave) ======
+  // Una sola richiesta per visita all'API Overpass: integra telefono, sito ed e-mail
+  // SOLO dove mancano, confrontando i nomi. Se l'API non risponde, non cambia nulla.
+  (function(){
+    if(!window.fetch||!('IntersectionObserver' in window))return;
+    var grids=['cantine-cards','hotel-cards'].map(function(id){return document.getElementById(id);}).filter(Boolean);
+    if(!grids.length)return;
+    var STOP={'cantina':1,'cantine':1,'azienda':1,'agricola':1,'viticoltori':1,'vini':1,'vino':1,
+      'villa':1,'hotel':1,'relais':1,'agriturismo':1,'tenuta':1,'tenute':1,'winery':1,'wine':1,
+      'della':1,'delle':1,'dalla':1,'degli':1,'casa':1,'borgo':1,'societa':1,'appartamenti':1};
+    function sig(t){
+      return (t||'').toLowerCase()
+        .replace(/[àáâ]/g,'a').replace(/[èéê]/g,'e').replace(/[ìíî]/g,'i')
+        .replace(/[òóô]/g,'o').replace(/[ùúû]/g,'u')
+        .replace(/[^a-z0-9 ]/g,' ').split(/\s+/)
+        .filter(function(w){return w.length>3&&!STOP[w];});
+    }
+    function match(a,b){
+      var A=sig(a),B=sig(b);
+      if(!A.length||!B.length)return false;
+      var n=A.filter(function(w){return B.indexOf(w)>=0;}).length;
+      return n>=2||(n>=1&&Math.min(A.length,B.length)===1);
+    }
+    function tag(t,k){return t[k]||t['contact:'+k]||'';}
+    function applica(card,tags){
+      var meta=card.querySelector('.card-meta'); if(!meta)return;
+      var tel=tag(tags,'phone');
+      if(tel&&!meta.querySelector('a[href^="tel:"]')){
+        var s1=document.createElement('span'),a1=document.createElement('a');
+        a1.href='tel:'+tel.replace(/[^+0-9]/g,''); a1.textContent='☏ '+tel;
+        s1.appendChild(a1); meta.insertBefore(s1,meta.firstChild);
+      }
+      var web=tag(tags,'website');
+      if(web&&!meta.querySelector('a[href^="http"]')){
+        try{
+          if(!/^https?:/i.test(web))web='https://'+web;
+          var host=new URL(web).host.replace(/^www\./,'');
+          var s2=document.createElement('span'),a2=document.createElement('a');
+          a2.href=web; a2.target='_blank'; a2.rel='noopener'; a2.textContent=host+' ↗';
+          s2.appendChild(a2); meta.appendChild(s2);
+        }catch(e){}
+      }
+      var mail=tag(tags,'email');
+      if(mail&&mail.indexOf('@')>0&&!meta.querySelector('a[href^="mailto:"]')){
+        var s3=document.createElement('span'),a3=document.createElement('a');
+        a3.href='mailto:'+mail; a3.textContent='✉ '+mail;
+        s3.appendChild(a3); meta.appendChild(s3);
+      }
+    }
+    var fatto=false;
+    function carica(){
+      if(fatto)return; fatto=true;
+      var bbox='45.42,10.72,45.74,11.06';
+      var q='[out:json][timeout:25];('
+        +'nwr["craft"="winery"]('+bbox+');'
+        +'nwr["shop"="wine"]('+bbox+');'
+        +'nwr["tourism"~"^(hotel|guest_house|apartment|chalet|motel)$"]('+bbox+');'
+        +'nwr["amenity"="restaurant"]('+bbox+');'
+        +');out tags;';
+      fetch('https://overpass-api.de/api/interpreter',{method:'POST',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:'data='+encodeURIComponent(q)})
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(d){
+        var els=(d&&d.elements||[]).filter(function(e){
+          return e.tags&&e.tags.name&&(tag(e.tags,'phone')||tag(e.tags,'website')||tag(e.tags,'email'));
+        });
+        if(!els.length)return;
+        grids.forEach(function(g){
+          g.querySelectorAll('article.card').forEach(function(c){
+            var nome=c.dataset.name; if(!nome)return;
+            for(var i=0;i<els.length;i++){
+              if(match(nome,els[i].tags.name)){applica(c,els[i].tags);break;}
+            }
+          });
+        });
+      }).catch(function(){});
+    }
+    var io=new IntersectionObserver(function(es){
+      if(es.some(function(e){return e.isIntersecting;})){io.disconnect();carica();}
+    },{rootMargin:'600px 0px'});
+    grids.forEach(function(g){io.observe(g);});
+  })();
+
+  // ====== COLLEGAMENTO A GOOGLE BUSINESS (facoltativo) ======
+  // Incolla qui la chiave di Google Maps Platform con "Places API (New)" abilitata.
+  // Con la chiave vuota questa funzione resta spenta e il portale funziona come sempre.
+  var GOOGLE_PLACES = window.GOOGLE_PLACES || {
+    key: '',          // <-- la tua chiave API, es. 'AIzaSy...'
+    maxPerVisit: 40   // schede arricchite al massimo per ogni visita (controllo dei costi)
+  };
+  (function(){
+    var K=((GOOGLE_PLACES&&GOOGLE_PLACES.key)||'').trim();
+    if(!K||!window.fetch||!('IntersectionObserver' in window))return;
+    var COMUNI={dolce:'Dolcè',fumane:'Fumane',marano:'Marano di Valpolicella',
+      negrar:'Negrar di Valpolicella',pescantina:'Pescantina',sanpietro:'San Pietro in Cariano',
+      santambrogio:"Sant'Ambrogio di Valpolicella",santanna:"Sant'Anna d'Alfaedo"};
+    var budget=Math.max(1,(GOOGLE_PLACES.maxPerVisit|0)||40), fatte=0;
+    var FM_S='places.id,places.displayName,places.photos,places.nationalPhoneNumber,places.internationalPhoneNumber,places.websiteUri,places.googleMapsUri,places.rating';
+    var FM_D='id,displayName,photos,nationalPhoneNumber,internationalPhoneNumber,websiteUri,googleMapsUri,rating';
+    function parole(t){return (t||'').toLowerCase().replace(/[^a-zà-ÿ0-9 ]/g,' ').split(/\s+/).filter(function(w){return w.length>3;});}
+    function compatibile(a,b){var pa=parole(a),pb=parole(b);return pa.some(function(w){return pb.indexOf(w)>=0;});}
+    function arricchisci(card,place){
+      var box=card.querySelector('.card-img');
+      var foto=place.photos&&place.photos[0];
+      if(box&&foto&&foto.name&&!box.querySelector('.gb-img')&&!box.querySelector('.wiki-img')){
+        var attr=(foto.authorAttributions&&foto.authorAttributions[0]&&foto.authorAttributions[0].displayName)||'';
+        var img=new Image();
+        img.className='gb-img'; img.loading='lazy'; img.decoding='async';
+        img.alt=(card.dataset.name||'')+' — foto dalla scheda Google';
+        if(attr)img.title='Foto: '+attr+' · Google';
+        img.onload=function(){
+          if(place.googleMapsUri&&!box.querySelector('.gb-badge')){
+            var a=document.createElement('a');
+            a.className='gb-badge'; a.href=place.googleMapsUri; a.target='_blank'; a.rel='noopener';
+            a.textContent='Google ↗';
+            a.title='Scheda su Google'+(attr?' · foto di '+attr:'');
+            a.addEventListener('click',function(e){e.stopPropagation();});
+            box.appendChild(a);
+          }
+        };
+        img.onerror=function(){img.remove();};
+        img.src='https://places.googleapis.com/v1/'+foto.name+'/media?maxWidthPx=640&key='+encodeURIComponent(K);
+        box.appendChild(img);
+      }
+      var meta=card.querySelector('.card-meta');
+      if(meta){
+        var tel=place.nationalPhoneNumber;
+        if(tel&&!meta.querySelector('a[href^="tel:"]')){
+          var sp=document.createElement('span');
+          var a1=document.createElement('a');
+          a1.href='tel:'+((place.internationalPhoneNumber||tel).replace(/\s+/g,''));
+          a1.textContent='☏ '+tel;
+          sp.appendChild(a1); meta.insertBefore(sp,meta.firstChild);
+        }
+        if(place.websiteUri&&!meta.querySelector('a[href^="http"]')){
+          try{
+            var host=new URL(place.websiteUri).host.replace(/^www\./,'');
+            var sp2=document.createElement('span'); var a2=document.createElement('a');
+            a2.href=place.websiteUri; a2.target='_blank'; a2.rel='noopener'; a2.textContent=host+' ↗';
+            sp2.appendChild(a2); meta.appendChild(sp2);
+          }catch(e){}
+        }
+        if(place.rating&&meta.textContent.indexOf('★')<0){
+          var sp3=document.createElement('span'); sp3.className='gb-rating';
+          sp3.textContent='★ '+String(place.rating).replace('.',',');
+          meta.appendChild(sp3);
+        }
+      }
+    }
+    function porta(d){var p=d&&d.places&&d.places[0];return p||d&&d.id&&d||null;}
+    function carica(card){
+      var hdr={'Content-Type':'application/json','X-Goog-Api-Key':K};
+      var pid=card.dataset.gplace;
+      var req;
+      if(pid){
+        hdr['X-Goog-FieldMask']=FM_D;
+        req=fetch('https://places.googleapis.com/v1/places/'+encodeURIComponent(pid)+'?languageCode=it',{headers:hdr});
+      }else{
+        hdr['X-Goog-FieldMask']=FM_S;
+        var slug=(card.dataset.c||'').split(' ').filter(function(t){return COMUNI[t];})[0];
+        req=fetch('https://places.googleapis.com/v1/places:searchText',{
+          method:'POST',headers:hdr,
+          body:JSON.stringify({textQuery:card.dataset.name+', '+(COMUNI[slug]||'Valpolicella')+' VR',
+                               languageCode:'it',regionCode:'IT',pageSize:1})
+        });
+      }
+      req.then(function(r){return r.ok?r.json():null;}).then(function(d){
+        var p=porta(d); if(!p)return;
+        var nomeG=(p.displayName&&p.displayName.text)||'';
+        if(pid||compatibile(card.dataset.name,nomeG))arricchisci(card,p);
+      }).catch(function(){});
+    }
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var c=e.target; io.unobserve(c);
+        if(c.dataset.gbDone||fatte>=budget)return;
+        c.dataset.gbDone='1'; fatte++;
+        carica(c);
+      });
+    },{rootMargin:'200px 0px'});
+    ['cantine-cards','hotel-cards'].forEach(function(id){
+      var g=document.getElementById(id); if(!g)return;
+      g.querySelectorAll('article.card').forEach(function(c){io.observe(c);});
+    });
+  })();
+
+  // ====== OPERATORI SOCI DEL DISTRETTO ======
+  // ELENCO DIMOSTRATIVO: sostituire con l'elenco reale degli aderenti prima della pubblicazione.
+  // Per ogni voce: nome (anche parziale) e vantaggio offerto con la Distretto Turistico Card.
+  const SOCI = [
+    ["Cantina Valpolicella Negrar",  "10% sull'acquisto in cantina e calice del distretto in omaggio"],
+    ["Fratelli Vogadori",            "Degustazione guidata a tariffa ridotta"],
+    ["Villa Spinosa",                "Ingresso al wine shop con degustazione omaggio"],
+    ["Cantina Siridia",              "Secondo partecipante gratuito alla visita guidata"],
+    ["Corte Fornaledo",              "Tagliere del territorio incluso nella degustazione"],
+    ["Le Bignele",                   "10% sull'acquisto e sosta camper gratuita"],
+    ["Valentina Cubi",               "Degustazione ridotta per i possessori di card"],
+    ["Corteforte",                   "Visita all'antica cantina con degustazione scontata"],
+    ["Cantine Benedetti",            "Calice in omaggio al wine shop"],
+    ["Monteci",                      "10% sull'acquisto in cantina"],
+    ["Albino Armani",                "Visita alla Conservatoria a tariffa riservata"],
+    ["Relais La Magioca",            "Late check-out gratuito"],
+    ["Agriturismo Le Croibe",        "Colazione del territorio inclusa"],
+    ["Villa Quaranta",               "Ingresso spa scontato per i possessori di card"],
+    ["Castrum Wine Relais",          "10% sul soggiorno di almeno due notti"],
+    ["Corte Cariano",                "Degustazione di benvenuto in omaggio"],
+    ["Il Mulino dei Veraghi",        "Sconto sul soggiorno infrasettimanale"],
+    ["B&B Campan",                   "Accesso alla sauna incluso"],
+    ["Agriturismo alle Vallene",     "Dolce della casa in omaggio"],
+    ["Foresteria Serego Alighieri",  "Visita alle Possessioni a tariffa riservata"]
+  ];
+  (function(){
+    const norm=t=>(t||'').toLowerCase().replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
+    function vantaggio(nome){
+      const n=norm(nome);
+      const hit=SOCI.find(s=>n.indexOf(norm(s[0]))>=0);
+      return hit?hit[1]:null;
+    }
+    ['cantine-cards','hotel-cards'].forEach(id=>{
+      const grid=document.getElementById(id); if(!grid)return;
+      const cards=[...grid.querySelectorAll('article.card')];
+      cards.forEach(c=>{
+        const h=c.querySelector('h3'); const body=c.querySelector('.card-body'); if(!h||!body)return;
+        const v=vantaggio(c.dataset.name||h.textContent);
+        const foot=c.querySelector('.card-foot');
+        if(v){
+          c.classList.add('socio'); c.dataset.c+=' socio';
+          const b=document.createElement('span'); b.className='bsoc'; b.textContent='Socio · Card'; h.appendChild(b);
+          const d=document.createElement('div'); d.className='dc-card-adv';
+          d.innerHTML='<span style="color:var(--garnet);font-weight:600">◉</span><span><b>Vantaggio Card:</b> '+v+'</span>';
+          body.insertBefore(d,foot);
+        }else{
+          const b=document.createElement('span'); b.className='bnosoc'; b.textContent='Non aderente'; h.appendChild(b);
+        }
+      });
+      // i soci per primi
+      cards.filter(c=>c.classList.contains('socio')).reverse().forEach(c=>grid.insertBefore(c,grid.firstElementChild));
+      if(typeof applyFilters==='function')applyFilters(grid);
+    });
+  })();
+
+  // pianificatore di percorsi
+  (function(){
+    const root=document.getElementById('pianifica'); if(!root)return;
+
+    const COM={dolce:["Dolcè",45.6156,10.8408],fumane:["Fumane",45.5405,10.8863],
+      marano:["Marano di Valpolicella",45.5477,10.9101],negrar:["Negrar di Valpolicella",45.5347,10.9420],
+      pescantina:["Pescantina",45.4780,10.8720],sanpietro:["San Pietro in Cariano",45.5175,10.9033],
+      santambrogio:["Sant'Ambrogio di Valpolicella",45.5185,10.8420],santanna:["Sant'Anna d'Alfaedo",45.6210,10.9400]};
+    const FRAZ=[["molina",45.5680,10.8850],["mazzurega",45.5560,10.8660],["cavalo",45.5720,10.8760],
+      ["breonio",45.5900,10.8600],["gargagnago",45.5300,10.8600],["san giorgio",45.5390,10.8330],
+      ["ponton",45.5100,10.8210],["domegliara",45.5050,10.8330],["valgatara",45.5350,10.9130],
+      ["purano",45.5560,10.9050],["prognol",45.5600,10.9000],["pedemonte",45.5100,10.9100],
+      ["castelrotto",45.5250,10.8850],["bure",45.5220,10.8950],["corrubbio",45.5090,10.8930],
+      ["cengia",45.5230,10.8790],["arbizzano",45.5070,10.9540],["torbe",45.5620,10.9330],
+      ["san peretto",45.5290,10.9350],["montecchio",45.5420,10.9500],["fosse",45.6300,10.9100],
+      ["cerna",45.6100,10.9550],["vaggimal",45.6050,10.9250],["volargne",45.5730,10.8210],
+      ["ceraino",45.5850,10.8250],["peri",45.6450,10.8400],["ossenigo",45.6700,10.8600],
+      ["balconi",45.4900,10.8500],["arcè",45.4850,10.8900],["ospedaletto",45.4880,10.8600],
+      ["santa lucia",45.4750,10.8800],["settimo",45.4820,10.8750],["novaia",45.5500,10.9080],
+      ["casterna",45.5450,10.8800],["osan",45.5490,10.8830]];
+
+    function coord(slug,txt){
+      const t=(txt||'').toLowerCase();
+      for(const f of FRAZ) if(t.indexOf(f[0])>=0) return [f[1],f[2]];
+      const c=COM[slug]; return c?[c[1],c[2]]:[45.53,10.89];
+    }
+    function dist(a,b){
+      const R=6371,dLa=(b[0]-a[0])*Math.PI/180,dLo=(b[1]-a[1])*Math.PI/180;
+      const x=Math.sin(dLa/2)**2+Math.cos(a[0]*Math.PI/180)*Math.cos(b[0]*Math.PI/180)*Math.sin(dLo/2)**2;
+      return R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
+    }
+
+    // ---- indice costruito dai contenuti già presenti nel portale ----
+    const ITEMS=[];
+    let uid=0;
+    const nomePulito=el=>{
+      if(!el)return '';
+      const c=el.cloneNode(true);
+      c.querySelectorAll('.bsoc,.bnosoc').forEach(x=>x.remove());
+      return c.textContent.trim();
+    };
+    function push(o){o.id='i'+(uid++);ITEMS.push(o);}
+
+    document.querySelectorAll('#luoghi-cards article.card').forEach(el=>{
+      const tags=(el.dataset.c||'').split(' ');
+      const slug=tags.find(t=>COM[t]); if(!slug)return;
+      const nome=el.querySelector('h3')?.textContent.trim();
+      const dove=el.querySelector('.card-kicker')?.textContent.trim()||'';
+      if(!nome)return;
+      push({n:nome,d:dove,com:slug,cat:'luogo',lab:'Da vedere',pos:coord(slug,dove+' '+nome)});
+    });
+    document.querySelectorAll('#cantine-cards article.card').forEach(c=>{
+      const tags=(c.dataset.c||'').split(' ');
+      const slug=tags.find(t=>COM[t]); if(!slug)return;
+      const cat=c.dataset.cat==='ristoro'?'mangiare':'cantina';
+      push({n:c.dataset.name,d:c.dataset.loc||'',com:slug,cat,lab:cat==='mangiare'?'Mangiare':'Cantina',
+            pos:coord(slug,(c.dataset.loc||'')+' '+c.dataset.name),socio:tags.includes('socio')});
+    });
+    document.querySelectorAll('#hotel-cards article.card').forEach(c=>{
+      const tags=(c.dataset.c||'').split(' ');
+      const slug=tags.find(t=>COM[t]); if(!slug)return;
+      push({n:c.dataset.name,d:c.dataset.loc||'',com:slug,cat:'dormire',lab:'Dormire',
+            pos:coord(slug,c.dataset.loc||''),socio:tags.includes('socio')});
+    });
+    document.querySelectorAll('#routes-list .route').forEach(el=>{
+      const nome=el.querySelector('h3')?.textContent.trim();
+      const sub=el.querySelector('.route-sub')?.textContent.trim()||'';
+      if(!nome)return;
+      let slug=null; const t=(nome+' '+sub).toLowerCase();
+      for(const k in COM) if(t.indexOf(COM[k][0].split(' ')[0].toLowerCase())>=0){slug=k;break;}
+      push({n:nome,d:sub,com:slug||'sanpietro',cat:'percorso',lab:'Percorso',pos:coord(slug,t)});
+    });
+
+    // ---- punti di partenza ----
+    const sel=document.getElementById('pl-start');
+    Object.keys(COM).forEach(k=>{
+      const o=document.createElement('option'); o.value=k; o.textContent=COM[k][0]; sel.appendChild(o);
+    });
+    sel.value='sanpietro';
+
+    const KIND={luogo:'',cantina:'',dormire:'k2',mangiare:'k3',percorso:'k2'};
+    let percorso=[];
+    const $res=document.getElementById('pl-results'),$rt=document.getElementById('pl-route'),
+          $found=document.getElementById('pl-found'),$stats=document.getElementById('pl-stats');
+
+    function cats(){return [...document.querySelectorAll('#pl-cats input:checked')].map(x=>x.value);}
+
+    function cerca(){
+      const start=COM[sel.value], p0=[start[1],start[2]];
+      const rad=parseFloat(document.getElementById('pl-rad').value);
+      const cs=cats();
+      const pri=document.getElementById('pl-soci')&&document.getElementById('pl-soci').checked;
+      const out=ITEMS.filter(i=>cs.includes(i.cat)).map(i=>({...i,km:dist(p0,i.pos)}))
+        .filter(i=>i.km<=rad)
+        .sort((a,b)=>pri?((b.socio?1:0)-(a.socio?1:0))||a.km-b.km:a.km-b.km).slice(0,60);
+      $found.innerHTML=out.length?('<span><b>'+out.length+'</b> risultati entro '+rad+' km da '+start[0]+'</span>'):'';
+      if(!out.length){$res.innerHTML='<p class="pl-empty">Nessun risultato: prova ad allargare il raggio o ad aggiungere categorie.</p>';return;}
+      $res.innerHTML=out.map(i=>
+        '<div class="pl-item"><span class="pl-kind '+KIND[i.cat]+'">'+i.lab+'</span>'+
+        '<span><span class="pl-nm">'+i.n+(i.socio?'<span class="bsoc">Socio</span>':'')+'</span><br>'+
+        '<span class="pl-sub">'+(i.d||'')+' · '+i.km.toFixed(1)+' km</span></span>'+
+        '<button class="pl-add'+(percorso.some(x=>x.id===i.id)?' on':'')+'" data-id="'+i.id+'" title="Aggiungi al percorso">'+
+        (percorso.some(x=>x.id===i.id)?'✓':'+')+'</button></div>').join('');
+    }
+
+    function renderRoute(){
+      if(!percorso.length){
+        $rt.innerHTML='<p class="pl-empty">Nessuna tappa: il percorso è ancora vuoto.</p>';
+        $stats.innerHTML=''; return;
+      }
+      $rt.innerHTML=percorso.map((i,k)=>
+        '<div class="pl-step"><span class="pl-num">'+(k+1)+'</span>'+
+        '<span><span class="pl-nm">'+i.n+'</span><br><span class="pl-sub">'+i.lab+(i.d?' · '+i.d:'')+'</span></span>'+
+        '<span class="pl-ctl"><button data-up="'+k+'" title="Sposta su">↑</button>'+
+        '<button data-dn="'+k+'" title="Sposta giù">↓</button>'+
+        '<button data-rm="'+k+'" title="Rimuovi">×</button></span></div>').join('');
+      let tot=0; for(let k=1;k<percorso.length;k++) tot+=dist(percorso[k-1].pos,percorso[k].pos);
+      $stats.innerHTML='<span><b>'+percorso.length+'</b> tappe</span><span><b>'+tot.toFixed(1)+'</b> km in linea d\'aria</span>';
+    }
+
+    $res.addEventListener('click',e=>{
+      const b=e.target.closest('.pl-add'); if(!b)return;
+      const it=ITEMS.find(x=>x.id===b.dataset.id); if(!it)return;
+      const at=percorso.findIndex(x=>x.id===it.id);
+      if(at>=0){percorso.splice(at,1);b.classList.remove('on');b.textContent='+';}
+      else{percorso.push(it);b.classList.add('on');b.textContent='✓';}
+      renderRoute();
+    });
+    $rt.addEventListener('click',e=>{
+      const b=e.target.closest('button'); if(!b)return;
+      if(b.dataset.rm!==undefined)percorso.splice(+b.dataset.rm,1);
+      if(b.dataset.up!==undefined&&+b.dataset.up>0){const k=+b.dataset.up;[percorso[k-1],percorso[k]]=[percorso[k],percorso[k-1]];}
+      if(b.dataset.dn!==undefined&&+b.dataset.dn<percorso.length-1){const k=+b.dataset.dn;[percorso[k+1],percorso[k]]=[percorso[k],percorso[k+1]];}
+      renderRoute(); cerca();
+    });
+
+    document.getElementById('pl-go').addEventListener('click',cerca);
+
+    document.getElementById('pl-map').addEventListener('click',()=>{
+      if(!percorso.length){alert('Aggiungi almeno una tappa al percorso.');return;}
+      const pulisci=t=>t.replace(/[«»"]/g,'').split(/\s[—–]\s/)[0].replace(/\s*\(.*?\)/g,'').trim();
+      const q=i=>encodeURIComponent(pulisci(i.n)+', '+COM[i.com][0]+' VR');
+      const start=encodeURIComponent(COM[sel.value][0]+' VR');
+      const dest=q(percorso[percorso.length-1]);
+      const mid=percorso.slice(0,-1).slice(0,9).map(q).join('%7C');
+      let u='https://www.google.com/maps/dir/?api=1&origin='+start+'&destination='+dest;
+      if(mid)u+='&waypoints='+mid;
+      window.open(u,'_blank','noopener');
+    });
+    document.getElementById('pl-print').addEventListener('click',()=>window.print());
+    document.getElementById('pl-clear').addEventListener('click',()=>{percorso=[];renderRoute();cerca();});
+
+    // ---- salvataggio locale (con fallback in memoria) ----
+    let mem={};
+    const store={
+      get(){try{return JSON.parse(localStorage.getItem('dtv-percorsi')||'{}');}catch(e){return mem;}},
+      set(v){try{localStorage.setItem('dtv-percorsi',JSON.stringify(v));}catch(e){mem=v;}}
+    };
+    function renderSaved(){
+      const all=store.get(), ks=Object.keys(all);
+      const el=document.getElementById('pl-list');
+      el.innerHTML=ks.length?ks.map(k=>'<button data-load="'+encodeURIComponent(k)+'">'+k+' ↺</button>'+
+        '<button data-del="'+encodeURIComponent(k)+'" title="Elimina">×</button>').join(''):
+        '<span class="pl-sub">Nessun percorso salvato su questo dispositivo.</span>';
+    }
+    document.getElementById('pl-save').addEventListener('click',()=>{
+      if(!percorso.length){alert('Il percorso è vuoto.');return;}
+      const inp=document.getElementById('pl-name');
+      const nome=(inp.value||'').trim()||('Percorso del '+new Date().toLocaleDateString('it-IT'));
+      const all=store.get(); all[nome]=percorso.map(i=>i.id); store.set(all);
+      inp.value=''; renderSaved();
+    });
+    document.getElementById('pl-list').addEventListener('click',e=>{
+      const b=e.target.closest('button'); if(!b)return;
+      const all=store.get();
+      if(b.dataset.del){delete all[decodeURIComponent(b.dataset.del)];store.set(all);renderSaved();return;}
+      if(b.dataset.load){
+        const ids=all[decodeURIComponent(b.dataset.load)]||[];
+        percorso=ids.map(id=>ITEMS.find(x=>x.id===id)).filter(Boolean);
+        renderRoute(); cerca();
+        document.getElementById('pl-route').scrollIntoView({behavior:'smooth',block:'nearest'});
+      }
+    });
+
+    // ---- suggerimenti ----
+    const PRESET=[
+      {t:'La Classica in un giorno',d:'I borghi di pietra, le pievi romaniche e due cantine storiche nel cuore della zona classica.',
+       s:'sanpietro',k:['San Giorgio','Pieve di San Floriano','Villa Serego','Speri','Tommasi']},
+      {t:'Acqua, roccia e boschi',d:'Le meraviglie naturali della valle, dalle cascate al grande arco di roccia della Lessinia.',
+       s:'fumane',k:['Parco delle Cascate','Grotta di Fumane','Ponte Tibetano','Ponte di Veja','Vallene']},
+      {t:'Ville e giardini',d:'Le dimore venete, i giardini storici e gli affreschi: la Valpolicella nobile.',
+       s:'negrar',k:['Giardino di Pojega','Villa Mosconi','Villa Della Torre','Villa del Bene','Villa Serego']},
+      {t:'Weekend in Lessinia',d:'Quota, fossili e malghe: due giorni sopra la fascia viticola, tra i grandi monumenti geologici.',
+       s:'santanna',k:['Ponte di Veja','Spluga della Preta','Museo Paleontologico','Monte Tesoro','Campan']}
+    ];
+    document.getElementById('pl-presets').innerHTML=PRESET.map((p,i)=>
+      '<button class="pl-preset" data-p="'+i+'"><h4>'+p.t+'</h4><p>'+p.d+'</p><span>Carica questo itinerario →</span></button>').join('');
+    document.getElementById('pl-presets').addEventListener('click',e=>{
+      const b=e.target.closest('.pl-preset'); if(!b)return;
+      const p=PRESET[+b.dataset.p];
+      sel.value=p.s;
+      percorso=p.k.map(k=>ITEMS.find(i=>i.n.toLowerCase().indexOf(k.toLowerCase())>=0)).filter(Boolean);
+      document.getElementById('pl-rad').value='25';
+      renderRoute(); cerca();
+      document.querySelector('#pianifica .pl-grid').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+
+    renderSaved(); renderRoute();
+  })();
+
+
+  // modulo di adesione
+  (function(){
+    const f=document.getElementById('adform'); if(!f)return;
+    const v=id=>(document.getElementById(id)||{}).value?.trim()||'—';
+    const chk=id=>document.getElementById(id)&&document.getElementById(id).checked?'SÌ':'NO';
+    function servizi(){
+      const c=[...document.querySelectorAll('#f-serv input:checked')].map(x=>x.value);
+      return c.length?c.join(', '):'—';
+    }
+    function testo(){
+      return [
+'DOMANDA DI ADESIONE — DISTRETTO TURISTICO VALPOLICELLA APS','',
+'1. AZIENDA',
+'Ragione sociale: '+v('f-rs'),
+'Nome commerciale: '+v('f-nome'),
+'Tipologia: '+v('f-tipo'),
+'Comune: '+v('f-com'),
+'Indirizzo: '+v('f-ind'),
+'P.IVA / C.F.: '+v('f-piva'),'',
+'2. CONTATTI',
+'Referente: '+v('f-ref'),
+'Telefono: '+v('f-tel'),
+'E-mail: '+v('f-mail'),
+'Sito web: '+v('f-web'),
+'Social: '+v('f-soc'),'',
+'3. SCHEDA PER IL PORTALE',
+'Descrizione: '+v('f-desc'),
+'Anno di fondazione: '+v('f-anno'),
+'Orari: '+v('f-orari'),
+'Visite e degustazioni: '+v('f-vis'),
+'Lingue: '+v('f-lin'),
+'Servizi: '+servizi(),'',
+'4. DISTRETTO TURISTICO CARD',
+'Tipo di vantaggio: '+v('f-vtipo'),
+'Entità: '+v('f-vper'),
+'Validità: '+v('f-vval'),
+'Vantaggio: '+v('f-vdesc'),
+'Condizioni: '+v('f-vcond'),'',
+'5. CONSENSI',
+'Adesione e regolamento: '+chk('f-c1'),
+'Pubblicazione dati: '+chk('f-c2'),
+'Privacy (Reg. UE 2016/679): '+chk('f-c3'),
+'Luogo e data: '+v('f-luogo'),
+'Firma: '+v('f-firma')
+      ].join('\n');
+    }
+    function mancanti(){
+      const req=[['f-rs','Ragione sociale'],['f-tipo','Tipologia'],['f-com','Comune'],['f-ind','Indirizzo'],
+        ['f-ref','Referente'],['f-tel','Telefono'],['f-mail','E-mail'],['f-desc','Descrizione'],
+        ['f-vtipo','Tipo di vantaggio'],['f-vdesc','Descrizione del vantaggio']];
+      return req.filter(r=>!(document.getElementById(r[0]).value||'').trim()).map(r=>r[1]);
+    }
+    const out=document.getElementById('form-out'), pre=document.getElementById('form-pre');
+    document.getElementById('f-gen').addEventListener('click',()=>{
+      const m=mancanti();
+      pre.textContent=(m.length?'⚠ Campi ancora da compilare: '+m.join(', ')+'\n\n':'')+testo();
+      out.style.display='block'; out.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+    document.getElementById('f-mail-btn').addEventListener('click',()=>{
+      const sub='Adesione al Distretto Turistico Valpolicella — '+v('f-rs');
+      window.location.href='mailto:info@valpolicelladistrettoturistico.it?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(testo());
+    });
+    document.getElementById('f-print').addEventListener('click',()=>window.print());
+    document.getElementById('f-copy').addEventListener('click',function(){
+      navigator.clipboard.writeText(pre.textContent).then(()=>{
+        const b=this,t=b.textContent; b.textContent='Copiato ✓'; setTimeout(()=>b.textContent=t,1800);
+      });
+    });
+  })();
+
+  // map toggle + valley list
+  const paths=document.querySelectorAll('.zone-classica');
+  const listItems=document.querySelectorAll('#valleyList li');
+  document.querySelectorAll('.map-toggle button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.map-toggle button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const only=btn.dataset.filter==='classica';
+      paths.forEach(p=>p.classList.toggle('on',only));
+      listItems.forEach(li=>li.style.opacity=(only&&li.dataset.t!=='classica')?'.32':'1');
+    });
+  });
+
+
+
+  // pulsante «torna su» su mobile
+  (function(){
+    const b=document.getElementById('totop'); if(!b)return;
+    const tog=()=>b.classList.toggle('on', window.scrollY>700);
+    window.addEventListener('scroll',tog,{passive:true}); tog();
+    b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  })();
+
+
+  // foto principali da Wikipedia per le schede dei Luoghi (pievi, ville, borghi, paesaggi)
+  (function(){
+    var cards=[].slice.call(document.querySelectorAll('article.card[data-wiki]'));
+    if(!cards.length||!window.fetch)return;
+    var titles=[]; cards.forEach(function(c){c.dataset.wiki.split('||').forEach(function(t){
+      t=t.trim(); if(t&&titles.indexOf(t)<0)titles.push(t);});});
+    var url='https://it.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&origin=*'+
+      '&redirects=1&prop=pageimages%7Cinfo&inprop=url&piprop=thumbnail&pithumbsize=640&titles='+
+      encodeURIComponent(titles.join('|'));
+    fetch(url).then(function(r){return r.json();}).then(function(d){
+      var q=(d&&d.query)||{}, map={}, alias={};
+      (q.normalized||[]).forEach(function(n){alias[n.from]=n.to;});
+      (q.redirects||[]).forEach(function(r){alias[r.from]=r.to;});
+      (q.pages||[]).forEach(function(p){
+        if(!p.missing&&p.thumbnail&&p.thumbnail.source)
+          map[p.title]={src:p.thumbnail.source,
+            url:p.fullurl||('https://it.wikipedia.org/wiki/'+encodeURIComponent(p.title))};
+      });
+      function resolve(t){var n=0; while(alias[t]&&n++<4)t=alias[t]; return map[t]||null;}
+      cards.forEach(function(c){
+        var hit=null;
+        c.dataset.wiki.split('||').some(function(t){hit=resolve(t.trim());return !!hit;});
+        if(!hit)return;
+        var box=c.querySelector('.card-img'); if(!box||box.querySelector('.gb-img'))return;
+        var img=new Image();
+        img.alt=(c.dataset.name||'')+' — immagine da Wikipedia';
+        img.loading='lazy'; img.decoding='async'; img.className='wiki-img';
+        img.onload=function(){
+          var a=document.createElement('a');
+          a.className='wiki-badge'; a.href=hit.url; a.target='_blank'; a.rel='noopener';
+          a.textContent='Wikipedia ↗'; a.title='Immagine e approfondimento su Wikipedia';
+          a.addEventListener('click',function(e){e.stopPropagation();});
+          box.appendChild(a);
+        };
+        img.onerror=function(){ img.remove(); };
+        img.src=hit.src;
+        box.appendChild(img);
+      });
+    }).catch(function(){ /* senza rete restano le illustrazioni */ });
+  })();
+
+  // scroll reveal — soglia 0: le sezioni molto alte (es. le 98 cantine)
+  // non raggiungerebbero mai una percentuale di visibilità e resterebbero invisibili
+  const revealEls=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:0,rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(el=>io.observe(el));
+    // rete di sicurezza: se qualcosa non scatta, dopo 3 secondi mostra tutto
+    setTimeout(()=>revealEls.forEach(el=>el.classList.add('in')),3000);
+  }else{
+    revealEls.forEach(el=>el.classList.add('in'));
+  }
+</script>
+</body>
+</html>

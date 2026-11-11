@@ -5,8 +5,13 @@ ospitalità, percorsi e la *Distretto Turistico Card* negli **8 comuni** della V
 (Dolcè, Fumane, Marano, Negrar, Pescantina, San Pietro in Cariano, Sant'Ambrogio,
 Sant'Anna d'Alfaedo).
 
-Sito **statico in un unico file** (`index.html`): nessuna build, nessuna dipendenza da
-installare, nessun database. Il logo e le immagini sono incorporati nel file stesso.
+Sito **statico multi-pagina**: una pagina per ogni voce del menu (`index.html` è la home
+leggera con l'accesso alle sezioni). Nessuna build, nessuna dipendenza, nessun database.
+
+Pagine: `territorio` · `progetti` · `luoghi` · `cibo-e-vino` · `dormire` · `percorsi` ·
+`pianifica` · `storia` · `documenti` · `card` · `aderisci`.
+La chiave Google (facoltativa) ora si imposta in **`assets/config.js`**, una volta sola
+per tutte le pagine.
 
 Realizzato da **MBR Servizi by Maimeri Informatica**.
 
