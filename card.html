@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Distretto Turistico Card — Distretto Turistico Valpolicella</title>
-<meta name="description" content="Il portale del Distretto Turistico Valpolicella APS: luoghi, cantine, ospitalità, percorsi e la Distretto Turistico Card negli 8 comuni della Valpolicella, in provincia di Verona.">
+<title>Valpolicella Card — Distretto Turistico Valpolicella</title>
+<meta name="description" content="Il portale del Distretto Turistico Valpolicella APS: luoghi, cantine, ospitalità, percorsi e la Valpolicella Card negli 8 comuni della Valpolicella, in provincia di Verona.">
 <meta name="theme-color" content="#1C6E31">
 <meta name="author" content="Distretto Turistico Valpolicella APS">
 <meta name="robots" content="index, follow">
@@ -245,7 +245,7 @@
   .tag-part{background:rgba(82,112,44,.16);color:var(--olive)}
 
 
-  /* ---------- Distretto Turistico Card ---------- */
+  /* ---------- Valpolicella Card ---------- */
   .cardsec{background:var(--panel)}
   .card-top{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px;align-items:center;margin-bottom:56px}
   .cardface{position:relative;aspect-ratio:1.586/1;border-radius:14px;overflow:hidden;
@@ -516,7 +516,7 @@
   @media (max-width:720px){.photo-band{height:150px;margin-bottom:22px;border-radius:5px}}
 
   /* ---------- foto da Wikipedia nelle schede Luoghi ---------- */
-  .card-img .wiki-img,.card-img .gb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .card-img .wiki-img,.card-img .gb-img,.card-img .ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
   .wiki-badge,.gb-badge{position:absolute;right:10px;bottom:10px;z-index:2;font-family:"Spline Sans Mono";
     font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(241,238,228,.94);
     color:var(--ink);padding:4px 8px;border-radius:2px;border:1px solid var(--line);text-decoration:none}
@@ -553,6 +553,14 @@
   .fsel-w{display:flex;flex-direction:column;gap:6px;flex:1;min-width:210px;max-width:330px}
   .fsel-w span{font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--olive,#52702C)}
   .fsel{padding:11px 12px;border:1px solid var(--line-strong);background:var(--panel);font:inherit;font-size:.92rem;color:var(--ink);border-radius:3px;width:100%}
+
+
+  .card-img .ph-brand{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#F1EEE4;padding:12px 16px}
+  .card-img .ph-brand img{height:56%;width:auto;max-width:72%;object-fit:contain}
+  .card-img .ph-brand span{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--garnet);text-align:center;line-height:1.35}
+
+
+  .route-desc{margin-top:9px;font-size:.88rem;color:var(--ink-soft);line-height:1.6;max-width:72ch}
 
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
@@ -758,8 +766,8 @@
 <main><section class="section cardsec" id="card">
   <div class="wrap reveal">
     <div class="section-head">
-      <h2>Distretto Turistico Card: il territorio che ti premia</h2>
-      <p>La <strong>Distretto Turistico Card</strong>, la card vantaggi del Distretto Turistico Valpolicella APS, pensata per chi visita Verona e la sua provincia. Una sola tessera — fisica o digitale — che raccoglie sconti, gratuità e gadget offerti dalle attività aderenti negli 8 comuni.</p>
+      <h2>Valpolicella Card: il territorio che ti premia</h2>
+      <p>La <strong>Valpolicella Card</strong>, la card vantaggi del Distretto Turistico Valpolicella APS, pensata per chi visita la Valpolicella e il suo territorio. Una sola tessera — fisica o digitale — che raccoglie sconti, gratuità e gadget offerti dalle attività aderenti negli 8 comuni.</p>
     </div>
     <figure class="photo-band">
       <img src="assets/img/calice.jpg" data-remote="https://img.magnific.com/foto-gratuito/foto-verticale-di-una-persona-che-tiene-un-bicchiere-di-vino-nel-vigneto-sotto-la-luce-solare_181624-31406.jpg" alt="Un calice tra i filari" loading="lazy" onerror="fotoErr(this)">
@@ -899,7 +907,7 @@
       </div>
       <div>
         <h5>Risorse</h5>
-        <a href="card.html">Distretto Turistico Card</a><a href="storia.html">Storia</a><a href="documenti.html">Documenti</a><a href="storia.html">Bibliografia</a>
+        <a href="card.html">Valpolicella Card</a><a href="storia.html">Storia</a><a href="documenti.html">Documenti</a><a href="storia.html">Bibliografia</a>
       </div>
       <div>
         <h5>Contatti</h5>
@@ -1124,7 +1132,7 @@
     function arricchisci(card,place){
       var box=card.querySelector('.card-img');
       var foto=place.photos&&place.photos[0];
-      if(box&&foto&&foto.name&&!box.querySelector('.gb-img')&&!box.querySelector('.wiki-img:not(.amb)')){
+      if(box&&foto&&foto.name&&!box.querySelector('.gb-img')&&!box.querySelector('.wiki-img:not(.amb)')&&!box.querySelector('.ph-img')){
         var attr=(foto.authorAttributions&&foto.authorAttributions[0]&&foto.authorAttributions[0].displayName)||'';
         var img=new Image();
         img.className='gb-img'; img.loading='lazy'; img.decoding='async';
@@ -1211,30 +1219,13 @@
 
   // ====== OPERATORI SOCI DEL DISTRETTO ======
   // ELENCO DIMOSTRATIVO: sostituire con l'elenco reale degli aderenti prima della pubblicazione.
-  // Per ogni voce: nome (anche parziale) e vantaggio offerto con la Distretto Turistico Card.
+  // Per ogni voce: nome (anche parziale) e vantaggio offerto con la Valpolicella Card.
   const SOCI = [
-    ["Cantina Valpolicella Negrar",  "10% sull'acquisto in cantina e calice del distretto in omaggio"],
-    ["Fratelli Vogadori",            "Degustazione guidata a tariffa ridotta"],
-    ["Villa Spinosa",                "Ingresso al wine shop con degustazione omaggio"],
-    ["Cantina Siridia",              "Secondo partecipante gratuito alla visita guidata"],
-    ["Corte Fornaledo",              "Tagliere del territorio incluso nella degustazione"],
-    ["Le Bignele",                   "10% sull'acquisto e sosta camper gratuita"],
-    ["Valentina Cubi",               "Degustazione ridotta per i possessori di card"],
-    ["Corteforte",                   "Visita all'antica cantina con degustazione scontata"],
-    ["Cantine Benedetti",            "Calice in omaggio al wine shop"],
-    ["Monteci",                      "10% sull'acquisto in cantina"],
-    ["Albino Armani",                "Visita alla Conservatoria a tariffa riservata"],
-    ["Relais La Magioca",            "Late check-out gratuito"],
-    ["Agriturismo Le Croibe",        "Colazione del territorio inclusa"],
-    ["Villa Quaranta",               "Ingresso spa scontato per i possessori di card"],
-    ["Castrum Wine Relais",          "10% sul soggiorno di almeno due notti"],
-    ["Corte Cariano",                "Degustazione di benvenuto in omaggio"],
-    ["Il Mulino dei Veraghi",        "Sconto sul soggiorno infrasettimanale"],
-    ["B&B Campan",                   "Accesso alla sauna incluso"],
-    ["Agriturismo alle Vallene",     "Dolce della casa in omaggio"],
-    ["Foresteria Serego Alighieri",  "Visita alle Possessioni a tariffa riservata"]
+    // NESSUNA ADESIONE ATTIVA: quando arrivano gli aderenti reali, aggiungere qui
+    // ["Nome operatore (anche parziale)", "Vantaggio offerto con la Card"],
   ];
   (function(){
+    if(!SOCI.length)return; // con l'elenco vuoto nessun distintivo viene mostrato
     const norm=t=>(t||'').toLowerCase().replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
     function vantaggio(nome){
       const n=norm(nome);
