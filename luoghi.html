@@ -548,6 +548,12 @@
   #territorio .prose{max-width:none}
   #territorio .section-head{max-width:none}
 
+
+  .fsel-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+  .fsel-w{display:flex;flex-direction:column;gap:6px;flex:1;min-width:210px;max-width:330px}
+  .fsel-w span{font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--olive,#52702C)}
+  .fsel{padding:11px 12px;border:1px solid var(--line-strong);background:var(--panel);font:inherit;font-size:.92rem;color:var(--ink);border-radius:3px;width:100%}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -755,25 +761,31 @@
       <h2>I luoghi degli 8 comuni</h2>
       <p>Pievi romaniche e siti archeologici, ville venete e giardini storici, borghi di pietra, grotte e musei. Filtra per tipologia o scegli il comune.</p>
     </div>
-    <div class="filters" data-target="luoghi-cards">
-      <button class="chip active" data-f="all">Tutte le tipologie</button>
-      <button class="chip" data-f="storia">Storia &amp; archeologia</button>
-      <button class="chip" data-f="ville">Ville &amp; giardini</button>
-      <button class="chip" data-f="natura">Natura</button>
-      <button class="chip" data-f="borghi">Borghi</button>
-      <button class="chip" data-f="musei">Musei &amp; terme</button>
-      <button class="chip" data-f="sharry">Con scheda Sharry Land</button>
-    </div>
-    <div class="filters" data-target="luoghi-cards">
-      <button class="chip active" data-f="all">Tutti i comuni</button>
-      <button class="chip" data-f="dolce">Dolcè</button>
-      <button class="chip" data-f="fumane">Fumane</button>
-      <button class="chip" data-f="marano">Marano</button>
-      <button class="chip" data-f="negrar">Negrar</button>
-      <button class="chip" data-f="pescantina">Pescantina</button>
-      <button class="chip" data-f="sanpietro">San Pietro in C.</button>
-      <button class="chip" data-f="santambrogio">Sant'Ambrogio</button>
-      <button class="chip" data-f="santanna">Sant'Anna d'Alfaedo</button>
+    <div class="fsel-row">
+      <label class="fsel-w"><span>Tipologia</span>
+        <select class="fsel" data-target="luoghi-cards">
+          <option value="all">Tutte le tipologie</option>
+          <option value="storia">Storia &amp; archeologia</option>
+          <option value="ville">Ville &amp; giardini</option>
+          <option value="natura">Natura</option>
+          <option value="borghi">Borghi</option>
+          <option value="musei">Musei &amp; terme</option>
+          <option value="sharry">Con scheda Sharry Land</option>
+        </select>
+      </label>
+      <label class="fsel-w"><span>Comune</span>
+        <select class="fsel" data-target="luoghi-cards">
+          <option value="all">Tutti i comuni</option>
+          <option value="dolce">Dolcè</option>
+          <option value="fumane">Fumane</option>
+          <option value="marano">Marano</option>
+          <option value="negrar">Negrar</option>
+          <option value="pescantina">Pescantina</option>
+          <option value="sanpietro">San Pietro in Cariano</option>
+          <option value="santambrogio">Sant'Ambrogio</option>
+          <option value="santanna">Sant'Anna d'Alfaedo</option>
+        </select>
+      </label>
     </div>
     <div class="cards" id="luoghi-cards">
       <article class="card" data-c="ville dolce sharry" data-wiki="Villa Del Bene" data-name="Villa del Bene">
@@ -1227,6 +1239,9 @@
     const bars=[...document.querySelectorAll('.filters')].filter(b=>b.dataset.target===target.id);
     const active=bars.map(b=>{const c=b.querySelector('.chip.active');return c?c.dataset.f:'all';})
                      .filter(f=>f&&f!=='all');
+    document.querySelectorAll('select.fsel').forEach(se=>{
+      if(se.dataset.target===target.id && se.value && se.value!=='all') active.push(se.value);
+    });
     const inp=document.querySelector('[data-search-for="'+target.id+'"]');
     const q=inp?(inp.value||'').trim().toLowerCase():'';
     const paged=target.hasAttribute('data-page');
@@ -1252,6 +1267,13 @@
     const more=document.querySelector('[data-more-for="'+target.id+'"]');
     if(more)more.hidden=!(paged&&match>shown);
   }
+
+  document.querySelectorAll('select.fsel').forEach(se=>{
+    se.addEventListener('change',()=>{
+      const t=document.getElementById(se.dataset.target); if(!t)return;
+      delete PAGE[t.id]; applyFilters(t);
+    });
+  });
   document.querySelectorAll('.filters').forEach(bar=>{
     const target=document.getElementById(bar.dataset.target);
     if(!target)return;
