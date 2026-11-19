@@ -108,7 +108,7 @@
 
   /* ---------- map / signature ---------- */
   .map-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-  .map-frame{background:var(--panel);border:1px solid var(--line-strong);border-radius:4px;padding:22px;box-shadow:var(--shadow);position:relative}
+  .map-frame{background:transparent;border:none;border-radius:0;padding:0;box-shadow:none;position:relative}
   .map-frame svg{width:100%;height:auto;display:block}
   .map-frame .map-img{width:100%;max-width:430px;height:auto;display:block;margin:0 auto}
   .zone-path{transition:.3s;cursor:pointer}
@@ -217,11 +217,11 @@
   .foot-bottom{border-top:1px solid rgba(241,238,228,.18);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:rgba(241,238,228,.55);font-family:"Spline Sans Mono"}
 
   /* ---------- progettualità ---------- */
-  .mission{display:grid;grid-template-columns:.92fr 1.08fr;gap:52px;align-items:start}
+  .mission{display:block}
   .mission-quote{font-family:"Fraunces";font-size:clamp(1.4rem,2.6vw,1.85rem);line-height:1.28;font-weight:500}
   .mission-quote em{color:var(--garnet);font-style:italic}
   .mission-sign{font-family:"Spline Sans Mono";font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:20px}
-  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .pillar{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:22px 22px 24px;transition:.26s}
   .pillar:hover{border-color:var(--line-strong);transform:translateY(-3px)}
   .pillar .pk{font-family:"Spline Sans Mono";font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:flex;gap:9px;align-items:center;margin-bottom:9px}
@@ -540,6 +540,13 @@
   .libro p{font-size:.95rem;color:var(--ink-soft);line-height:1.6;margin-bottom:16px}
   @media (max-width:700px){.libro{flex-direction:column;align-items:center;text-align:center}.libro img{width:160px}}
 
+
+  .pillar .pil-ico{height:96px;width:auto;max-width:100%;display:block;margin:2px auto 14px}
+
+
+  .tverde{color:var(--garnet)}
+  #territorio .section-head{max-width:none}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -744,7 +751,7 @@
 <main><section class="section" id="territorio">
   <div class="wrap reveal">
     <div class="section-head">
-      <h2>La Valpolicella e il suo territorio</h2>
+      <h2>La Valpolicella e il suo <span class="tverde">territorio</span></h2>
       <p>La Valpolicella è la zona collinare che precede l'inizio delle Prealpi Veronesi, nella Regione Veneto. Comprende il territorio di <strong>otto comuni</strong>, tutti appartenenti alla provincia di Verona: Dolcè, Fumane, Marano, Negrar, Pescantina, San Pietro in Cariano, Sant'Ambrogio e Sant'Anna d'Alfaedo.</p>
     </div>
     <figure class="photo-band">
@@ -756,10 +763,7 @@
         <img class="map-img" src="assets/img/mappa-comuni.png" alt="Mappa degli otto comuni della Valpolicella con gli stemmi comunali" loading="lazy">
       </div>
       <div>
-        <div class="map-toggle" role="tablist">
-          <button class="active" data-filter="all">Tutti i comuni</button>
-          <button data-filter="classica">Comuni del vino</button>
-        </div>
+        
         <ul class="valley-list" id="valleyList">
           <li data-t="classica"><span>Fumane</span></li>
           <li data-t="classica"><span>Marano di Valpolicella</span></li>
