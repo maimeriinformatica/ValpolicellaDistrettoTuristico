@@ -76,8 +76,8 @@
   .brand .glyph{width:26px;height:26px;flex:none}
   .brand .glyph-img{height:34px;width:auto;flex:none}
   .foot-logo{height:60px;width:auto;margin-bottom:16px;display:block}
-  .nav-links{display:flex;gap:14px;align-items:center;margin-left:22px}
-  .nav-links a{font-size:.78rem;color:var(--ink-soft);position:relative;padding:4px 0;white-space:nowrap}
+  .nav-links{display:flex;gap:11px;align-items:center;margin-left:16px}
+  .nav-links a{font-size:.74rem;color:var(--ink-soft);position:relative;padding:4px 0;white-space:nowrap}
   .nav-links a:hover{color:var(--ink)}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--garnet);transition:width .28s ease}
   .nav-links a:hover::after{width:100%}
@@ -110,6 +110,7 @@
   .map-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
   .map-frame{background:var(--panel);border:1px solid var(--line-strong);border-radius:4px;padding:22px;box-shadow:var(--shadow);position:relative}
   .map-frame svg{width:100%;height:auto;display:block}
+  .map-frame .map-img{width:100%;max-width:430px;height:auto;display:block;margin:0 auto}
   .zone-path{transition:.3s;cursor:pointer}
   .zone-classica{fill:rgba(28,110,49,.16);stroke:var(--garnet);stroke-width:1.4}
   .zone-classica.on,.zone-classica:hover{fill:rgba(28,110,49,.4)}
@@ -529,6 +530,16 @@
   .card-act a:hover{border-color:var(--garnet);color:var(--garnet)}
   .card-act a.primo:hover{color:var(--paper);opacity:.9}
 
+
+  /* ---------- libro in vendita ---------- */
+  .libro{display:flex;gap:28px;align-items:flex-start;background:var(--panel);border:1px solid var(--line-strong);
+    border-radius:4px;padding:28px;box-shadow:var(--shadow);max-width:780px;margin:44px auto 0}
+  .libro img{width:180px;height:auto;display:block;border:1px solid var(--line);flex-shrink:0}
+  .libro .lk{font-family:"Spline Sans Mono";font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--olive,#52702C)}
+  .libro h3{font-size:1.5rem;font-weight:600;margin:6px 0 10px;line-height:1.2}
+  .libro p{font-size:.95rem;color:var(--ink-soft);line-height:1.6;margin-bottom:16px}
+  @media (max-width:700px){.libro{flex-direction:column;align-items:center;text-align:center}.libro img{width:160px}}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -716,7 +727,7 @@
     </a>
     <nav class="nav-links" id="navlinks">
       <a href="index.html">Home</a>
-      <a href="territorio.html">Il territorio</a>
+      <a href="territorio.html">Il territorio e la sua storia</a>
       <a href="progetti.html">I progetti</a>
       <a href="luoghi.html">I luoghi</a>
       <a href="cibo-e-vino.html">Il cibo e il vino</a>
@@ -884,7 +895,7 @@
       </div>
       <div>
         <h5>Esplora</h5>
-        <a href="territorio.html">Territorio</a><a href="progetti.html">Progetti</a><a href="luoghi.html">Luoghi</a><a href="cibo-e-vino.html">Cibo e vino</a><a href="dormire.html">Dormire</a><a href="percorsi.html">Percorsi</a><a href="pianifica.html">Pianifica il percorso</a>
+        <a href="territorio.html">Il territorio e la sua storia</a><a href="progetti.html">Progetti</a><a href="luoghi.html">Luoghi</a><a href="cibo-e-vino.html">Cibo e vino</a><a href="dormire.html">Dormire</a><a href="percorsi.html">Percorsi</a><a href="pianifica.html">Pianifica il percorso</a>
       </div>
       <div>
         <h5>Risorse</h5>
