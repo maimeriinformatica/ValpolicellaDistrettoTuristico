@@ -72,12 +72,12 @@
     border-bottom:1px solid var(--line);
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1160px;margin:0 auto;padding:0 26px}
-  .brand{display:flex;align-items:center;gap:11px;font-family:"Fraunces";font-weight:600;font-size:1.06rem;letter-spacing:-.01em}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Fraunces";font-weight:600;font-size:1.06rem;letter-spacing:-.01em;white-space:nowrap}
   .brand .glyph{width:26px;height:26px;flex:none}
   .brand .glyph-img{height:34px;width:auto;flex:none}
   .foot-logo{height:60px;width:auto;margin-bottom:16px;display:block}
-  .nav-links{display:flex;gap:19px;align-items:center}
-  .nav-links a{font-size:.85rem;color:var(--ink-soft);position:relative;padding:4px 0}
+  .nav-links{display:flex;gap:14px;align-items:center;margin-left:22px}
+  .nav-links a{font-size:.78rem;color:var(--ink-soft);position:relative;padding:4px 0;white-space:nowrap}
   .nav-links a:hover{color:var(--ink)}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--garnet);transition:width .28s ease}
   .nav-links a:hover::after{width:100%}
@@ -502,13 +502,14 @@
     font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
     background:rgba(241,238,228,.92);color:var(--ink);padding:5px 10px;border-radius:2px;border:1px solid var(--line)}
   .hero .wrap{position:relative}
-  .hero-photo{display:none}
+  .hero-photo{display:block;max-width:860px;margin:36px auto 0;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 18px 50px -30px rgba(34,39,29,.45)}
+  .hero-photo img{width:100%;height:auto;display:block}
   @media (min-width:1080px){
-    .hero-photo{display:block;position:absolute;right:0;top:36px;width:370px;height:430px;
+    .hero-photo{display:block;position:absolute;right:0;top:56px;width:470px;height:auto;
       border:1px solid var(--line-strong);border-radius:6px;overflow:hidden;box-shadow:var(--shadow);
-      transform:rotate(1.2deg);background:var(--panel)}
-    .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .hero-photo::after{content:"VALPOLICELLA · VIGNETI";position:absolute;left:12px;bottom:10px;
+      transform:rotate(1.2deg);background:#fff}
+    .hero-photo img{width:100%;height:auto;display:block}
+    .hero-photo::after{content:"VALPOLICELLA · VERONA · ITALIA";position:absolute;left:12px;bottom:10px;
       font-family:"Spline Sans Mono";font-size:.58rem;letter-spacing:.14em;color:var(--ink);
       background:rgba(241,238,228,.92);padding:5px 10px;border-radius:2px;border:1px solid var(--line)}
   }
@@ -520,6 +521,15 @@
     font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(241,238,228,.94);
     color:var(--ink);padding:4px 8px;border-radius:2px;border:1px solid var(--line);text-decoration:none}
   .wiki-badge:hover,.gb-badge:hover{color:var(--garnet);border-color:var(--garnet)}
+
+  /* ---------- pulsanti di prenotazione sulle schede ---------- */
+  .card-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .card-act a{font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;
+    text-decoration:none;padding:7px 11px;border:1px solid var(--line);border-radius:2px;color:var(--ink)}
+  .card-act a.primo{background:var(--garnet);border-color:var(--garnet);color:var(--paper)}
+  .card-act a:hover{border-color:var(--garnet);color:var(--garnet)}
+  .card-act a.primo:hover{color:var(--paper);opacity:.9}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -705,14 +715,15 @@
       Distretto Turistico Valpolicella
     </a>
     <nav class="nav-links" id="navlinks">
-      <a href="territorio.html">Territorio</a>
-      <a href="progetti.html">Progetti</a>
-      <a href="luoghi.html">Luoghi</a>
-      <a href="cibo-e-vino.html">Cibo e vino</a>
-      <a href="dormire.html">Dormire</a>
-      <a href="percorsi.html">Percorsi</a>
-      <a href="pianifica.html">Pianifica</a>
-      <a href="card.html">Card</a>
+      <a href="index.html">Home</a>
+      <a href="territorio.html">Il territorio</a>
+      <a href="progetti.html">I progetti</a>
+      <a href="luoghi.html">I luoghi</a>
+      <a href="cibo-e-vino.html">Il cibo e il vino</a>
+      <a href="dormire.html">Dove alloggiare</a>
+      <a href="percorsi.html">I percorsi</a>
+      <a href="pianifica.html">Crea il tuo percorso</a>
+      <a href="card.html">Valpolicella Card</a>
       <a class="nav-cta" href="aderisci.html">Aderisci</a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -957,6 +968,36 @@
 
 
 
+
+  // ====== PULSANTI «CHIAMA / PRENOTA / SITO» SULLE SCHEDE ======
+  // Legge telefono, e-mail e sito presenti nella scheda (scritti nel codice o
+  // arrivati da OpenStreetMap / Google) e li trasforma in pulsanti di prenotazione.
+  window.buildAct=function(card){
+    var meta=card.querySelector('.card-meta'); if(!meta)return;
+    var tel=meta.querySelector('a[href^="tel:"]');
+    var mail=meta.querySelector('a[href^="mailto:"]');
+    var web=meta.querySelector('a[href^="http"]');
+    var act=card.querySelector('.card-act');
+    if(!tel&&!mail&&!web){ if(act)act.remove(); return; }
+    if(!act){act=document.createElement('div');act.className='card-act';meta.parentNode.appendChild(act);}
+    act.innerHTML='';
+    var h3=card.querySelector('h3');
+    var nome=card.dataset.name||(h3?h3.textContent:'');
+    if(tel){var a=document.createElement('a');a.href=tel.getAttribute('href');a.textContent='☏ Chiama';act.appendChild(a);}
+    if(mail){var m=document.createElement('a');m.className='primo';
+      m.href=mail.getAttribute('href').split('?')[0]
+        +'?subject='+encodeURIComponent('Prenotazione — '+nome)
+        +'&body='+encodeURIComponent('Buongiorno,\nvorrei prenotare presso '+nome+'.\nData:\nPersone:\n\nGrazie.\n(richiesta inviata dal portale del Distretto Turistico Valpolicella)');
+      m.textContent='✉ Prenota'; act.appendChild(m);}
+    if(web){var w=document.createElement('a');w.href=web.getAttribute('href');w.target='_blank';w.rel='noopener';w.textContent='Sito ↗';act.appendChild(w);}
+  };
+  (function(){
+    ['luoghi-cards','cantine-cards','hotel-cards'].forEach(function(id){
+      var g=document.getElementById(id); if(!g)return;
+      g.querySelectorAll('article.card').forEach(window.buildAct);
+    });
+  })();
+
   // ====== CONTATTI DA OPENSTREETMAP (gratuito, senza chiave) ======
   // Una sola richiesta per visita all'API Overpass: integra telefono, sito ed e-mail
   // SOLO dove mancano, confrontando i nomi. Se l'API non risponde, non cambia nulla.
@@ -1029,7 +1070,7 @@
           g.querySelectorAll('article.card').forEach(function(c){
             var nome=c.dataset.name; if(!nome)return;
             for(var i=0;i<els.length;i++){
-              if(match(nome,els[i].tags.name)){applica(c,els[i].tags);break;}
+              if(match(nome,els[i].tags.name)){applica(c,els[i].tags);if(window.buildAct)window.buildAct(c);break;}
             }
           });
         });
@@ -1062,13 +1103,15 @@
     function arricchisci(card,place){
       var box=card.querySelector('.card-img');
       var foto=place.photos&&place.photos[0];
-      if(box&&foto&&foto.name&&!box.querySelector('.gb-img')&&!box.querySelector('.wiki-img')){
+      if(box&&foto&&foto.name&&!box.querySelector('.gb-img')&&!box.querySelector('.wiki-img:not(.amb)')){
         var attr=(foto.authorAttributions&&foto.authorAttributions[0]&&foto.authorAttributions[0].displayName)||'';
         var img=new Image();
         img.className='gb-img'; img.loading='lazy'; img.decoding='async';
         img.alt=(card.dataset.name||'')+' — foto dalla scheda Google';
         if(attr)img.title='Foto: '+attr+' · Google';
         img.onload=function(){
+          var amb=box.querySelector('.wiki-img.amb');
+          if(amb){amb.remove(); var wb=box.querySelector('.wiki-badge'); if(wb)wb.remove();}
           if(place.googleMapsUri&&!box.querySelector('.gb-badge')){
             var a=document.createElement('a');
             a.className='gb-badge'; a.href=place.googleMapsUri; a.target='_blank'; a.rel='noopener';
@@ -1127,7 +1170,7 @@
       req.then(function(r){return r.ok?r.json():null;}).then(function(d){
         var p=porta(d); if(!p)return;
         var nomeG=(p.displayName&&p.displayName.text)||'';
-        if(pid||compatibile(card.dataset.name,nomeG))arricchisci(card,p);
+        if(pid||compatibile(card.dataset.name,nomeG)){arricchisci(card,p);if(window.buildAct)window.buildAct(card);}
       }).catch(function(){});
     }
     var io=new IntersectionObserver(function(es){
@@ -1519,7 +1562,7 @@
       (q.normalized||[]).forEach(function(n){alias[n.from]=n.to;});
       (q.redirects||[]).forEach(function(r){alias[r.from]=r.to;});
       (q.pages||[]).forEach(function(p){
-        if(!p.missing&&p.thumbnail&&p.thumbnail.source)
+        if(!p.missing&&p.thumbnail&&p.thumbnail.source&&!/\.svg$|stemma|coat_of|bandiera|flag_|logo/i.test(p.thumbnail.source))
           map[p.title]={src:p.thumbnail.source,
             url:p.fullurl||('https://it.wikipedia.org/wiki/'+encodeURIComponent(p.title))};
       });
@@ -1530,12 +1573,14 @@
         if(!hit)return;
         var box=c.querySelector('.card-img'); if(!box||box.querySelector('.gb-img'))return;
         var img=new Image();
-        img.alt=(c.dataset.name||'')+' — immagine da Wikipedia';
-        img.loading='lazy'; img.decoding='async'; img.className='wiki-img';
+        var amb=!!c.dataset.amb;
+        img.alt=(c.dataset.name||'')+(amb?' — paesaggio della Valpolicella (immagine da Wikipedia)':' — immagine da Wikipedia');
+        img.loading='lazy'; img.decoding='async'; img.className=amb?'wiki-img amb':'wiki-img';
         img.onload=function(){
           var a=document.createElement('a');
           a.className='wiki-badge'; a.href=hit.url; a.target='_blank'; a.rel='noopener';
-          a.textContent='Wikipedia ↗'; a.title='Immagine e approfondimento su Wikipedia';
+          a.textContent='Wikipedia ↗';
+          a.title=amb?'Foto d\u2019ambiente della Valpolicella \u2014 da Wikipedia':'Immagine e approfondimento su Wikipedia';
           a.addEventListener('click',function(e){e.stopPropagation();});
           box.appendChild(a);
         };

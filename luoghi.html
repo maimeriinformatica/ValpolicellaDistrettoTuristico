@@ -72,12 +72,12 @@
     border-bottom:1px solid var(--line);
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1160px;margin:0 auto;padding:0 26px}
-  .brand{display:flex;align-items:center;gap:11px;font-family:"Fraunces";font-weight:600;font-size:1.06rem;letter-spacing:-.01em}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Fraunces";font-weight:600;font-size:1.06rem;letter-spacing:-.01em;white-space:nowrap}
   .brand .glyph{width:26px;height:26px;flex:none}
   .brand .glyph-img{height:34px;width:auto;flex:none}
   .foot-logo{height:60px;width:auto;margin-bottom:16px;display:block}
-  .nav-links{display:flex;gap:19px;align-items:center}
-  .nav-links a{font-size:.85rem;color:var(--ink-soft);position:relative;padding:4px 0}
+  .nav-links{display:flex;gap:14px;align-items:center;margin-left:22px}
+  .nav-links a{font-size:.78rem;color:var(--ink-soft);position:relative;padding:4px 0;white-space:nowrap}
   .nav-links a:hover{color:var(--ink)}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--garnet);transition:width .28s ease}
   .nav-links a:hover::after{width:100%}
@@ -502,13 +502,14 @@
     font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
     background:rgba(241,238,228,.92);color:var(--ink);padding:5px 10px;border-radius:2px;border:1px solid var(--line)}
   .hero .wrap{position:relative}
-  .hero-photo{display:none}
+  .hero-photo{display:block;max-width:860px;margin:36px auto 0;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 18px 50px -30px rgba(34,39,29,.45)}
+  .hero-photo img{width:100%;height:auto;display:block}
   @media (min-width:1080px){
-    .hero-photo{display:block;position:absolute;right:0;top:36px;width:370px;height:430px;
+    .hero-photo{display:block;position:absolute;right:0;top:56px;width:470px;height:auto;
       border:1px solid var(--line-strong);border-radius:6px;overflow:hidden;box-shadow:var(--shadow);
-      transform:rotate(1.2deg);background:var(--panel)}
-    .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .hero-photo::after{content:"VALPOLICELLA · VIGNETI";position:absolute;left:12px;bottom:10px;
+      transform:rotate(1.2deg);background:#fff}
+    .hero-photo img{width:100%;height:auto;display:block}
+    .hero-photo::after{content:"VALPOLICELLA · VERONA · ITALIA";position:absolute;left:12px;bottom:10px;
       font-family:"Spline Sans Mono";font-size:.58rem;letter-spacing:.14em;color:var(--ink);
       background:rgba(241,238,228,.92);padding:5px 10px;border-radius:2px;border:1px solid var(--line)}
   }
@@ -520,6 +521,15 @@
     font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(241,238,228,.94);
     color:var(--ink);padding:4px 8px;border-radius:2px;border:1px solid var(--line);text-decoration:none}
   .wiki-badge:hover,.gb-badge:hover{color:var(--garnet);border-color:var(--garnet)}
+
+  /* ---------- pulsanti di prenotazione sulle schede ---------- */
+  .card-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .card-act a{font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;
+    text-decoration:none;padding:7px 11px;border:1px solid var(--line);border-radius:2px;color:var(--ink)}
+  .card-act a.primo{background:var(--garnet);border-color:var(--garnet);color:var(--paper)}
+  .card-act a:hover{border-color:var(--garnet);color:var(--garnet)}
+  .card-act a.primo:hover{color:var(--paper);opacity:.9}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -705,14 +715,15 @@
       Distretto Turistico Valpolicella
     </a>
     <nav class="nav-links" id="navlinks">
-      <a href="territorio.html">Territorio</a>
-      <a href="progetti.html">Progetti</a>
-      <a class="on" href="luoghi.html">Luoghi</a>
-      <a href="cibo-e-vino.html">Cibo e vino</a>
-      <a href="dormire.html">Dormire</a>
-      <a href="percorsi.html">Percorsi</a>
-      <a href="pianifica.html">Pianifica</a>
-      <a href="card.html">Card</a>
+      <a href="index.html">Home</a>
+      <a href="territorio.html">Il territorio</a>
+      <a href="progetti.html">I progetti</a>
+      <a class="on" href="luoghi.html">I luoghi</a>
+      <a href="cibo-e-vino.html">Il cibo e il vino</a>
+      <a href="dormire.html">Dove alloggiare</a>
+      <a href="percorsi.html">I percorsi</a>
+      <a href="pianifica.html">Crea il tuo percorso</a>
+      <a href="card.html">Valpolicella Card</a>
       <a class="nav-cta" href="aderisci.html">Aderisci</a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -754,7 +765,7 @@
           <div class="card-kicker">Volargne di Dolcè</div>
           <h3>Villa del Bene</h3>
           <p>Complesso ultimato nel 1560: il portone d'accesso allineato all'attracco sul fiume è forse opera di Sanmicheli, con affreschi di Brusasorzi, Caroto, Crollalanza e Bernardino India su tutto il piano nobile.</p>
-          <div class="card-meta"><span>◷ 1560</span><span>◉ Piano nobile affrescato</span></div>
+          <div class="card-meta"><span>◷ 1560</span><span>◉ Piano nobile affrescato</span><span><a href="https://www.villadelbene.com" target="_blank" rel="noopener">villadelbene.com ↗</a></span></div>
           <a class="sl-link" href="https://www.sharry.land/it/profilo/villa-del-bene" target="_blank" rel="noopener"><span class="dot"></span>Sharry Land ↗</a>
         </div>
       </article>
@@ -799,7 +810,7 @@
           <div class="card-kicker">Fumane</div>
           <h3>Villa Della Torre</h3>
           <p>Capolavoro manierista del '500 con peristilio, mascheroni-camino e grotta-ninfeo. Monumentale, aperta con visite guidate e degustazioni.</p>
-          <div class="card-meta"><span>◷ 1560 ca.</span><span>◉ Visite e degustazioni</span></div>
+          <div class="card-meta"><span>◷ 1560 ca.</span><span>◉ Visite e degustazioni</span><span><a href="tel:+390456832070">☏ 045 683 2070</a></span><span><a href="https://www.villadellatorre.it" target="_blank" rel="noopener">villadellatorre.it ↗</a></span></div>
         </div>
       </article>
       <article class="card" data-c="natura fumane" data-wiki="Grotta di Fumane" data-name="Grotta di Fumane (Riparo Solinas)">
@@ -810,7 +821,7 @@
           <div class="card-kicker">Fumane</div>
           <h3>Grotta di Fumane (Riparo Solinas)</h3>
           <p>Sito preistorico tra i più importanti d'Europa per l'arte paleolitica, con tracce di Neanderthal e di Homo Sapiens.</p>
-          <div class="card-meta"><span>◷ 40.000 anni</span><span>◉ Arte paleolitica</span></div>
+          <div class="card-meta"><span>◷ 40.000 anni</span><span>◉ Arte paleolitica</span><span><a href="tel:+393662064398">☏ 366 206 4398</a></span><span><a href="mailto:info@grottadifumane.eu">✉ info@grottadifumane.eu</a></span><span><a href="https://www.grottadifumane.eu" target="_blank" rel="noopener">grottadifumane.eu ↗</a></span></div>
         </div>
       </article>
       <article class="card" data-c="storia fumane">
@@ -832,7 +843,7 @@
           <div class="card-kicker">Molina di Fumane</div>
           <h3>Molina e il Parco delle Cascate</h3>
           <p>Borgo medievale in pietra con i suoi mulini — Mulin de Lorenzo e Mulino dei Veraghi — e il Parco delle Cascate, aperto da marzo a novembre.</p>
-          <div class="card-meta"><span>◷ Marzo–novembre</span><span>◉ Mulini storici</span></div>
+          <div class="card-meta"><span>◷ Marzo–novembre</span><span>◉ Mulini storici</span><span><a href="https://www.parcodellecascate.it" target="_blank" rel="noopener">parcodellecascate.it ↗</a></span></div>
           <a class="sl-link" href="https://www.sharry.land/it/meraviglie/parco-delle-cascate-di-molina" target="_blank" rel="noopener"><span class="dot"></span>Sharry Land ↗</a>
         </div>
       </article>
@@ -910,7 +921,7 @@
           <div class="card-kicker">Negrar di Valpolicella</div>
           <h3>Giardino di Pojega — Villa Rizzardi</h3>
           <p>Disposto su tre livelli per 54.000 mq: boschetto con Tempio circolare, Ninfeo, Giardino segreto, Laghetto ovale, Parterre, Teatro di verzura e Belvedere.</p>
-          <div class="card-meta"><span>◷ 1783</span><span>◉ 54.000 mq</span></div>
+          <div class="card-meta"><span>◷ 1783</span><span>◉ 54.000 mq</span><span><a href="https://pojega.it" target="_blank" rel="noopener">pojega.it ↗</a></span></div>
         </div>
       </article>
       <article class="card" data-c="ville negrar" data-wiki="Villa Mosconi Bertani||Villa Mosconi" data-name="Villa Mosconi Bertani">
@@ -921,7 +932,7 @@
           <div class="card-kicker">Novare · Negrar</div>
           <h3>Villa Mosconi Bertani</h3>
           <p>Edificata in tufo tenero della Valpolicella nella prima metà del '700 su progetto di Adriano Cristofori. Magnifico il salone delle Muse, interamente affrescato; sul retro il parco con sorgenti, laghetto, giochi d'acqua, chalet e ghiacciaia.</p>
-          <div class="card-meta"><span>◷ Primo '700</span><span>◉ Salone delle Muse</span></div>
+          <div class="card-meta"><span>◷ Primo '700</span><span>◉ Salone delle Muse</span><span><a href="https://mosconibertani.it" target="_blank" rel="noopener">mosconibertani.it ↗</a></span></div>
         </div>
       </article>
       <article class="card" data-c="musei negrar">
@@ -932,7 +943,7 @@
           <div class="card-kicker">Negrar di Valpolicella</div>
           <h3>Cantina Valpolicella Negrar</h3>
           <p>La cantina storica del territorio, celebre per aver dato i natali al primo Amarone nel 1936.</p>
-          <div class="card-meta"><span>◷ 1936</span><span>◉ Primo Amarone</span></div>
+          <div class="card-meta"><span>◷ 1936</span><span>◉ Primo Amarone</span><span><a href="https://www.cantinanegrar.it" target="_blank" rel="noopener">cantinanegrar.it ↗</a></span></div>
         </div>
       </article>
       <article class="card" data-c="natura negrar">
@@ -998,7 +1009,7 @@
           <div class="card-kicker">Pescantina</div>
           <h3>Aquardens</h3>
           <p>Parco termale con oltre 5.000 mq di acqua salso-bromo-iodica, che sgorga a 47 °C.</p>
-          <div class="card-meta"><span>◷ Tutto l'anno</span><span>◉ Acqua a 47 °C</span></div>
+          <div class="card-meta"><span>◷ Tutto l'anno</span><span>◉ Acqua a 47 °C</span><span><a href="https://www.aquardens.it" target="_blank" rel="noopener">aquardens.it ↗</a></span></div>
         </div>
       </article>
       <article class="card" data-c="musei pescantina">
@@ -1020,7 +1031,7 @@
           <div class="card-kicker">Pedemonte · San Pietro</div>
           <h3>Villa Serego — Santa Sofia</h3>
           <p>Una delle ultime ville progettate da Palladio e l'unica rimasta nel veronese, dal 1996 patrimonio UNESCO. Realizzata solo in minima parte rispetto al progetto originale, oggi ospita un'azienda vitivinicola.</p>
-          <div class="card-meta"><span>◷ UNESCO dal 1996</span><span>◉ Palladio</span></div>
+          <div class="card-meta"><span>◷ UNESCO dal 1996</span><span>◉ Palladio</span><span><a href="https://www.santasofia.com" target="_blank" rel="noopener">santasofia.com ↗</a></span></div>
         </div>
       </article>
       <article class="card" data-c="storia sanpietro sharry" data-wiki="Pieve di San Floriano||Chiesa di San Floriano (San Pietro in Cariano)" data-name="Pieve di San Floriano">
@@ -1248,6 +1259,36 @@
 
 
 
+
+  // ====== PULSANTI «CHIAMA / PRENOTA / SITO» SULLE SCHEDE ======
+  // Legge telefono, e-mail e sito presenti nella scheda (scritti nel codice o
+  // arrivati da OpenStreetMap / Google) e li trasforma in pulsanti di prenotazione.
+  window.buildAct=function(card){
+    var meta=card.querySelector('.card-meta'); if(!meta)return;
+    var tel=meta.querySelector('a[href^="tel:"]');
+    var mail=meta.querySelector('a[href^="mailto:"]');
+    var web=meta.querySelector('a[href^="http"]');
+    var act=card.querySelector('.card-act');
+    if(!tel&&!mail&&!web){ if(act)act.remove(); return; }
+    if(!act){act=document.createElement('div');act.className='card-act';meta.parentNode.appendChild(act);}
+    act.innerHTML='';
+    var h3=card.querySelector('h3');
+    var nome=card.dataset.name||(h3?h3.textContent:'');
+    if(tel){var a=document.createElement('a');a.href=tel.getAttribute('href');a.textContent='☏ Chiama';act.appendChild(a);}
+    if(mail){var m=document.createElement('a');m.className='primo';
+      m.href=mail.getAttribute('href').split('?')[0]
+        +'?subject='+encodeURIComponent('Prenotazione — '+nome)
+        +'&body='+encodeURIComponent('Buongiorno,\nvorrei prenotare presso '+nome+'.\nData:\nPersone:\n\nGrazie.\n(richiesta inviata dal portale del Distretto Turistico Valpolicella)');
+      m.textContent='✉ Prenota'; act.appendChild(m);}
+    if(web){var w=document.createElement('a');w.href=web.getAttribute('href');w.target='_blank';w.rel='noopener';w.textContent='Sito ↗';act.appendChild(w);}
+  };
+  (function(){
+    ['luoghi-cards','cantine-cards','hotel-cards'].forEach(function(id){
+      var g=document.getElementById(id); if(!g)return;
+      g.querySelectorAll('article.card').forEach(window.buildAct);
+    });
+  })();
+
   // ====== CONTATTI DA OPENSTREETMAP (gratuito, senza chiave) ======
   // Una sola richiesta per visita all'API Overpass: integra telefono, sito ed e-mail
   // SOLO dove mancano, confrontando i nomi. Se l'API non risponde, non cambia nulla.
@@ -1320,7 +1361,7 @@
           g.querySelectorAll('article.card').forEach(function(c){
             var nome=c.dataset.name; if(!nome)return;
             for(var i=0;i<els.length;i++){
-              if(match(nome,els[i].tags.name)){applica(c,els[i].tags);break;}
+              if(match(nome,els[i].tags.name)){applica(c,els[i].tags);if(window.buildAct)window.buildAct(c);break;}
             }
           });
         });
@@ -1353,13 +1394,15 @@
     function arricchisci(card,place){
       var box=card.querySelector('.card-img');
       var foto=place.photos&&place.photos[0];
-      if(box&&foto&&foto.name&&!box.querySelector('.gb-img')&&!box.querySelector('.wiki-img')){
+      if(box&&foto&&foto.name&&!box.querySelector('.gb-img')&&!box.querySelector('.wiki-img:not(.amb)')){
         var attr=(foto.authorAttributions&&foto.authorAttributions[0]&&foto.authorAttributions[0].displayName)||'';
         var img=new Image();
         img.className='gb-img'; img.loading='lazy'; img.decoding='async';
         img.alt=(card.dataset.name||'')+' — foto dalla scheda Google';
         if(attr)img.title='Foto: '+attr+' · Google';
         img.onload=function(){
+          var amb=box.querySelector('.wiki-img.amb');
+          if(amb){amb.remove(); var wb=box.querySelector('.wiki-badge'); if(wb)wb.remove();}
           if(place.googleMapsUri&&!box.querySelector('.gb-badge')){
             var a=document.createElement('a');
             a.className='gb-badge'; a.href=place.googleMapsUri; a.target='_blank'; a.rel='noopener';
@@ -1418,7 +1461,7 @@
       req.then(function(r){return r.ok?r.json():null;}).then(function(d){
         var p=porta(d); if(!p)return;
         var nomeG=(p.displayName&&p.displayName.text)||'';
-        if(pid||compatibile(card.dataset.name,nomeG))arricchisci(card,p);
+        if(pid||compatibile(card.dataset.name,nomeG)){arricchisci(card,p);if(window.buildAct)window.buildAct(card);}
       }).catch(function(){});
     }
     var io=new IntersectionObserver(function(es){
@@ -1810,7 +1853,7 @@
       (q.normalized||[]).forEach(function(n){alias[n.from]=n.to;});
       (q.redirects||[]).forEach(function(r){alias[r.from]=r.to;});
       (q.pages||[]).forEach(function(p){
-        if(!p.missing&&p.thumbnail&&p.thumbnail.source)
+        if(!p.missing&&p.thumbnail&&p.thumbnail.source&&!/\.svg$|stemma|coat_of|bandiera|flag_|logo/i.test(p.thumbnail.source))
           map[p.title]={src:p.thumbnail.source,
             url:p.fullurl||('https://it.wikipedia.org/wiki/'+encodeURIComponent(p.title))};
       });
@@ -1821,12 +1864,14 @@
         if(!hit)return;
         var box=c.querySelector('.card-img'); if(!box||box.querySelector('.gb-img'))return;
         var img=new Image();
-        img.alt=(c.dataset.name||'')+' — immagine da Wikipedia';
-        img.loading='lazy'; img.decoding='async'; img.className='wiki-img';
+        var amb=!!c.dataset.amb;
+        img.alt=(c.dataset.name||'')+(amb?' — paesaggio della Valpolicella (immagine da Wikipedia)':' — immagine da Wikipedia');
+        img.loading='lazy'; img.decoding='async'; img.className=amb?'wiki-img amb':'wiki-img';
         img.onload=function(){
           var a=document.createElement('a');
           a.className='wiki-badge'; a.href=hit.url; a.target='_blank'; a.rel='noopener';
-          a.textContent='Wikipedia ↗'; a.title='Immagine e approfondimento su Wikipedia';
+          a.textContent='Wikipedia ↗';
+          a.title=amb?'Foto d\u2019ambiente della Valpolicella \u2014 da Wikipedia':'Immagine e approfondimento su Wikipedia';
           a.addEventListener('click',function(e){e.stopPropagation();});
           box.appendChild(a);
         };

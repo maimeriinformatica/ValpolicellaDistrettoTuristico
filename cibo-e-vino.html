@@ -72,12 +72,12 @@
     border-bottom:1px solid var(--line);
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1160px;margin:0 auto;padding:0 26px}
-  .brand{display:flex;align-items:center;gap:11px;font-family:"Fraunces";font-weight:600;font-size:1.06rem;letter-spacing:-.01em}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Fraunces";font-weight:600;font-size:1.06rem;letter-spacing:-.01em;white-space:nowrap}
   .brand .glyph{width:26px;height:26px;flex:none}
   .brand .glyph-img{height:34px;width:auto;flex:none}
   .foot-logo{height:60px;width:auto;margin-bottom:16px;display:block}
-  .nav-links{display:flex;gap:19px;align-items:center}
-  .nav-links a{font-size:.85rem;color:var(--ink-soft);position:relative;padding:4px 0}
+  .nav-links{display:flex;gap:14px;align-items:center;margin-left:22px}
+  .nav-links a{font-size:.78rem;color:var(--ink-soft);position:relative;padding:4px 0;white-space:nowrap}
   .nav-links a:hover{color:var(--ink)}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--garnet);transition:width .28s ease}
   .nav-links a:hover::after{width:100%}
@@ -502,13 +502,14 @@
     font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
     background:rgba(241,238,228,.92);color:var(--ink);padding:5px 10px;border-radius:2px;border:1px solid var(--line)}
   .hero .wrap{position:relative}
-  .hero-photo{display:none}
+  .hero-photo{display:block;max-width:860px;margin:36px auto 0;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 18px 50px -30px rgba(34,39,29,.45)}
+  .hero-photo img{width:100%;height:auto;display:block}
   @media (min-width:1080px){
-    .hero-photo{display:block;position:absolute;right:0;top:36px;width:370px;height:430px;
+    .hero-photo{display:block;position:absolute;right:0;top:56px;width:470px;height:auto;
       border:1px solid var(--line-strong);border-radius:6px;overflow:hidden;box-shadow:var(--shadow);
-      transform:rotate(1.2deg);background:var(--panel)}
-    .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .hero-photo::after{content:"VALPOLICELLA · VIGNETI";position:absolute;left:12px;bottom:10px;
+      transform:rotate(1.2deg);background:#fff}
+    .hero-photo img{width:100%;height:auto;display:block}
+    .hero-photo::after{content:"VALPOLICELLA · VERONA · ITALIA";position:absolute;left:12px;bottom:10px;
       font-family:"Spline Sans Mono";font-size:.58rem;letter-spacing:.14em;color:var(--ink);
       background:rgba(241,238,228,.92);padding:5px 10px;border-radius:2px;border:1px solid var(--line)}
   }
@@ -520,6 +521,15 @@
     font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(241,238,228,.94);
     color:var(--ink);padding:4px 8px;border-radius:2px;border:1px solid var(--line);text-decoration:none}
   .wiki-badge:hover,.gb-badge:hover{color:var(--garnet);border-color:var(--garnet)}
+
+  /* ---------- pulsanti di prenotazione sulle schede ---------- */
+  .card-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .card-act a{font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;
+    text-decoration:none;padding:7px 11px;border:1px solid var(--line);border-radius:2px;color:var(--ink)}
+  .card-act a.primo{background:var(--garnet);border-color:var(--garnet);color:var(--paper)}
+  .card-act a:hover{border-color:var(--garnet);color:var(--garnet)}
+  .card-act a.primo:hover{color:var(--paper);opacity:.9}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -705,14 +715,15 @@
       Distretto Turistico Valpolicella
     </a>
     <nav class="nav-links" id="navlinks">
-      <a href="territorio.html">Territorio</a>
-      <a href="progetti.html">Progetti</a>
-      <a href="luoghi.html">Luoghi</a>
-      <a class="on" href="cibo-e-vino.html">Cibo e vino</a>
-      <a href="dormire.html">Dormire</a>
-      <a href="percorsi.html">Percorsi</a>
-      <a href="pianifica.html">Pianifica</a>
-      <a href="card.html">Card</a>
+      <a href="index.html">Home</a>
+      <a href="territorio.html">Il territorio</a>
+      <a href="progetti.html">I progetti</a>
+      <a href="luoghi.html">I luoghi</a>
+      <a class="on" href="cibo-e-vino.html">Il cibo e il vino</a>
+      <a href="dormire.html">Dove alloggiare</a>
+      <a href="percorsi.html">I percorsi</a>
+      <a href="pianifica.html">Crea il tuo percorso</a>
+      <a href="card.html">Valpolicella Card</a>
       <a class="nav-cta" href="aderisci.html">Aderisci</a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -818,7 +829,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="bussola tommaso via mulino turri 30 cantina negrar di valpolicella" data-name="Bussola Tommaso" data-loc="Via Mulino Turri 30" data-cat="cantina">
+      <article data-wiki="Negrar di Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="bussola tommaso via mulino turri 30 cantina negrar di valpolicella" data-name="Bussola Tommaso" data-loc="Via Mulino Turri 30" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -833,7 +844,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="fratelli vogadori via vigolo 16 cantina negrar di valpolicella" data-name="Fratelli Vogadori" data-loc="Via Vigolo 16" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="fratelli vogadori via vigolo 16 cantina negrar di valpolicella" data-name="Fratelli Vogadori" data-loc="Via Vigolo 16" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -848,7 +859,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="roberto mazzi e figli via crosetta 8 cantina negrar di valpolicella" data-name="Roberto Mazzi e Figli" data-loc="Via Crosetta 8" data-cat="cantina">
+      <article data-wiki="Negrar di Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="roberto mazzi e figli via crosetta 8 cantina negrar di valpolicella" data-name="Roberto Mazzi e Figli" data-loc="Via Crosetta 8" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -863,7 +874,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="recchia vini via ca&#x27; bertoldi 30 cantina negrar di valpolicella" data-name="Recchia Vini" data-loc="Via Ca&#x27; Bertoldi 30" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="recchia vini via ca&#x27; bertoldi 30 cantina negrar di valpolicella" data-name="Recchia Vini" data-loc="Via Ca&#x27; Bertoldi 30" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -871,14 +882,14 @@
           <div class="card-kicker">Cantina · Via Ca&#x27; Bertoldi 30</div>
           <h3>Recchia Vini</h3>
           <p>Cantina di Negrar di Valpolicella. Scheda in completamento: indirizzo, telefono e collegamenti alla mappa sono già disponibili.</p>
-          <div class="card-meta"><span><a href="tel:+390457500584">☏ 045 750 0584</a></span><span><a href="https://www.recchiavini.it" target="_blank" rel="noopener">www.recchiavini.it ↗</a></span></div>
+          <div class="card-meta"><span><a href="tel:+390457500584">☏ 045 750 0584</a></span><span><a href="https://www.recchiavini.it" target="_blank" rel="noopener">www.recchiavini.it ↗</a></span><span><a href="mailto:info@recchiavini.it">✉ info@recchiavini.it</a></span></div>
           <div class="card-foot">
             <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Recchia%20Vini%20Via%20Ca%27%20Bertoldi%2030%20Negrar%20di%20Valpolicella%20VR" target="_blank" rel="noopener">◉ Dove si trova</a>
             <a class="mapbtn alt" href="https://www.google.com/maps/dir/?api=1&destination=Recchia%20Vini%20Via%20Ca%27%20Bertoldi%2030%20Negrar%20di%20Valpolicella%20VR" target="_blank" rel="noopener">➤ Come arrivare</a>
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="villa spinosa via jago dall&#x27;ora 14 cantina negrar di valpolicella" data-name="Villa Spinosa" data-loc="Via Jago dall&#x27;Ora 14" data-cat="cantina">
+      <article data-wiki="Negrar di Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="villa spinosa via jago dall&#x27;ora 14 cantina negrar di valpolicella" data-name="Villa Spinosa" data-loc="Via Jago dall&#x27;Ora 14" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -893,7 +904,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="benedetti «lavilla» via villa 2 cantina negrar di valpolicella" data-name="Benedetti «LaVilla»" data-loc="Via Villa 2" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="benedetti «lavilla» via villa 2 cantina negrar di valpolicella" data-name="Benedetti «LaVilla»" data-loc="Via Villa 2" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -908,7 +919,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="franchini agricola loc. forlago 1 cantina negrar di valpolicella" data-name="Franchini Agricola" data-loc="Loc. Forlago 1" data-cat="cantina">
+      <article data-wiki="Negrar di Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="franchini agricola loc. forlago 1 cantina negrar di valpolicella" data-name="Franchini Agricola" data-loc="Loc. Forlago 1" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -923,7 +934,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="cantina siridia via ca&#x27; righetto 8 cantina negrar di valpolicella" data-name="Cantina Siridia" data-loc="Via Ca&#x27; Righetto 8" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="cantina siridia via ca&#x27; righetto 8 cantina negrar di valpolicella" data-name="Cantina Siridia" data-loc="Via Ca&#x27; Righetto 8" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -938,7 +949,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="the lady wines via quintarelli 39 cantina negrar di valpolicella" data-name="The Lady Wines" data-loc="Via Quintarelli 39" data-cat="cantina">
+      <article data-wiki="Negrar di Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="the lady wines via quintarelli 39 cantina negrar di valpolicella" data-name="The Lady Wines" data-loc="Via Quintarelli 39" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -953,7 +964,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="cantina cà salgari via ca&#x27; salgari 7 cantina negrar di valpolicella" data-name="Cantina Cà Salgari" data-loc="Via Ca&#x27; Salgari 7" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="cantina cà salgari via ca&#x27; salgari 7 cantina negrar di valpolicella" data-name="Cantina Cà Salgari" data-loc="Via Ca&#x27; Salgari 7" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -968,7 +979,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="lavarini via casa zamboni 4 cantina negrar di valpolicella" data-name="Lavarini" data-loc="Via Casa Zamboni 4" data-cat="cantina">
+      <article data-wiki="Negrar di Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="lavarini via casa zamboni 4 cantina negrar di valpolicella" data-name="Lavarini" data-loc="Via Casa Zamboni 4" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -983,7 +994,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar" data-k="dolcevera via s. rocco 1, loc. villa cantina negrar di valpolicella" data-name="DolceVera" data-loc="Via S. Rocco 1, loc. Villa" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina negrar" data-k="dolcevera via s. rocco 1, loc. villa cantina negrar di valpolicella" data-name="DolceVera" data-loc="Via S. Rocco 1, loc. Villa" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -998,7 +1009,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina negrar completa" data-k="corte martini via martini 3, torbe cantina negrar di valpolicella" data-name="Corte Martini" data-loc="Via Martini 3, Torbe" data-cat="cantina">
+      <article data-wiki="Negrar di Valpolicella" data-amb="1" class="card" data-c="cantina negrar completa" data-k="corte martini via martini 3, torbe cantina negrar di valpolicella" data-name="Corte Martini" data-loc="Via Martini 3, Torbe" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1013,7 +1024,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="cantina sociale di san pietro in cariano via valpolicella 61 cantina san pietro in cariano" data-name="Cantina Sociale di San Pietro in Cariano" data-loc="Via Valpolicella 61" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="cantina sociale di san pietro in cariano via valpolicella 61 cantina san pietro in cariano" data-name="Cantina Sociale di San Pietro in Cariano" data-loc="Via Valpolicella 61" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1028,7 +1039,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="tommasi viticoltori via ronchetto 4, pedemonte cantina san pietro in cariano" data-name="Tommasi Viticoltori" data-loc="Via Ronchetto 4, Pedemonte" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="tommasi viticoltori via ronchetto 4, pedemonte cantina san pietro in cariano" data-name="Tommasi Viticoltori" data-loc="Via Ronchetto 4, Pedemonte" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1043,7 +1054,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="agricola fratelli tedeschi via g. verdi 4/a, pedemonte cantina san pietro in cariano" data-name="Agricola Fratelli Tedeschi" data-loc="Via G. Verdi 4/a, Pedemonte" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="agricola fratelli tedeschi via g. verdi 4/a, pedemonte cantina san pietro in cariano" data-name="Agricola Fratelli Tedeschi" data-loc="Via G. Verdi 4/a, Pedemonte" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1058,7 +1069,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="speri viticoltori via fontana 12, pedemonte cantina san pietro in cariano" data-name="Speri Viticoltori" data-loc="Via Fontana 12, Pedemonte" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="speri viticoltori via fontana 12, pedemonte cantina san pietro in cariano" data-name="Speri Viticoltori" data-loc="Via Fontana 12, Pedemonte" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1088,7 +1099,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="zýmē – celestino gaspari via cà del pipa 1, loc. mattonara cantina san pietro in cariano" data-name="Zýmē – Celestino Gaspari" data-loc="Via Cà del Pipa 1, loc. Mattonara" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="zýmē – celestino gaspari via cà del pipa 1, loc. mattonara cantina san pietro in cariano" data-name="Zýmē – Celestino Gaspari" data-loc="Via Cà del Pipa 1, loc. Mattonara" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1103,7 +1114,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="brunelli via cariano 10 cantina san pietro in cariano" data-name="Brunelli" data-loc="Via Cariano 10" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="brunelli via cariano 10 cantina san pietro in cariano" data-name="Brunelli" data-loc="Via Cariano 10" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1118,7 +1129,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="corte cariano via cariano 10 cantina san pietro in cariano" data-name="Corte Cariano" data-loc="Via Cariano 10" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="corte cariano via cariano 10 cantina san pietro in cariano" data-name="Corte Cariano" data-loc="Via Cariano 10" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1133,7 +1144,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="cantine buglioni via campagnole 55, corrubbio cantina san pietro in cariano" data-name="Cantine Buglioni" data-loc="Via Campagnole 55, Corrubbio" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="cantine buglioni via campagnole 55, corrubbio cantina san pietro in cariano" data-name="Cantine Buglioni" data-loc="Via Campagnole 55, Corrubbio" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1148,7 +1159,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="tenute salvaterra via cengia 85, cengia cantina san pietro in cariano" data-name="Tenute SalvaTerra" data-loc="Via Cengia 85, Cengia" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="tenute salvaterra via cengia 85, cengia cantina san pietro in cariano" data-name="Tenute SalvaTerra" data-loc="Via Cengia 85, Cengia" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1163,7 +1174,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="brigaldara via brigaldara 20 cantina san pietro in cariano" data-name="Brigaldara" data-loc="Via Brigaldara 20" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="brigaldara via brigaldara 20 cantina san pietro in cariano" data-name="Brigaldara" data-loc="Via Brigaldara 20" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1171,14 +1182,14 @@
           <div class="card-kicker">Cantina · Via Brigaldara 20</div>
           <h3>Brigaldara</h3>
           <p>Villa e fondo documentati fin dal 1260, di proprietà della famiglia Cesari dal 1929. Azienda familiare con vendemmia manuale, pratiche sostenibili e sala degustazione.</p>
-          <div class="card-meta"><span><a href="tel:+390457701055">☏ 045 770 1055</a></span><span>◉ Visite e degustazioni</span></div>
+          <div class="card-meta"><span><a href="tel:+390457701055">☏ 045 770 1055</a></span><span>◉ Visite e degustazioni</span><span><a href="https://www.brigaldara.it" target="_blank" rel="noopener">brigaldara.it ↗</a></span></div>
           <div class="card-foot">
             <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Brigaldara%20Via%20Brigaldara%2020%20San%20Pietro%20in%20Cariano%20VR" target="_blank" rel="noopener">◉ Dove si trova</a>
             <a class="mapbtn alt" href="https://www.google.com/maps/dir/?api=1&destination=Brigaldara%20Via%20Brigaldara%2020%20San%20Pietro%20in%20Cariano%20VR" target="_blank" rel="noopener">➤ Come arrivare</a>
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="venturini massimino via semonte 20 cantina san pietro in cariano" data-name="Venturini Massimino" data-loc="Via Semonte 20" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="venturini massimino via semonte 20 cantina san pietro in cariano" data-name="Venturini Massimino" data-loc="Via Semonte 20" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1193,7 +1204,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="manara via don c. biasi 53 cantina san pietro in cariano" data-name="Manara" data-loc="Via Don C. Biasi 53" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="manara via don c. biasi 53 cantina san pietro in cariano" data-name="Manara" data-loc="Via Don C. Biasi 53" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1208,7 +1219,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="nicolis via villa girardi 29 cantina san pietro in cariano" data-name="Nicolis" data-loc="Via Villa Girardi 29" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="nicolis via villa girardi 29 cantina san pietro in cariano" data-name="Nicolis" data-loc="Via Villa Girardi 29" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1223,7 +1234,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="cantina spada via villa girardi 26 cantina san pietro in cariano" data-name="Cantina Spada" data-loc="Via Villa Girardi 26" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="cantina spada via villa girardi 26 cantina san pietro in cariano" data-name="Cantina Spada" data-loc="Via Villa Girardi 26" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1238,7 +1249,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro" data-k="agricola pietro zardini via cadeniso 24 cantina san pietro in cariano" data-name="Agricola Pietro Zardini" data-loc="Via Cadeniso 24" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro" data-k="agricola pietro zardini via cadeniso 24 cantina san pietro in cariano" data-name="Agricola Pietro Zardini" data-loc="Via Cadeniso 24" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1253,7 +1264,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="ugolini vini strada di bonamico 11 cantina san pietro in cariano" data-name="Ugolini Vini" data-loc="Strada di Bonamico 11" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="ugolini vini strada di bonamico 11 cantina san pietro in cariano" data-name="Ugolini Vini" data-loc="Strada di Bonamico 11" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1268,7 +1279,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro" data-k="montecariano via valena 3 cantina san pietro in cariano" data-name="Montecariano" data-loc="Via Valena 3" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro" data-k="montecariano via valena 3 cantina san pietro in cariano" data-name="Montecariano" data-loc="Via Valena 3" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1276,14 +1287,14 @@
           <div class="card-kicker">Cantina · Via Valena 3</div>
           <h3>Montecariano</h3>
           <p>Cantina di San Pietro in Cariano. Scheda in completamento: indirizzo, telefono e collegamenti alla mappa sono già disponibili.</p>
-          <div class="card-meta"><span><a href="tel:+390456838335">☏ 045 683 8335</a></span></div>
+          <div class="card-meta"><span><a href="tel:+390456838335">☏ 045 683 8335</a></span><span><a href="https://www.montecariano.it" target="_blank" rel="noopener">montecariano.it ↗</a></span></div>
           <div class="card-foot">
             <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Montecariano%20Via%20Valena%203%20San%20Pietro%20in%20Cariano%20VR" target="_blank" rel="noopener">◉ Dove si trova</a>
             <a class="mapbtn alt" href="https://www.google.com/maps/dir/?api=1&destination=Montecariano%20Via%20Valena%203%20San%20Pietro%20in%20Cariano%20VR" target="_blank" rel="noopener">➤ Come arrivare</a>
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro" data-k="accordini igino via dell&#x27;industria 21 cantina san pietro in cariano" data-name="Accordini Igino" data-loc="Via dell&#x27;Industria 21" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro" data-k="accordini igino via dell&#x27;industria 21 cantina san pietro in cariano" data-name="Accordini Igino" data-loc="Via dell&#x27;Industria 21" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1298,7 +1309,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro" data-k="cantine marchesi fumanelli via squarano 5 cantina san pietro in cariano" data-name="Cantine Marchesi Fumanelli" data-loc="Via Squarano 5" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro" data-k="cantine marchesi fumanelli via squarano 5 cantina san pietro in cariano" data-name="Cantine Marchesi Fumanelli" data-loc="Via Squarano 5" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1313,7 +1324,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro" data-k="vantini luigi e figli via ca&#x27; dell&#x27;ebreo 7 cantina san pietro in cariano" data-name="Vantini Luigi e Figli" data-loc="Via Ca&#x27; dell&#x27;Ebreo 7" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro" data-k="vantini luigi e figli via ca&#x27; dell&#x27;ebreo 7 cantina san pietro in cariano" data-name="Vantini Luigi e Figli" data-loc="Via Ca&#x27; dell&#x27;Ebreo 7" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1328,7 +1339,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro" data-k="cantina rino sartori via calandrine 14 cantina san pietro in cariano" data-name="Cantina Rino Sartori" data-loc="Via Calandrine 14" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro" data-k="cantina rino sartori via calandrine 14 cantina san pietro in cariano" data-name="Cantina Rino Sartori" data-loc="Via Calandrine 14" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1343,7 +1354,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="mizzon via quar 23 cantina san pietro in cariano" data-name="Mizzon" data-loc="Via Quar 23" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="mizzon via quar 23 cantina san pietro in cariano" data-name="Mizzon" data-loc="Via Quar 23" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1358,7 +1369,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="villa crine via della contea 46 cantina san pietro in cariano" data-name="Villa Crine" data-loc="Via della Contea 46" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="villa crine via della contea 46 cantina san pietro in cariano" data-name="Villa Crine" data-loc="Via della Contea 46" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1373,7 +1384,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="flatìo via cariano 20 cantina san pietro in cariano" data-name="FlaTìo" data-loc="Via Cariano 20" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="flatìo via cariano 20 cantina san pietro in cariano" data-name="FlaTìo" data-loc="Via Cariano 20" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1388,7 +1399,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="corte saibante via cariano 16/d cantina san pietro in cariano" data-name="Corte Saibante" data-loc="Via Cariano 16/D" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="corte saibante via cariano 16/d cantina san pietro in cariano" data-name="Corte Saibante" data-loc="Via Cariano 16/D" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1396,14 +1407,14 @@
           <div class="card-kicker">Cantina · Via Cariano 16/D</div>
           <h3>Corte Saibante</h3>
           <p>Progetto nato dalla passione per i vigneti di famiglia e dalla volontà di valorizzare una cultura enologica secolare, tra le colline e le dimore storiche di San Pietro in Cariano.</p>
-          <div class="card-meta"><span><a href="tel:+393397700194">☏ 339 770 0194</a></span><span><a href="https://www.cortesaibante.com" target="_blank" rel="noopener">www.cortesaibante.com ↗</a></span></div>
+          <div class="card-meta"><span><a href="tel:+393397700194">☏ 339 770 0194</a></span><span><a href="https://www.cortesaibante.com" target="_blank" rel="noopener">www.cortesaibante.com ↗</a></span><span><a href="mailto:info@cortesaibante.com">✉ info@cortesaibante.com</a></span></div>
           <div class="card-foot">
             <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Corte%20Saibante%20Via%20Cariano%2016/D%20San%20Pietro%20in%20Cariano%20VR" target="_blank" rel="noopener">◉ Dove si trova</a>
             <a class="mapbtn alt" href="https://www.google.com/maps/dir/?api=1&destination=Corte%20Saibante%20Via%20Cariano%2016/D%20San%20Pietro%20in%20Cariano%20VR" target="_blank" rel="noopener">➤ Come arrivare</a>
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro" data-k="monte faustino (fornaser paolo) via bure alto 1 cantina san pietro in cariano" data-name="Monte Faustino (Fornaser Paolo)" data-loc="Via Bure Alto 1" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro" data-k="monte faustino (fornaser paolo) via bure alto 1 cantina san pietro in cariano" data-name="Monte Faustino (Fornaser Paolo)" data-loc="Via Bure Alto 1" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1418,7 +1429,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro" data-k="cantina fornaser via s. maddalena di canossa 10, bure cantina san pietro in cariano" data-name="Cantina Fornaser" data-loc="Via S. Maddalena di Canossa 10, Bure" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro" data-k="cantina fornaser via s. maddalena di canossa 10, bure cantina san pietro in cariano" data-name="Cantina Fornaser" data-loc="Via S. Maddalena di Canossa 10, Bure" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1433,7 +1444,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="palazzo montanari via bure alto 11/a cantina san pietro in cariano" data-name="Palazzo Montanari" data-loc="Via Bure Alto 11/A" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="palazzo montanari via bure alto 11/a cantina san pietro in cariano" data-name="Palazzo Montanari" data-loc="Via Bure Alto 11/A" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1448,7 +1459,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro" data-k="villa san pietro winery via poiano 2a cantina san pietro in cariano" data-name="Villa San Pietro Winery" data-loc="Via Poiano 2a" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro" data-k="villa san pietro winery via poiano 2a cantina san pietro in cariano" data-name="Villa San Pietro Winery" data-loc="Via Poiano 2a" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1463,7 +1474,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro" data-k="corte casterna (sterza nicola) via a. volta 6 cantina san pietro in cariano" data-name="Corte Casterna (Sterza Nicola)" data-loc="Via A. Volta 6" data-cat="cantina">
+      <article data-wiki="San Pietro in Cariano" data-amb="1" class="card" data-c="cantina sanpietro" data-k="corte casterna (sterza nicola) via a. volta 6 cantina san pietro in cariano" data-name="Corte Casterna (Sterza Nicola)" data-loc="Via A. Volta 6" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1478,7 +1489,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina sanpietro completa" data-k="borghetti giampiero via belvedere 27 cantina san pietro in cariano" data-name="Borghetti Giampiero" data-loc="Via Belvedere 27" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina sanpietro completa" data-k="borghetti giampiero via belvedere 27 cantina san pietro in cariano" data-name="Borghetti Giampiero" data-loc="Via Belvedere 27" data-cat="cantina">
         <div class="card-img"><span class="card-tag">San Pietro in C.</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1493,7 +1504,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="campagnola giuseppe agnella 9 cantina marano di valpolicella" data-name="Campagnola Giuseppe" data-loc="Agnella 9" data-cat="cantina">
+      <article data-wiki="Marano di Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="campagnola giuseppe agnella 9 cantina marano di valpolicella" data-name="Campagnola Giuseppe" data-loc="Agnella 9" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1508,7 +1519,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="albino armani – valpolicella loc. camporal cantina marano di valpolicella" data-name="Albino Armani – Valpolicella" data-loc="Loc. Camporal" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="albino armani – valpolicella loc. camporal cantina marano di valpolicella" data-name="Albino Armani – Valpolicella" data-loc="Loc. Camporal" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1523,7 +1534,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="castellani michele &amp; figli via granda 1 cantina marano di valpolicella" data-name="Castellani Michele &amp; Figli" data-loc="Via Granda 1" data-cat="cantina">
+      <article data-wiki="Marano di Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="castellani michele &amp; figli via granda 1 cantina marano di valpolicella" data-name="Castellani Michele &amp; Figli" data-loc="Via Granda 1" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1538,7 +1549,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="cà la bionda via bionda 4, valgatara cantina marano di valpolicella" data-name="Cà La Bionda" data-loc="Via Bionda 4, Valgatara" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="cà la bionda via bionda 4, valgatara cantina marano di valpolicella" data-name="Cà La Bionda" data-loc="Via Bionda 4, Valgatara" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1553,7 +1564,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="novaia via novaia 1 cantina marano di valpolicella" data-name="Novaia" data-loc="Via Novaia 1" data-cat="cantina">
+      <article data-wiki="Marano di Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="novaia via novaia 1 cantina marano di valpolicella" data-name="Novaia" data-loc="Via Novaia 1" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1568,7 +1579,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="san rustico dal 1870 via pozzo 2 cantina marano di valpolicella" data-name="San Rustico dal 1870" data-loc="Via Pozzo 2" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="san rustico dal 1870 via pozzo 2 cantina marano di valpolicella" data-name="San Rustico dal 1870" data-loc="Via Pozzo 2" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1583,7 +1594,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="tenuta santa maria valverde loc. gazzo 4 cantina marano di valpolicella" data-name="Tenuta Santa Maria Valverde" data-loc="Loc. Gazzo 4" data-cat="cantina">
+      <article data-wiki="Marano di Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="tenuta santa maria valverde loc. gazzo 4 cantina marano di valpolicella" data-name="Tenuta Santa Maria Valverde" data-loc="Loc. Gazzo 4" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1598,7 +1609,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="le marognole via marognole 7 cantina marano di valpolicella" data-name="Le Marognole" data-loc="Via Marognole 7" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="le marognole via marognole 7 cantina marano di valpolicella" data-name="Le Marognole" data-loc="Via Marognole 7" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1613,7 +1624,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="le bignele (aldrighetti) via biniele 4, valgatara cantina marano di valpolicella" data-name="Le Bignele (Aldrighetti)" data-loc="Via Biniele 4, Valgatara" data-cat="cantina">
+      <article data-wiki="Marano di Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="le bignele (aldrighetti) via biniele 4, valgatara cantina marano di valpolicella" data-name="Le Bignele (Aldrighetti)" data-loc="Via Biniele 4, Valgatara" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1628,7 +1639,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="gamba via gnirega 19, valgatara cantina marano di valpolicella" data-name="Gamba" data-loc="Via Gnirega 19, Valgatara" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="gamba via gnirega 19, valgatara cantina marano di valpolicella" data-name="Gamba" data-loc="Via Gnirega 19, Valgatara" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1643,7 +1654,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="corte archi – fernando campagnola via paverno 21, valgatara cantina marano di valpolicella" data-name="Corte Archi – Fernando Campagnola" data-loc="Via Paverno 21, Valgatara" data-cat="cantina">
+      <article data-wiki="Marano di Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="corte archi – fernando campagnola via paverno 21, valgatara cantina marano di valpolicella" data-name="Corte Archi – Fernando Campagnola" data-loc="Via Paverno 21, Valgatara" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1658,7 +1669,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="vaona odino via paverno 41 cantina marano di valpolicella" data-name="Vaona Odino" data-loc="Via Paverno 41" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="vaona odino via paverno 41 cantina marano di valpolicella" data-name="Vaona Odino" data-loc="Via Paverno 41" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1673,7 +1684,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="corte rugolin via rugolin 1 cantina marano di valpolicella" data-name="Corte Rugolin" data-loc="Via Rugolin 1" data-cat="cantina">
+      <article data-wiki="Marano di Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="corte rugolin via rugolin 1 cantina marano di valpolicella" data-name="Corte Rugolin" data-loc="Via Rugolin 1" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1681,14 +1692,14 @@
           <div class="card-kicker">Cantina · Via Rugolin 1</div>
           <h3>Corte Rugolin</h3>
           <p>Azienda familiare della contrada Rugolin, a Valgatara, condotta da Elena e Federico Coati.</p>
-          <div class="card-meta"><span><a href="tel:+390457702153">☏ 045 770 2153</a></span><span><a href="https://www.corterugolin.it" target="_blank" rel="noopener">www.corterugolin.it ↗</a></span></div>
+          <div class="card-meta"><span><a href="tel:+390457702153">☏ 045 770 2153</a></span><span><a href="https://www.corterugolin.it" target="_blank" rel="noopener">www.corterugolin.it ↗</a></span><span><a href="mailto:info@corterugolin.it">✉ info@corterugolin.it</a></span></div>
           <div class="card-foot">
             <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Corte%20Rugolin%20Via%20Rugolin%201%20Marano%20di%20Valpolicella%20VR" target="_blank" rel="noopener">◉ Dove si trova</a>
             <a class="mapbtn alt" href="https://www.google.com/maps/dir/?api=1&destination=Corte%20Rugolin%20Via%20Rugolin%201%20Marano%20di%20Valpolicella%20VR" target="_blank" rel="noopener">➤ Come arrivare</a>
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="corte borghetti via praele 19, prognol cantina marano di valpolicella" data-name="Corte Borghetti" data-loc="Via Praele 19, Prognol" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="corte borghetti via praele 19, prognol cantina marano di valpolicella" data-name="Corte Borghetti" data-loc="Via Praele 19, Prognol" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1703,7 +1714,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="corte fornaledo purano cantina marano di valpolicella" data-name="Corte Fornaledo" data-loc="Purano" data-cat="cantina">
+      <article data-wiki="Marano di Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="corte fornaledo purano cantina marano di valpolicella" data-name="Corte Fornaledo" data-loc="Purano" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1718,7 +1729,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano" data-k="filippini via monte 1, sant&#x27;urbano cantina marano di valpolicella" data-name="Filippini" data-loc="Via Monte 1, Sant&#x27;Urbano" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina marano" data-k="filippini via monte 1, sant&#x27;urbano cantina marano di valpolicella" data-name="Filippini" data-loc="Via Monte 1, Sant&#x27;Urbano" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1733,7 +1744,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano completa" data-k="vantorosso via badin 16, valgatara cantina marano di valpolicella" data-name="Vantorosso" data-loc="Via Badin 16, Valgatara" data-cat="cantina">
+      <article data-wiki="Marano di Valpolicella" data-amb="1" class="card" data-c="cantina marano completa" data-k="vantorosso via badin 16, valgatara cantina marano di valpolicella" data-name="Vantorosso" data-loc="Via Badin 16, Valgatara" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1748,7 +1759,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina marano" data-k="lonardi alessandro (bio) via campel 3/a cantina marano di valpolicella" data-name="Lonardi Alessandro (bio)" data-loc="Via Campel 3/a" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina marano" data-k="lonardi alessandro (bio) via campel 3/a cantina marano di valpolicella" data-name="Lonardi Alessandro (bio)" data-loc="Via Campel 3/a" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Marano</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1808,7 +1819,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="le salette via pio brugnoli 11 cantina fumane" data-name="Le Salette" data-loc="Via Pio Brugnoli 11" data-cat="cantina">
+      <article data-wiki="Fumane" data-amb="1" class="card" data-c="cantina fumane completa" data-k="le salette via pio brugnoli 11 cantina fumane" data-name="Le Salette" data-loc="Via Pio Brugnoli 11" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1816,14 +1827,14 @@
           <div class="card-kicker">Cantina · Via Pio Brugnoli 11</div>
           <h3>Le Salette</h3>
           <p>Azienda agricola di Fumane specializzata nella produzione di Amarone, Valpolicella e degli altri vini classici del territorio.</p>
-          <div class="card-meta"><span><a href="tel:+390457701027">☏ 045 770 1027</a></span></div>
+          <div class="card-meta"><span><a href="tel:+390457701027">☏ 045 770 1027</a></span><span><a href="https://www.lesalette.it" target="_blank" rel="noopener">lesalette.it ↗</a></span></div>
           <div class="card-foot">
             <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Le%20Salette%20Via%20Pio%20Brugnoli%2011%20Fumane%20VR" target="_blank" rel="noopener">◉ Dove si trova</a>
             <a class="mapbtn alt" href="https://www.google.com/maps/dir/?api=1&destination=Le%20Salette%20Via%20Pio%20Brugnoli%2011%20Fumane%20VR" target="_blank" rel="noopener">➤ Come arrivare</a>
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane" data-k="secondo marco via campolongo 9 cantina fumane" data-name="Secondo Marco" data-loc="Via Campolongo 9" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina fumane" data-k="secondo marco via campolongo 9 cantina fumane" data-name="Secondo Marco" data-loc="Via Campolongo 9" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1838,7 +1849,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane" data-k="scriani via ponte scrivan 7 cantina fumane" data-name="Scriani" data-loc="Via Ponte Scrivan 7" data-cat="cantina">
+      <article data-wiki="Fumane" data-amb="1" class="card" data-c="cantina fumane" data-k="scriani via ponte scrivan 7 cantina fumane" data-name="Scriani" data-loc="Via Ponte Scrivan 7" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1853,7 +1864,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="flavio cottini via ponte scrivan 21/a cantina fumane" data-name="Flavio Cottini" data-loc="Via Ponte Scrivan 21/A" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina fumane completa" data-k="flavio cottini via ponte scrivan 21/a cantina fumane" data-name="Flavio Cottini" data-loc="Via Ponte Scrivan 21/A" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1868,7 +1879,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="paolo cottini via s. micheletto 3 cantina fumane" data-name="Paolo Cottini" data-loc="Via S. Micheletto 3" data-cat="cantina">
+      <article data-wiki="Fumane" data-amb="1" class="card" data-c="cantina fumane completa" data-k="paolo cottini via s. micheletto 3 cantina fumane" data-name="Paolo Cottini" data-loc="Via S. Micheletto 3" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1883,7 +1894,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane" data-k="marco cottini via casetta 11/b cantina fumane" data-name="Marco Cottini" data-loc="Via Casetta 11/B" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina fumane" data-k="marco cottini via casetta 11/b cantina fumane" data-name="Marco Cottini" data-loc="Via Casetta 11/B" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1898,7 +1909,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="accordini stefano loc. camparol 10 cantina fumane" data-name="Accordini Stefano" data-loc="Loc. Camparol 10" data-cat="cantina">
+      <article data-wiki="Fumane" data-amb="1" class="card" data-c="cantina fumane completa" data-k="accordini stefano loc. camparol 10 cantina fumane" data-name="Accordini Stefano" data-loc="Loc. Camparol 10" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1913,7 +1924,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="corteforte via osan 45 cantina fumane" data-name="Corteforte" data-loc="Via Osan 45" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina fumane completa" data-k="corteforte via osan 45 cantina fumane" data-name="Corteforte" data-loc="Via Osan 45" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1928,7 +1939,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="le bertarole via bertarole 8a cantina fumane" data-name="Le Bertarole" data-loc="Via Bertarole 8A" data-cat="cantina">
+      <article data-wiki="Fumane" data-amb="1" class="card" data-c="cantina fumane completa" data-k="le bertarole via bertarole 8a cantina fumane" data-name="Le Bertarole" data-loc="Via Bertarole 8A" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1943,7 +1954,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="valentina cubi via casterna 60 cantina fumane" data-name="Valentina Cubi" data-loc="Via Casterna 60" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina fumane completa" data-k="valentina cubi via casterna 60 cantina fumane" data-name="Valentina Cubi" data-loc="Via Casterna 60" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1958,7 +1969,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane completa" data-k="cavarena via cavarena di sopra 10, mazzurega cantina fumane" data-name="Cavarena" data-loc="Via Cavarena di Sopra 10, Mazzurega" data-cat="cantina">
+      <article data-wiki="Fumane" data-amb="1" class="card" data-c="cantina fumane completa" data-k="cavarena via cavarena di sopra 10, mazzurega cantina fumane" data-name="Cavarena" data-loc="Via Cavarena di Sopra 10, Mazzurega" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1973,7 +1984,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane" data-k="el pendola via volta cantina fumane" data-name="El Pendola" data-loc="Via Volta" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina fumane" data-k="el pendola via volta cantina fumane" data-name="El Pendola" data-loc="Via Volta" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -1988,7 +1999,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina fumane" data-k="terre di fumane via f. pellegrini 46 cantina fumane" data-name="Terre di Fumane" data-loc="Via F. Pellegrini 46" data-cat="cantina">
+      <article data-wiki="Fumane" data-amb="1" class="card" data-c="cantina fumane" data-k="terre di fumane via f. pellegrini 46 cantina fumane" data-name="Terre di Fumane" data-loc="Via F. Pellegrini 46" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2033,7 +2044,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina santambrogio completa" data-k="boscaini carlo via sengia 15 cantina sant&#x27;ambrogio di valpolicella" data-name="Boscaini Carlo" data-loc="Via Sengia 15" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina santambrogio completa" data-k="boscaini carlo via sengia 15 cantina sant&#x27;ambrogio di valpolicella" data-name="Boscaini Carlo" data-loc="Via Sengia 15" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2048,7 +2059,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina santambrogio completa" data-k="aldegheri via a. volta 9 cantina sant&#x27;ambrogio di valpolicella" data-name="Aldegheri" data-loc="Via A. Volta 9" data-cat="cantina">
+      <article data-wiki="Sant'Ambrogio di Valpolicella" data-amb="1" class="card" data-c="cantina santambrogio completa" data-k="aldegheri via a. volta 9 cantina sant&#x27;ambrogio di valpolicella" data-name="Aldegheri" data-loc="Via A. Volta 9" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2056,14 +2067,14 @@
           <div class="card-kicker">Cantina · Via A. Volta 9</div>
           <h3>Aldegheri</h3>
           <p>Cantina di Sant&#x27;Ambrogio di Valpolicella, in via Alessandro Volta.</p>
-          <div class="card-meta"><span><a href="tel:+390456861356">☏ 045 686 1356</a></span><span><a href="https://www.cantinealdegheri.it" target="_blank" rel="noopener">www.cantinealdegheri.it ↗</a></span></div>
+          <div class="card-meta"><span><a href="tel:+390456861356">☏ 045 686 1356</a></span><span><a href="https://www.cantinealdegheri.it" target="_blank" rel="noopener">www.cantinealdegheri.it ↗</a></span><span><a href="mailto:aldegheri@cantinealdegheri.it">✉ aldegheri@cantinealdegheri.it</a></span></div>
           <div class="card-foot">
             <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Aldegheri%20Via%20A.%20Volta%209%20Sant%27Ambrogio%20di%20Valpolicella%20VR" target="_blank" rel="noopener">◉ Dove si trova</a>
             <a class="mapbtn alt" href="https://www.google.com/maps/dir/?api=1&destination=Aldegheri%20Via%20A.%20Volta%209%20Sant%27Ambrogio%20di%20Valpolicella%20VR" target="_blank" rel="noopener">➤ Come arrivare</a>
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina santambrogio" data-k="meroni via roma 16/a cantina sant&#x27;ambrogio di valpolicella" data-name="Meroni" data-loc="Via Roma 16/a" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina santambrogio" data-k="meroni via roma 16/a cantina sant&#x27;ambrogio di valpolicella" data-name="Meroni" data-loc="Via Roma 16/a" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2078,7 +2089,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina santambrogio" data-k="eleva case sparse conca d&#x27;oro 21 cantina sant&#x27;ambrogio di valpolicella" data-name="Eleva" data-loc="Case Sparse Conca d&#x27;Oro 21" data-cat="cantina">
+      <article data-wiki="Sant'Ambrogio di Valpolicella" data-amb="1" class="card" data-c="cantina santambrogio" data-k="eleva case sparse conca d&#x27;oro 21 cantina sant&#x27;ambrogio di valpolicella" data-name="Eleva" data-loc="Case Sparse Conca d&#x27;Oro 21" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2093,7 +2104,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina santambrogio completa" data-k="cantine benedetti – corte antica prunea di sotto 5, gargagnago cantina sant&#x27;ambrogio di valpolicella" data-name="Cantine Benedetti – Corte Antica" data-loc="Prunea di Sotto 5, Gargagnago" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina santambrogio completa" data-k="cantine benedetti – corte antica prunea di sotto 5, gargagnago cantina sant&#x27;ambrogio di valpolicella" data-name="Cantine Benedetti – Corte Antica" data-loc="Prunea di Sotto 5, Gargagnago" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2108,7 +2119,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina santambrogio completa" data-k="corte bravi case sparse vaioi 8, gargagnago cantina sant&#x27;ambrogio di valpolicella" data-name="Corte Bravi" data-loc="Case Sparse Vaioi 8, Gargagnago" data-cat="cantina">
+      <article data-wiki="Sant'Ambrogio di Valpolicella" data-amb="1" class="card" data-c="cantina santambrogio completa" data-k="corte bravi case sparse vaioi 8, gargagnago cantina sant&#x27;ambrogio di valpolicella" data-name="Corte Bravi" data-loc="Case Sparse Vaioi 8, Gargagnago" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2123,7 +2134,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina santambrogio" data-k="corte aleardi via giare 208 cantina sant&#x27;ambrogio di valpolicella" data-name="Corte Aleardi" data-loc="Via Giare 208" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina santambrogio" data-k="corte aleardi via giare 208 cantina sant&#x27;ambrogio di valpolicella" data-name="Corte Aleardi" data-loc="Via Giare 208" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2138,7 +2149,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina santambrogio" data-k="villa monteleone via monteleone 12 cantina sant&#x27;ambrogio di valpolicella" data-name="Villa Monteleone" data-loc="Via Monteleone 12" data-cat="cantina">
+      <article data-wiki="Sant'Ambrogio di Valpolicella" data-amb="1" class="card" data-c="cantina santambrogio" data-k="villa monteleone via monteleone 12 cantina sant&#x27;ambrogio di valpolicella" data-name="Villa Monteleone" data-loc="Via Monteleone 12" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2153,7 +2164,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina pescantina completa" data-k="monteci via s. michele 34 cantina pescantina" data-name="Monteci" data-loc="Via S. Michele 34" data-cat="cantina">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="cantina pescantina completa" data-k="monteci via s. michele 34 cantina pescantina" data-name="Monteci" data-loc="Via S. Michele 34" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Pescantina</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2168,7 +2179,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina pescantina completa" data-k="fugolo gianluca via moceniga 38 cantina pescantina" data-name="Fugolo Gianluca" data-loc="Via Moceniga 38" data-cat="cantina">
+      <article data-wiki="Pescantina" data-amb="1" class="card" data-c="cantina pescantina completa" data-k="fugolo gianluca via moceniga 38 cantina pescantina" data-name="Fugolo Gianluca" data-loc="Via Moceniga 38" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Pescantina</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2183,7 +2194,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina pescantina" data-k="tenuta vignega via cà vignega 20 cantina pescantina" data-name="Tenuta Vignega" data-loc="Via Cà Vignega 20" data-cat="cantina">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="cantina pescantina" data-k="tenuta vignega via cà vignega 20 cantina pescantina" data-name="Tenuta Vignega" data-loc="Via Cà Vignega 20" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Pescantina</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2198,7 +2209,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina dolce completa" data-k="albino armani (sede storica) via ceradello 401 cantina dolcè" data-name="Albino Armani (sede storica)" data-loc="Via Ceradello 401" data-cat="cantina">
+      <article data-wiki="Dolcè" data-amb="1" class="card" data-c="cantina dolce completa" data-k="albino armani (sede storica) via ceradello 401 cantina dolcè" data-name="Albino Armani (sede storica)" data-loc="Via Ceradello 401" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Dolcè</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2213,7 +2224,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="cantina dolce completa" data-k="cantina vini armani a. via ceradello 401 cantina dolcè" data-name="Cantina Vini Armani A." data-loc="Via Ceradello 401" data-cat="cantina">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="cantina dolce completa" data-k="cantina vini armani a. via ceradello 401 cantina dolcè" data-name="Cantina Vini Armani A." data-loc="Via Ceradello 401" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Dolcè</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E3D6BE"/><path d="M0 118 C60 96 120 132 180 108 C230 88 270 112 300 100 L300 150 L0 150 Z" fill="#52702C" opacity=".32"/><g fill="#1C6E31" opacity=".85"><rect x="96" y="58" width="40" height="56" rx="8"/><rect x="146" y="50" width="40" height="64" rx="8"/><rect x="196" y="62" width="40" height="52" rx="8"/></g><g stroke="#E3D6BE" stroke-width="3" opacity=".7"><path d="M96 78 H136 M96 96 H136 M146 72 H186 M146 94 H186 M196 82 H236 M196 100 H236"/></g></svg>
         </div>
@@ -2228,7 +2239,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="ristoro negrar" data-k="agriturismo el bocolar loc. fava ristorazione negrar di valpolicella" data-name="Agriturismo el Bocolar" data-loc="Loc. Fava" data-cat="ristoro">
+      <article data-wiki="Negrar di Valpolicella" data-amb="1" class="card" data-c="ristoro negrar" data-k="agriturismo el bocolar loc. fava ristorazione negrar di valpolicella" data-name="Agriturismo el Bocolar" data-loc="Loc. Fava" data-cat="ristoro">
         <div class="card-img"><span class="card-tag">Negrar</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E7D8C4"/><circle cx="150" cy="86" r="40" fill="#F4F2EA" stroke="#C9A06C" stroke-width="3"/><circle cx="150" cy="86" r="26" fill="#DCCBB0"/><path d="M92 48 V128 M84 48 V72 Q84 80 92 80 Q100 80 100 72 V48" fill="none" stroke="#1C6E31" stroke-width="3.5"/><path d="M212 48 V128 M212 48 Q222 60 212 82" fill="none" stroke="#1C6E31" stroke-width="3.5"/></svg>
         </div>
@@ -2243,7 +2254,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="ristoro santambrogio" data-k="villa san giorgio conca d&#x27;oro 1, san giorgio ristorazione sant&#x27;ambrogio di valpolicella" data-name="Villa San Giorgio" data-loc="Conca d&#x27;Oro 1, San Giorgio" data-cat="ristoro">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="ristoro santambrogio" data-k="villa san giorgio conca d&#x27;oro 1, san giorgio ristorazione sant&#x27;ambrogio di valpolicella" data-name="Villa San Giorgio" data-loc="Conca d&#x27;Oro 1, San Giorgio" data-cat="ristoro">
         <div class="card-img"><span class="card-tag">Sant&#x27;Ambrogio</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E7D8C4"/><circle cx="150" cy="86" r="40" fill="#F4F2EA" stroke="#C9A06C" stroke-width="3"/><circle cx="150" cy="86" r="26" fill="#DCCBB0"/><path d="M92 48 V128 M84 48 V72 Q84 80 92 80 Q100 80 100 72 V48" fill="none" stroke="#1C6E31" stroke-width="3.5"/><path d="M212 48 V128 M212 48 Q222 60 212 82" fill="none" stroke="#1C6E31" stroke-width="3.5"/></svg>
         </div>
@@ -2258,7 +2269,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="ristoro fumane" data-k="corteforte via osan 45 ristorazione fumane" data-name="Corteforte" data-loc="Via Osan 45" data-cat="ristoro">
+      <article data-wiki="Fumane" data-amb="1" class="card" data-c="ristoro fumane" data-k="corteforte via osan 45 ristorazione fumane" data-name="Corteforte" data-loc="Via Osan 45" data-cat="ristoro">
         <div class="card-img"><span class="card-tag">Fumane</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E7D8C4"/><circle cx="150" cy="86" r="40" fill="#F4F2EA" stroke="#C9A06C" stroke-width="3"/><circle cx="150" cy="86" r="26" fill="#DCCBB0"/><path d="M92 48 V128 M84 48 V72 Q84 80 92 80 Q100 80 100 72 V48" fill="none" stroke="#1C6E31" stroke-width="3.5"/><path d="M212 48 V128 M212 48 Q222 60 212 82" fill="none" stroke="#1C6E31" stroke-width="3.5"/></svg>
         </div>
@@ -2273,7 +2284,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="ristoro pescantina" data-k="villa quaranta via ospedaletto 57 ristorazione pescantina" data-name="Villa Quaranta" data-loc="Via Ospedaletto 57" data-cat="ristoro">
+      <article data-wiki="Amarone della Valpolicella" data-amb="1" class="card" data-c="ristoro pescantina" data-k="villa quaranta via ospedaletto 57 ristorazione pescantina" data-name="Villa Quaranta" data-loc="Via Ospedaletto 57" data-cat="ristoro">
         <div class="card-img"><span class="card-tag">Pescantina</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E7D8C4"/><circle cx="150" cy="86" r="40" fill="#F4F2EA" stroke="#C9A06C" stroke-width="3"/><circle cx="150" cy="86" r="26" fill="#DCCBB0"/><path d="M92 48 V128 M84 48 V72 Q84 80 92 80 Q100 80 100 72 V48" fill="none" stroke="#1C6E31" stroke-width="3.5"/><path d="M212 48 V128 M212 48 Q222 60 212 82" fill="none" stroke="#1C6E31" stroke-width="3.5"/></svg>
         </div>
@@ -2288,7 +2299,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="ristoro santanna" data-k="agriturismo alle vallene via vallene 7 ristorazione sant&#x27;anna d&#x27;alfaedo" data-name="Agriturismo alle Vallene" data-loc="Via Vallene 7" data-cat="ristoro">
+      <article data-wiki="Sant'Anna d'Alfaedo" data-amb="1" class="card" data-c="ristoro santanna" data-k="agriturismo alle vallene via vallene 7 ristorazione sant&#x27;anna d&#x27;alfaedo" data-name="Agriturismo alle Vallene" data-loc="Via Vallene 7" data-cat="ristoro">
         <div class="card-img"><span class="card-tag">Sant&#x27;Anna d&#x27;Alfaedo</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E7D8C4"/><circle cx="150" cy="86" r="40" fill="#F4F2EA" stroke="#C9A06C" stroke-width="3"/><circle cx="150" cy="86" r="26" fill="#DCCBB0"/><path d="M92 48 V128 M84 48 V72 Q84 80 92 80 Q100 80 100 72 V48" fill="none" stroke="#1C6E31" stroke-width="3.5"/><path d="M212 48 V128 M212 48 Q222 60 212 82" fill="none" stroke="#1C6E31" stroke-width="3.5"/></svg>
         </div>
@@ -2303,7 +2314,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="ristoro santanna" data-k="agriturismo le coste loc. coste, tommasi ristorazione sant&#x27;anna d&#x27;alfaedo" data-name="Agriturismo Le Coste" data-loc="Loc. Coste, Tommasi" data-cat="ristoro">
+      <article data-wiki="Valpolicella" data-amb="1" class="card" data-c="ristoro santanna" data-k="agriturismo le coste loc. coste, tommasi ristorazione sant&#x27;anna d&#x27;alfaedo" data-name="Agriturismo Le Coste" data-loc="Loc. Coste, Tommasi" data-cat="ristoro">
         <div class="card-img"><span class="card-tag">Sant&#x27;Anna d&#x27;Alfaedo</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E7D8C4"/><circle cx="150" cy="86" r="40" fill="#F4F2EA" stroke="#C9A06C" stroke-width="3"/><circle cx="150" cy="86" r="26" fill="#DCCBB0"/><path d="M92 48 V128 M84 48 V72 Q84 80 92 80 Q100 80 100 72 V48" fill="none" stroke="#1C6E31" stroke-width="3.5"/><path d="M212 48 V128 M212 48 Q222 60 212 82" fill="none" stroke="#1C6E31" stroke-width="3.5"/></svg>
         </div>
@@ -2318,7 +2329,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="ristoro dolce" data-k="agriturismo la cà via corno d&#x27;aquilio ristorazione dolcè" data-name="Agriturismo La Cà" data-loc="Via Corno d&#x27;Aquilio" data-cat="ristoro">
+      <article data-wiki="Dolcè" data-amb="1" class="card" data-c="ristoro dolce" data-k="agriturismo la cà via corno d&#x27;aquilio ristorazione dolcè" data-name="Agriturismo La Cà" data-loc="Via Corno d&#x27;Aquilio" data-cat="ristoro">
         <div class="card-img"><span class="card-tag">Dolcè</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E7D8C4"/><circle cx="150" cy="86" r="40" fill="#F4F2EA" stroke="#C9A06C" stroke-width="3"/><circle cx="150" cy="86" r="26" fill="#DCCBB0"/><path d="M92 48 V128 M84 48 V72 Q84 80 92 80 Q100 80 100 72 V48" fill="none" stroke="#1C6E31" stroke-width="3.5"/><path d="M212 48 V128 M212 48 Q222 60 212 82" fill="none" stroke="#1C6E31" stroke-width="3.5"/></svg>
         </div>
@@ -2333,7 +2344,7 @@
           </div>
         </div>
       </article>
-      <article class="card" data-c="ristoro santanna" data-k="le malghe dell’alta valpolicella e lessinia altopiano della lessinia ristorazione sant&#x27;anna d&#x27;alfaedo" data-name="Le malghe dell’Alta Valpolicella e Lessinia" data-loc="Altopiano della Lessinia" data-cat="ristoro">
+      <article data-wiki="Recioto della Valpolicella" data-amb="1" class="card" data-c="ristoro santanna" data-k="le malghe dell’alta valpolicella e lessinia altopiano della lessinia ristorazione sant&#x27;anna d&#x27;alfaedo" data-name="Le malghe dell’Alta Valpolicella e Lessinia" data-loc="Altopiano della Lessinia" data-cat="ristoro">
         <div class="card-img"><span class="card-tag">Sant&#x27;Anna d&#x27;Alfaedo</span>
           <svg viewBox="0 0 300 150"><rect width="300" height="150" fill="#E7D8C4"/><circle cx="150" cy="86" r="40" fill="#F4F2EA" stroke="#C9A06C" stroke-width="3"/><circle cx="150" cy="86" r="26" fill="#DCCBB0"/><path d="M92 48 V128 M84 48 V72 Q84 80 92 80 Q100 80 100 72 V48" fill="none" stroke="#1C6E31" stroke-width="3.5"/><path d="M212 48 V128 M212 48 Q222 60 212 82" fill="none" stroke="#1C6E31" stroke-width="3.5"/></svg>
         </div>
@@ -2452,6 +2463,36 @@
 
 
 
+
+  // ====== PULSANTI «CHIAMA / PRENOTA / SITO» SULLE SCHEDE ======
+  // Legge telefono, e-mail e sito presenti nella scheda (scritti nel codice o
+  // arrivati da OpenStreetMap / Google) e li trasforma in pulsanti di prenotazione.
+  window.buildAct=function(card){
+    var meta=card.querySelector('.card-meta'); if(!meta)return;
+    var tel=meta.querySelector('a[href^="tel:"]');
+    var mail=meta.querySelector('a[href^="mailto:"]');
+    var web=meta.querySelector('a[href^="http"]');
+    var act=card.querySelector('.card-act');
+    if(!tel&&!mail&&!web){ if(act)act.remove(); return; }
+    if(!act){act=document.createElement('div');act.className='card-act';meta.parentNode.appendChild(act);}
+    act.innerHTML='';
+    var h3=card.querySelector('h3');
+    var nome=card.dataset.name||(h3?h3.textContent:'');
+    if(tel){var a=document.createElement('a');a.href=tel.getAttribute('href');a.textContent='☏ Chiama';act.appendChild(a);}
+    if(mail){var m=document.createElement('a');m.className='primo';
+      m.href=mail.getAttribute('href').split('?')[0]
+        +'?subject='+encodeURIComponent('Prenotazione — '+nome)
+        +'&body='+encodeURIComponent('Buongiorno,\nvorrei prenotare presso '+nome+'.\nData:\nPersone:\n\nGrazie.\n(richiesta inviata dal portale del Distretto Turistico Valpolicella)');
+      m.textContent='✉ Prenota'; act.appendChild(m);}
+    if(web){var w=document.createElement('a');w.href=web.getAttribute('href');w.target='_blank';w.rel='noopener';w.textContent='Sito ↗';act.appendChild(w);}
+  };
+  (function(){
+    ['luoghi-cards','cantine-cards','hotel-cards'].forEach(function(id){
+      var g=document.getElementById(id); if(!g)return;
+      g.querySelectorAll('article.card').forEach(window.buildAct);
+    });
+  })();
+
   // ====== CONTATTI DA OPENSTREETMAP (gratuito, senza chiave) ======
   // Una sola richiesta per visita all'API Overpass: integra telefono, sito ed e-mail
   // SOLO dove mancano, confrontando i nomi. Se l'API non risponde, non cambia nulla.
@@ -2524,7 +2565,7 @@
           g.querySelectorAll('article.card').forEach(function(c){
             var nome=c.dataset.name; if(!nome)return;
             for(var i=0;i<els.length;i++){
-              if(match(nome,els[i].tags.name)){applica(c,els[i].tags);break;}
+              if(match(nome,els[i].tags.name)){applica(c,els[i].tags);if(window.buildAct)window.buildAct(c);break;}
             }
           });
         });
@@ -2557,13 +2598,15 @@
     function arricchisci(card,place){
       var box=card.querySelector('.card-img');
       var foto=place.photos&&place.photos[0];
-      if(box&&foto&&foto.name&&!box.querySelector('.gb-img')&&!box.querySelector('.wiki-img')){
+      if(box&&foto&&foto.name&&!box.querySelector('.gb-img')&&!box.querySelector('.wiki-img:not(.amb)')){
         var attr=(foto.authorAttributions&&foto.authorAttributions[0]&&foto.authorAttributions[0].displayName)||'';
         var img=new Image();
         img.className='gb-img'; img.loading='lazy'; img.decoding='async';
         img.alt=(card.dataset.name||'')+' — foto dalla scheda Google';
         if(attr)img.title='Foto: '+attr+' · Google';
         img.onload=function(){
+          var amb=box.querySelector('.wiki-img.amb');
+          if(amb){amb.remove(); var wb=box.querySelector('.wiki-badge'); if(wb)wb.remove();}
           if(place.googleMapsUri&&!box.querySelector('.gb-badge')){
             var a=document.createElement('a');
             a.className='gb-badge'; a.href=place.googleMapsUri; a.target='_blank'; a.rel='noopener';
@@ -2622,7 +2665,7 @@
       req.then(function(r){return r.ok?r.json():null;}).then(function(d){
         var p=porta(d); if(!p)return;
         var nomeG=(p.displayName&&p.displayName.text)||'';
-        if(pid||compatibile(card.dataset.name,nomeG))arricchisci(card,p);
+        if(pid||compatibile(card.dataset.name,nomeG)){arricchisci(card,p);if(window.buildAct)window.buildAct(card);}
       }).catch(function(){});
     }
     var io=new IntersectionObserver(function(es){
@@ -3014,7 +3057,7 @@
       (q.normalized||[]).forEach(function(n){alias[n.from]=n.to;});
       (q.redirects||[]).forEach(function(r){alias[r.from]=r.to;});
       (q.pages||[]).forEach(function(p){
-        if(!p.missing&&p.thumbnail&&p.thumbnail.source)
+        if(!p.missing&&p.thumbnail&&p.thumbnail.source&&!/\.svg$|stemma|coat_of|bandiera|flag_|logo/i.test(p.thumbnail.source))
           map[p.title]={src:p.thumbnail.source,
             url:p.fullurl||('https://it.wikipedia.org/wiki/'+encodeURIComponent(p.title))};
       });
@@ -3025,12 +3068,14 @@
         if(!hit)return;
         var box=c.querySelector('.card-img'); if(!box||box.querySelector('.gb-img'))return;
         var img=new Image();
-        img.alt=(c.dataset.name||'')+' — immagine da Wikipedia';
-        img.loading='lazy'; img.decoding='async'; img.className='wiki-img';
+        var amb=!!c.dataset.amb;
+        img.alt=(c.dataset.name||'')+(amb?' — paesaggio della Valpolicella (immagine da Wikipedia)':' — immagine da Wikipedia');
+        img.loading='lazy'; img.decoding='async'; img.className=amb?'wiki-img amb':'wiki-img';
         img.onload=function(){
           var a=document.createElement('a');
           a.className='wiki-badge'; a.href=hit.url; a.target='_blank'; a.rel='noopener';
-          a.textContent='Wikipedia ↗'; a.title='Immagine e approfondimento su Wikipedia';
+          a.textContent='Wikipedia ↗';
+          a.title=amb?'Foto d\u2019ambiente della Valpolicella \u2014 da Wikipedia':'Immagine e approfondimento su Wikipedia';
           a.addEventListener('click',function(e){e.stopPropagation();});
           box.appendChild(a);
         };
