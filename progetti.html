@@ -58,7 +58,7 @@
   }
   .wrap{max-width:1160px;margin:0 auto;padding:0 26px}
   .section{padding:92px 0;border-top:1px solid var(--line)}
-  .section-head{max-width:640px;margin-bottom:46px}
+  .section-head{max-width:none;margin-bottom:46px}
   .section-head h2{font-size:clamp(2rem,4.4vw,3rem);margin:14px 0 12px}
   .section-head p{color:var(--ink-soft)}
 
@@ -108,7 +108,7 @@
 
   /* ---------- map / signature ---------- */
   .map-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-  .map-frame{background:var(--panel);border:1px solid var(--line-strong);border-radius:4px;padding:22px;box-shadow:var(--shadow);position:relative}
+  .map-frame{background:transparent;border:none;border-radius:0;padding:0;box-shadow:none;position:relative}
   .map-frame svg{width:100%;height:auto;display:block}
   .map-frame .map-img{width:100%;max-width:430px;height:auto;display:block;margin:0 auto}
   .zone-path{transition:.3s;cursor:pointer}
@@ -543,6 +543,11 @@
 
   .pillar .pil-ico{height:96px;width:auto;max-width:100%;display:block;margin:2px auto 14px}
 
+
+  .tverde{color:var(--garnet);font-style:italic}
+  #territorio .prose{max-width:none}
+  #territorio .section-head{max-width:none}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -747,7 +752,7 @@
 <main><section class="section" id="progetti">
   <div class="wrap reveal">
     <div class="section-head">
-      <h2>I nostri progetti, impegni e idee territoriali</h2>
+      <h2>I nostri <span class="tverde">progetti</span>, impegni e idee territoriali</h2>
       <p>Il Distretto Turistico Valpolicella non è solo una vetrina: è un progetto di comunità. Ecco le linee su cui lavoriamo, i nostri impegni sociali e le idee per far crescere il territorio.</p>
     </div>
     <div class="mission">
