@@ -217,11 +217,11 @@
   .foot-bottom{border-top:1px solid rgba(241,238,228,.18);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:rgba(241,238,228,.55);font-family:"Spline Sans Mono"}
 
   /* ---------- progettualità ---------- */
-  .mission{display:grid;grid-template-columns:.92fr 1.08fr;gap:52px;align-items:start}
+  .mission{display:block}
   .mission-quote{font-family:"Fraunces";font-size:clamp(1.4rem,2.6vw,1.85rem);line-height:1.28;font-weight:500}
   .mission-quote em{color:var(--garnet);font-style:italic}
   .mission-sign{font-family:"Spline Sans Mono";font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:20px}
-  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .pillar{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:22px 22px 24px;transition:.26s}
   .pillar:hover{border-color:var(--line-strong);transform:translateY(-3px)}
   .pillar .pk{font-family:"Spline Sans Mono";font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:flex;gap:9px;align-items:center;margin-bottom:9px}
@@ -540,6 +540,9 @@
   .libro p{font-size:.95rem;color:var(--ink-soft);line-height:1.6;margin-bottom:16px}
   @media (max-width:700px){.libro{flex-direction:column;align-items:center;text-align:center}.libro img{width:160px}}
 
+
+  .pillar .pil-ico{height:96px;width:auto;max-width:100%;display:block;margin:2px auto 14px}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -748,27 +751,24 @@
       <p>Il Distretto Turistico Valpolicella non è solo una vetrina: è un progetto di comunità. Ecco le linee su cui lavoriamo, i nostri impegni sociali e le idee per far crescere il territorio.</p>
     </div>
     <div class="mission">
-      <div>
-        <p class="mission-quote">Il Distretto Turistico Valpolicella nasce con l'intento di promuovere <em>il paesaggio, la cultura, la tradizione, la lingua, l'arte e l'architettura</em> della Valpolicella in Italia e nel Mondo.</p>
-        <div class="prose" style="margin-top:20px">
-          <p>Impegno nella valorizzazione del territorio della Valpolicella, con l'obiettivo di favorirne lo sviluppo socio‑economico e turistico‑ricettivo. Ci proponiamo come punto di riferimento per enti pubblici e imprese private, promuovendo sinergie, idee e progetti volti a migliorare il benessere della comunità e la sostenibilità ambientale.</p>
-          <p>Attraverso un approccio partecipativo e innovativo, vogliamo contribuire a costruire un futuro in cui il patrimonio naturale, culturale ed economico della Valpolicella possa prosperare in armonia.</p>
-        </div>
-      </div>
       <div class="pillars">
         <div class="pillar">
+          <img class="pil-ico" src="assets/img/pil-1.png" alt="" loading="lazy">
           <h3>Facciamo rete con le aziende locali</h3>
           <p>Il territorio ci offre una intera comunità di aziende e piccole medie imprese pronte a fare rete per la promozione del territorio.</p>
         </div>
         <div class="pillar">
+          <img class="pil-ico" src="assets/img/pil-2.png" alt="" loading="lazy">
           <h3>Cultura rurale e storia</h3>
           <p>Tutte le idee per far incontrare le persone con la storia del territorio. Diamo valore vero alla Valpolicella.</p>
         </div>
         <div class="pillar">
+          <img class="pil-ico" src="assets/img/pil-3.png" alt="" loading="lazy">
           <h3>Servizi per il turismo esplorativo</h3>
           <p>Tutti i servizi che le nostre aziende mettono a disposizione per rendere attivo l'ospite nella Valpolicella.</p>
         </div>
         <div class="pillar">
+          <img class="pil-ico" src="assets/img/pil-4.png" alt="" loading="lazy">
           <h3>Rete unica del territorio</h3>
           <p>Infrastruttura digitale e fisica per far dialogare tutti gli attori della valle.</p>
           <ul>
@@ -778,6 +778,7 @@
           </ul>
         </div>
         <div class="pillar">
+          <img class="pil-ico" src="assets/img/pil-5.png" alt="" loading="lazy">
           <h3>Un turismo che include</h3>
           <p>Crescita che coinvolge comunità, giovani e nuove generazioni di viticoltori.</p>
           <ul>
@@ -787,6 +788,7 @@
           </ul>
         </div>
         <div class="pillar">
+          <img class="pil-ico" src="assets/img/pil-6.png" alt="" loading="lazy">
           <h3>Esperienze &amp; campagne</h3>
           <p>Iniziative condivise per portare visitatori in ogni stagione dell'anno.</p>
           <ul>
@@ -796,6 +798,7 @@
           </ul>
         </div>
         <div class="pillar">
+          <img class="pil-ico" src="assets/img/pil-7.png" alt="" loading="lazy">
           <h3>Il paesaggio come identità</h3>
           <p>Proposte per custodire ciò che rende unica la Valpolicella storica.</p>
           <ul>
