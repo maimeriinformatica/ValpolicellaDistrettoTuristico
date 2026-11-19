@@ -110,6 +110,7 @@
   .map-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
   .map-frame{background:var(--panel);border:1px solid var(--line-strong);border-radius:4px;padding:22px;box-shadow:var(--shadow);position:relative}
   .map-frame svg{width:100%;height:auto;display:block}
+  .map-frame .map-img{width:100%;max-width:430px;height:auto;display:block;margin:0 auto}
   .zone-path{transition:.3s;cursor:pointer}
   .zone-classica{fill:rgba(28,110,49,.16);stroke:var(--garnet);stroke-width:1.4}
   .zone-classica.on,.zone-classica:hover{fill:rgba(28,110,49,.4)}
@@ -529,6 +530,16 @@
   .card-act a:hover{border-color:var(--garnet);color:var(--garnet)}
   .card-act a.primo:hover{color:var(--paper);opacity:.9}
 
+
+  /* ---------- libro in vendita ---------- */
+  .libro{display:flex;gap:28px;align-items:flex-start;background:var(--panel);border:1px solid var(--line-strong);
+    border-radius:4px;padding:28px;box-shadow:var(--shadow);max-width:780px;margin:44px auto 0}
+  .libro img{width:180px;height:auto;display:block;border:1px solid var(--line);flex-shrink:0}
+  .libro .lk{font-family:"Spline Sans Mono";font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--olive,#52702C)}
+  .libro h3{font-size:1.5rem;font-weight:600;margin:6px 0 10px;line-height:1.2}
+  .libro p{font-size:.95rem;color:var(--ink-soft);line-height:1.6;margin-bottom:16px}
+  @media (max-width:700px){.libro{flex-direction:column;align-items:center;text-align:center}.libro img{width:160px}}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -733,7 +744,7 @@
 <main><section class="section" id="territorio">
   <div class="wrap reveal">
     <div class="section-head">
-      <h2>Otto comuni, un territorio: la Valpolicella storica</h2>
+      <h2>La Valpolicella e il suo territorio</h2>
       <p>La Valpolicella è la zona collinare che precede l'inizio delle Prealpi Veronesi, nella Regione Veneto. Comprende il territorio di <strong>otto comuni</strong>, tutti appartenenti alla provincia di Verona: Dolcè, Fumane, Marano, Negrar, Pescantina, San Pietro in Cariano, Sant'Ambrogio e Sant'Anna d'Alfaedo.</p>
     </div>
     <figure class="photo-band">
@@ -742,32 +753,7 @@
     </figure>
     <div class="map-grid">
       <div class="map-frame">
-        <svg viewBox="0 0 420 340" role="img" aria-label="Mappa stilizzata degli 8 comuni della Valpolicella">
-          <!-- Adige river -->
-          <path d="M20 300 C70 250 60 200 110 150 C150 110 150 70 200 30" fill="none" stroke="#52702C" stroke-width="2.4" opacity=".55"/>
-          <text x="24" y="295" class="map-label" fill="#52702C">F. Adige</text>
-          <!-- comuni geografici (non del vino) -->
-          <path class="zone-path zone-estesa" data-zone="geo" d="M150 42 L215 50 L206 92 L150 88 Z"/>
-          <text x="160" y="72" class="map-label">Dolcè</text>
-          <path class="zone-path zone-estesa" data-zone="geo" d="M248 68 L322 80 L330 150 L262 156 L250 108 Z"/>
-          <text x="264" y="118" class="map-label">S.Anna d'Alf.</text>
-          <path class="zone-path zone-estesa" data-zone="geo" d="M190 302 L282 297 L290 330 L198 333 Z"/>
-          <text x="210" y="320" class="map-label">Pescantina</text>
-          <!-- classica valleys -->
-          <path class="zone-path zone-classica" data-zone="classica" d="M120 150 L180 130 L210 175 L165 210 L120 195 Z"/>
-          <text x="140" y="178" class="map-label">Fumane</text>
-          <path class="zone-path zone-classica" data-zone="classica" d="M180 130 L245 120 L255 170 L210 175 Z"/>
-          <text x="200" y="152" class="map-label">Marano</text>
-          <path class="zone-path zone-classica" data-zone="classica" d="M215 178 L258 172 L280 220 L225 235 L200 205 Z"/>
-          <text x="228" y="205" class="map-label">Negrar</text>
-          <path class="zone-path zone-classica" data-zone="classica" d="M120 200 L165 213 L200 240 L165 285 L110 260 Z"/>
-          <text x="128" y="248" class="map-label">S.Ambrogio</text>
-          <path class="zone-path zone-classica" data-zone="classica" d="M168 214 L225 238 L245 285 L185 300 L168 288 Z"/>
-          <text x="182" y="268" class="map-label">S.Pietro</text>
-          <!-- Verona marker -->
-          <circle cx="340" cy="300" r="4" fill="#1C6E31"/>
-          <text x="350" y="304" class="map-label" fill="#1C6E31">Verona</text>
-        </svg>
+        <img class="map-img" src="assets/img/mappa-comuni.png" alt="Mappa degli otto comuni della Valpolicella con gli stemmi comunali" loading="lazy">
       </div>
       <div>
         <div class="map-toggle" role="tablist">
@@ -790,6 +776,21 @@
       <p>La valle si estende per <strong>240 km²</strong> ed è compresa nell'ansa del fiume Adige, da Ossenigo a nord a Parona di Valpolicella a sud, e dalle colline di Quinzano fino ad arrivare al monte Corno d'Aquilio.</p>
       <p>La Valpolicella fu zona ricca di <strong>insediamenti romani</strong>, con ville, templi, villaggi e certamente cantine. Non è un mistero quanto il vino piacesse ai Romani, che introdussero la vite e l'enologia in tutte le zone colonizzate con il loro vasto Impero: il <strong>vino retico</strong>, prodotto in queste terre da uve appassite, era tra i preferiti dei vari imperatori.</p>
       <p>La promozione enologica della zona allargata resta affidata alla Strada del Vino e al Consorzio Tutela Vini Valpolicella: il distretto lavora al loro fianco, dedicandosi al turismo di territorio.</p>
+    </div>
+  </div>
+
+  <div class="wrap reveal">
+    <div class="libro">
+      <img src="assets/img/libro-vicariato.jpg" alt="Copertina del libro Vicariato e Vicari della Valpolicella di Egidio Ferrari">
+      <div>
+        <span class="lk">La pubblicazione del Distretto</span>
+        <h3>Vicariato e Vicari della Valpolicella</h3>
+        <p>di <strong>Egidio Ferrari</strong> — Edizioni Zerotre, Verona 1994.<br>
+           Gli stemmi murati sulla &laquo;Domus Vallis Pulicelle&raquo; a San Pietro in Cariano:
+           la storia del Vicariato che per secoli governò la valle, raccontata attraverso
+           gli stemmi dei suoi Vicari.</p>
+        <a class="btn btn-primary" href="mailto:info@valpolicelladistrettoturistico.it?subject=Acquisto%20libro%20%E2%80%94%20Vicariato%20e%20Vicari%20della%20Valpolicella&body=Buongiorno%2C%0Avorrei%20acquistare%20una%20copia%20del%20libro%20%C2%ABVicariato%20e%20Vicari%20della%20Valpolicella%C2%BB%20di%20Egidio%20Ferrari.%0A%0ANome%20e%20cognome%3A%0AIndirizzo%3A%0ATelefono%3A%0A%0AGrazie.">✉ Acquista il libro</a>
+      </div>
     </div>
   </div>
 </section></main>
