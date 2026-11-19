@@ -76,8 +76,8 @@
   .brand .glyph{width:26px;height:26px;flex:none}
   .brand .glyph-img{height:34px;width:auto;flex:none}
   .foot-logo{height:60px;width:auto;margin-bottom:16px;display:block}
-  .nav-links{display:flex;gap:11px;align-items:center;margin-left:16px}
-  .nav-links a{font-size:.74rem;color:var(--ink-soft);position:relative;padding:4px 0;white-space:nowrap}
+  .nav-links{display:flex;gap:9px;align-items:center;margin-left:12px}
+  .nav-links a{font-size:.71rem;color:var(--ink-soft);position:relative;padding:4px 0;white-space:nowrap}
   .nav-links a:hover{color:var(--ink)}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--garnet);transition:width .28s ease}
   .nav-links a:hover::after{width:100%}
@@ -548,6 +548,12 @@
   #territorio .prose{max-width:none}
   #territorio .section-head{max-width:none}
 
+
+  .fsel-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+  .fsel-w{display:flex;flex-direction:column;gap:6px;flex:1;min-width:210px;max-width:330px}
+  .fsel-w span{font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--olive,#52702C)}
+  .fsel{padding:11px 12px;border:1px solid var(--line-strong);background:var(--panel);font:inherit;font-size:.92rem;color:var(--ink);border-radius:3px;width:100%}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -738,7 +744,7 @@
       <a href="territorio.html">Il territorio e la sua storia</a>
       <a href="progetti.html">I progetti</a>
       <a href="luoghi.html">I luoghi</a>
-      <a href="cibo-e-vino.html">Il cibo e il vino</a>
+      <a href="cibo-e-vino.html">Cantine, tavole e sapori</a>
       <a href="dormire.html">Dove alloggiare</a>
       <a href="percorsi.html">I percorsi</a>
       <a class="on" href="pianifica.html">Crea il tuo percorso</a>
@@ -4319,7 +4325,7 @@
       </div>
       <div>
         <h5>Esplora</h5>
-        <a href="territorio.html">Il territorio e la sua storia</a><a href="progetti.html">Progetti</a><a href="luoghi.html">Luoghi</a><a href="cibo-e-vino.html">Cibo e vino</a><a href="dormire.html">Dormire</a><a href="percorsi.html">Percorsi</a><a href="pianifica.html">Pianifica il percorso</a>
+        <a href="territorio.html">Il territorio e la sua storia</a><a href="progetti.html">Progetti</a><a href="luoghi.html">Luoghi</a><a href="cibo-e-vino.html">Cantine, tavole e sapori</a><a href="dormire.html">Dormire</a><a href="percorsi.html">Percorsi</a><a href="pianifica.html">Pianifica il percorso</a>
       </div>
       <div>
         <h5>Risorse</h5>
@@ -4352,6 +4358,9 @@
     const bars=[...document.querySelectorAll('.filters')].filter(b=>b.dataset.target===target.id);
     const active=bars.map(b=>{const c=b.querySelector('.chip.active');return c?c.dataset.f:'all';})
                      .filter(f=>f&&f!=='all');
+    document.querySelectorAll('select.fsel').forEach(se=>{
+      if(se.dataset.target===target.id && se.value && se.value!=='all') active.push(se.value);
+    });
     const inp=document.querySelector('[data-search-for="'+target.id+'"]');
     const q=inp?(inp.value||'').trim().toLowerCase():'';
     const paged=target.hasAttribute('data-page');
@@ -4377,6 +4386,13 @@
     const more=document.querySelector('[data-more-for="'+target.id+'"]');
     if(more)more.hidden=!(paged&&match>shown);
   }
+
+  document.querySelectorAll('select.fsel').forEach(se=>{
+    se.addEventListener('change',()=>{
+      const t=document.getElementById(se.dataset.target); if(!t)return;
+      delete PAGE[t.id]; applyFilters(t);
+    });
+  });
   document.querySelectorAll('.filters').forEach(bar=>{
     const target=document.getElementById(bar.dataset.target);
     if(!target)return;
@@ -4627,28 +4643,11 @@
   // ELENCO DIMOSTRATIVO: sostituire con l'elenco reale degli aderenti prima della pubblicazione.
   // Per ogni voce: nome (anche parziale) e vantaggio offerto con la Distretto Turistico Card.
   const SOCI = [
-    ["Cantina Valpolicella Negrar",  "10% sull'acquisto in cantina e calice del distretto in omaggio"],
-    ["Fratelli Vogadori",            "Degustazione guidata a tariffa ridotta"],
-    ["Villa Spinosa",                "Ingresso al wine shop con degustazione omaggio"],
-    ["Cantina Siridia",              "Secondo partecipante gratuito alla visita guidata"],
-    ["Corte Fornaledo",              "Tagliere del territorio incluso nella degustazione"],
-    ["Le Bignele",                   "10% sull'acquisto e sosta camper gratuita"],
-    ["Valentina Cubi",               "Degustazione ridotta per i possessori di card"],
-    ["Corteforte",                   "Visita all'antica cantina con degustazione scontata"],
-    ["Cantine Benedetti",            "Calice in omaggio al wine shop"],
-    ["Monteci",                      "10% sull'acquisto in cantina"],
-    ["Albino Armani",                "Visita alla Conservatoria a tariffa riservata"],
-    ["Relais La Magioca",            "Late check-out gratuito"],
-    ["Agriturismo Le Croibe",        "Colazione del territorio inclusa"],
-    ["Villa Quaranta",               "Ingresso spa scontato per i possessori di card"],
-    ["Castrum Wine Relais",          "10% sul soggiorno di almeno due notti"],
-    ["Corte Cariano",                "Degustazione di benvenuto in omaggio"],
-    ["Il Mulino dei Veraghi",        "Sconto sul soggiorno infrasettimanale"],
-    ["B&B Campan",                   "Accesso alla sauna incluso"],
-    ["Agriturismo alle Vallene",     "Dolce della casa in omaggio"],
-    ["Foresteria Serego Alighieri",  "Visita alle Possessioni a tariffa riservata"]
+    // NESSUNA ADESIONE ATTIVA: quando arrivano gli aderenti reali, aggiungere qui
+    // ["Nome operatore (anche parziale)", "Vantaggio offerto con la Card"],
   ];
   (function(){
+    if(!SOCI.length)return; // con l'elenco vuoto nessun distintivo viene mostrato
     const norm=t=>(t||'').toLowerCase().replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
     function vantaggio(nome){
       const n=norm(nome);

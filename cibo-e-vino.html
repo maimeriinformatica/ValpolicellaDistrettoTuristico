@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cibo e vino — Distretto Turistico Valpolicella</title>
+<title>Cantine, tavole e sapori — Distretto Turistico Valpolicella</title>
 <meta name="description" content="Il portale del Distretto Turistico Valpolicella APS: luoghi, cantine, ospitalità, percorsi e la Distretto Turistico Card negli 8 comuni della Valpolicella, in provincia di Verona.">
 <meta name="theme-color" content="#1C6E31">
 <meta name="author" content="Distretto Turistico Valpolicella APS">
@@ -76,8 +76,8 @@
   .brand .glyph{width:26px;height:26px;flex:none}
   .brand .glyph-img{height:34px;width:auto;flex:none}
   .foot-logo{height:60px;width:auto;margin-bottom:16px;display:block}
-  .nav-links{display:flex;gap:11px;align-items:center;margin-left:16px}
-  .nav-links a{font-size:.74rem;color:var(--ink-soft);position:relative;padding:4px 0;white-space:nowrap}
+  .nav-links{display:flex;gap:9px;align-items:center;margin-left:12px}
+  .nav-links a{font-size:.71rem;color:var(--ink-soft);position:relative;padding:4px 0;white-space:nowrap}
   .nav-links a:hover{color:var(--ink)}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--garnet);transition:width .28s ease}
   .nav-links a:hover::after{width:100%}
@@ -548,6 +548,12 @@
   #territorio .prose{max-width:none}
   #territorio .section-head{max-width:none}
 
+
+  .fsel-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+  .fsel-w{display:flex;flex-direction:column;gap:6px;flex:1;min-width:210px;max-width:330px}
+  .fsel-w span{font-family:"Spline Sans Mono";font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--olive,#52702C)}
+  .fsel{padding:11px 12px;border:1px solid var(--line-strong);background:var(--panel);font:inherit;font-size:.92rem;color:var(--ink);border-radius:3px;width:100%}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -738,7 +744,7 @@
       <a href="territorio.html">Il territorio e la sua storia</a>
       <a href="progetti.html">I progetti</a>
       <a href="luoghi.html">I luoghi</a>
-      <a class="on" href="cibo-e-vino.html">Il cibo e il vino</a>
+      <a class="on" href="cibo-e-vino.html">Cantine, tavole e sapori</a>
       <a href="dormire.html">Dove alloggiare</a>
       <a href="percorsi.html">I percorsi</a>
       <a href="pianifica.html">Crea il tuo percorso</a>
@@ -759,34 +765,34 @@
       <img src="assets/img/botte.jpg" data-remote="https://img.magnific.com/foto-gratuito/botte-di-legno-accanto-a-vino-e-tapa_23-2148214934.jpg" alt="Botte, calici e sapori" loading="lazy" onerror="fotoErr(this)">
       <figcaption>Botte, calici e sapori</figcaption>
     </figure>
-    <div class="filters" data-target="cantine-cards">
-      <button class="chip active" data-f="all">Tutto</button>
-      <button class="chip" data-f="cantina">Cantine</button>
-      <button class="chip" data-f="ristoro">Ristorazione</button>
+    <div class="fsel-row">
+      <label class="fsel-w"><span>Tipologia</span>
+        <select class="fsel" data-target="cantine-cards">
+          <option value="all">Tutto</option>
+          <option value="cantina">Cantine</option>
+          <option value="ristoro">Ristorazione</option>
+        </select>
+      </label>
+      <label class="fsel-w"><span>Comune</span>
+        <select class="fsel" data-target="cantine-cards">
+          <option value="all">Tutti i comuni</option>
+          <option value="dolce">Dolcè</option>
+          <option value="fumane">Fumane</option>
+          <option value="marano">Marano</option>
+          <option value="negrar">Negrar</option>
+          <option value="pescantina">Pescantina</option>
+          <option value="sanpietro">San Pietro in Cariano</option>
+          <option value="santambrogio">Sant'Ambrogio</option>
+          <option value="santanna">Sant'Anna d'Alfaedo</option>
+        </select>
+      </label>
     </div>
-    <div class="filters" data-target="cantine-cards">
-      <button class="chip active" data-f="all">Tutti i comuni</button>
-      <button class="chip" data-f="dolce">Dolcè</button>
-      <button class="chip" data-f="fumane">Fumane</button>
-      <button class="chip" data-f="marano">Marano</button>
-      <button class="chip" data-f="negrar">Negrar</button>
-      <button class="chip" data-f="pescantina">Pescantina</button>
-      <button class="chip" data-f="sanpietro">San Pietro in C.</button>
-      <button class="chip" data-f="santambrogio">Sant'Ambrogio</button>
-      <button class="chip" data-f="santanna">Sant'Anna d'Alfaedo</button>
-    </div>
-    <div class="filters" data-target="cantine-cards" data-role="soci">
-      <button class="chip active" data-f="all">Tutti gli operatori</button>
-      <button class="chip" data-f="socio">Solo operatori soci</button>
-    </div>
+    
     <div class="dir-tools" style="margin-bottom:18px">
       <input class="dir-search" data-search-for="cantine-cards" type="search" placeholder="Cerca cantina, ristorante o località…" aria-label="Cerca">
       <span class="pl-sum" id="cantine-cards-count"></span>
     </div>
-    <div class="soc-legend">
-      <span><i></i> <strong style="color:var(--ink)">Operatore socio</strong> — aderisce al distretto e offre un vantaggio con la Card</span>
-      <span><i class="n"></i> Operatore non aderente — resta comunque consultabile</span>
-    </div>
+    
     <div class="cards" id="cantine-cards" data-page="12">
       <article class="card" data-c="cantina negrar completa" data-k="cantina valpolicella negrar / domìni veneti via ca&#x27; salgari 2 cantina negrar di valpolicella" data-wiki="Cantina Valpolicella Negrar" data-name="Cantina Valpolicella Negrar / Domìni Veneti" data-loc="Via Ca&#x27; Salgari 2" data-cat="cantina">
         <div class="card-img"><span class="card-tag">Negrar</span>
@@ -2398,7 +2404,7 @@
       </div>
       <div>
         <h5>Esplora</h5>
-        <a href="territorio.html">Il territorio e la sua storia</a><a href="progetti.html">Progetti</a><a href="luoghi.html">Luoghi</a><a href="cibo-e-vino.html">Cibo e vino</a><a href="dormire.html">Dormire</a><a href="percorsi.html">Percorsi</a><a href="pianifica.html">Pianifica il percorso</a>
+        <a href="territorio.html">Il territorio e la sua storia</a><a href="progetti.html">Progetti</a><a href="luoghi.html">Luoghi</a><a href="cibo-e-vino.html">Cantine, tavole e sapori</a><a href="dormire.html">Dormire</a><a href="percorsi.html">Percorsi</a><a href="pianifica.html">Pianifica il percorso</a>
       </div>
       <div>
         <h5>Risorse</h5>
@@ -2431,6 +2437,9 @@
     const bars=[...document.querySelectorAll('.filters')].filter(b=>b.dataset.target===target.id);
     const active=bars.map(b=>{const c=b.querySelector('.chip.active');return c?c.dataset.f:'all';})
                      .filter(f=>f&&f!=='all');
+    document.querySelectorAll('select.fsel').forEach(se=>{
+      if(se.dataset.target===target.id && se.value && se.value!=='all') active.push(se.value);
+    });
     const inp=document.querySelector('[data-search-for="'+target.id+'"]');
     const q=inp?(inp.value||'').trim().toLowerCase():'';
     const paged=target.hasAttribute('data-page');
@@ -2456,6 +2465,13 @@
     const more=document.querySelector('[data-more-for="'+target.id+'"]');
     if(more)more.hidden=!(paged&&match>shown);
   }
+
+  document.querySelectorAll('select.fsel').forEach(se=>{
+    se.addEventListener('change',()=>{
+      const t=document.getElementById(se.dataset.target); if(!t)return;
+      delete PAGE[t.id]; applyFilters(t);
+    });
+  });
   document.querySelectorAll('.filters').forEach(bar=>{
     const target=document.getElementById(bar.dataset.target);
     if(!target)return;
@@ -2706,28 +2722,11 @@
   // ELENCO DIMOSTRATIVO: sostituire con l'elenco reale degli aderenti prima della pubblicazione.
   // Per ogni voce: nome (anche parziale) e vantaggio offerto con la Distretto Turistico Card.
   const SOCI = [
-    ["Cantina Valpolicella Negrar",  "10% sull'acquisto in cantina e calice del distretto in omaggio"],
-    ["Fratelli Vogadori",            "Degustazione guidata a tariffa ridotta"],
-    ["Villa Spinosa",                "Ingresso al wine shop con degustazione omaggio"],
-    ["Cantina Siridia",              "Secondo partecipante gratuito alla visita guidata"],
-    ["Corte Fornaledo",              "Tagliere del territorio incluso nella degustazione"],
-    ["Le Bignele",                   "10% sull'acquisto e sosta camper gratuita"],
-    ["Valentina Cubi",               "Degustazione ridotta per i possessori di card"],
-    ["Corteforte",                   "Visita all'antica cantina con degustazione scontata"],
-    ["Cantine Benedetti",            "Calice in omaggio al wine shop"],
-    ["Monteci",                      "10% sull'acquisto in cantina"],
-    ["Albino Armani",                "Visita alla Conservatoria a tariffa riservata"],
-    ["Relais La Magioca",            "Late check-out gratuito"],
-    ["Agriturismo Le Croibe",        "Colazione del territorio inclusa"],
-    ["Villa Quaranta",               "Ingresso spa scontato per i possessori di card"],
-    ["Castrum Wine Relais",          "10% sul soggiorno di almeno due notti"],
-    ["Corte Cariano",                "Degustazione di benvenuto in omaggio"],
-    ["Il Mulino dei Veraghi",        "Sconto sul soggiorno infrasettimanale"],
-    ["B&B Campan",                   "Accesso alla sauna incluso"],
-    ["Agriturismo alle Vallene",     "Dolce della casa in omaggio"],
-    ["Foresteria Serego Alighieri",  "Visita alle Possessioni a tariffa riservata"]
+    // NESSUNA ADESIONE ATTIVA: quando arrivano gli aderenti reali, aggiungere qui
+    // ["Nome operatore (anche parziale)", "Vantaggio offerto con la Card"],
   ];
   (function(){
+    if(!SOCI.length)return; // con l'elenco vuoto nessun distintivo viene mostrato
     const norm=t=>(t||'').toLowerCase().replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
     function vantaggio(nome){
       const n=norm(nome);
