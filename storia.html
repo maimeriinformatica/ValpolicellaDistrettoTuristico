@@ -562,6 +562,13 @@
 
   .route-desc{margin-top:9px;font-size:.88rem;color:var(--ink-soft);line-height:1.6;max-width:72ch}
 
+
+  .libri-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;max-width:780px;margin-left:auto;margin-right:auto}
+  .libro.mini{margin:0;max-width:none;padding:24px;display:block}
+  .libro.mini h3{font-size:1.15rem}
+  .libro.mini p{font-size:.88rem;margin-bottom:14px}
+  @media (max-width:700px){.libri-grid{grid-template-columns:1fr}}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -756,6 +763,7 @@
       <a href="dormire.html">Dove alloggiare</a>
       <a href="percorsi.html">I percorsi</a>
       <a href="pianifica.html">Crea il tuo percorso</a>
+      <a href="storia.html">La storia</a>
       <a class="nav-cta" href="aderisci.html">Aderisci</a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -769,29 +777,20 @@
       <p>Dalla viticoltura romana alla Repubblica di Venezia, fino al distretto di oggi. Una linea del tempo e una bibliografia storica in continua crescita.</p>
     </div>
     <figure class="photo-band">
-      <img src="assets/img/uva.jpg" data-remote="https://img.magnific.com/foto-gratuito/colpo-verticale-di-uve-nere-che-crescono-in-un-vigneto_181624-58033.jpg" alt="Uve nere in maturazione" loading="lazy" onerror="fotoErr(this)">
-      <figcaption>Uve nere in maturazione</figcaption>
+      <img src="assets/img/mosaici-negrar.jpg" alt="I mosaici della villa romana di Negrar" loading="lazy">
+      <figcaption>I mosaici della villa romana di Negrar, riaffiorati tra i vigneti nel 2020</figcaption>
     </figure>
-    <div class="story-grid">
+    <div class="story-grid" style="display:block">
       <ol class="timeline">
         <li><div class="yr">I–IV sec. d.C.</div><h4>Roma e il vino retico</h4><p>Ville rustiche e vigneti sui pendii; il "vinum raeticum" lodato dalle fonti antiche. I mosaici di Negrar ne sono testimonianza.</p></li>
         <li><div class="yr">VIII–XII sec.</div><h4>Le pievi e i borghi</h4><p>Nascono San Giorgio e le pievi romaniche; il nome "Valpolicella" compare nei documenti medievali.</p></li>
         <li><div class="yr">1405–1797</div><h4>La Serenissima</h4><p>Sotto Venezia fioriscono le ville‑fattoria e il commercio del vino; si struttura il paesaggio delle marogne.</p></li>
-        <li><div class="yr">1968 · 1990</div><h4>DOC e DOCG</h4><p>Riconoscimento della DOC Valpolicella e, in seguito, della DOCG per Amarone e Recioto.</p></li>
-        <li><div class="yr">Oggi</div><h4>Il Distretto Turistico</h4><p>Luoghi, cantine e ospitalità in rete: un'unica regia per raccontare gli 8 comuni della Valpolicella geografica.</p></li>
+        <li><div class="yr">1866</div><h4>Il Veneto all'Italia</h4><p>Con la Terza guerra d'indipendenza la valle entra nel Regno d'Italia; sulle alture dell'Adige restano i forti dello sbarramento di Ceraino e Rivoli.</p></li>
+        <li><div class="yr">Fine '800</div><h4>La fillossera e la rinascita</h4><p>Il flagello della fillossera impone il reimpianto dei vigneti su piede americano: la viticoltura della valle si ricostruisce e si organizza.</p></li>
+        <li><div class="yr">1933</div><h4>Le cantine sociali</h4><p>Nasce la Cantina Sociale di Negrar: dalle sue botti, negli anni Trenta, esce il primo vino chiamato Amarone.</p></li>
+        <li><div class="yr">2020</div><h4>I mosaici riaffiorano</h4><p>Tra i filari di Negrar torna alla luce la villa romana con i suoi mosaici policromi: la scoperta fa il giro del mondo e riporta la Valpolicella alle sue origini.</p></li>
       </ol>
-      <div>
-        <div class="eyebrow" style="margin-bottom:16px">Bibliografia storica — avvio</div>
-        <ul class="biblio">
-          <li><span class="num">01</span><span><em>Centro di Documentazione per la Storia della Valpolicella</em>, «Annuario Storico della Valpolicella» — collana periodica.</span></li>
-          <li><span class="num">02</span><span>G. Silvestri, <em>La Valpolicella</em> — opera classica sul territorio e la sua storia.</span></li>
-          <li><span class="num">03</span><span>P. Brugnoli (a cura di), studi su ville, pievi e insediamenti della valle.</span></li>
-          <li><span class="num">04</span><span>Contributi su <em>viticoltura romana</em> e villa di Negrar (relazioni di scavo).</span></li>
-          <li><span class="num">05</span><span>Atlante toponomastico e cartografia storica della Valpolicella Classica.</span></li>
-        </ul>
-        <p class="mono" style="margin-top:16px;font-size:.74rem;color:var(--ink-soft)">↳ Riferimenti indicativi da verificare e ampliare con schede complete (autore, editore, anno, ISBN).</p>
-        <p class="mono" style="margin-top:10px;font-size:.74rem;color:var(--ink-soft)">↳ Crediti delle immagini e dei dati: Fotografie d’ambiente: Magnific / Freepik (wirestock, muhammad.abdullah) · Immagini dei luoghi: Wikipedia / Wikimedia Commons, con licenza dei rispettivi autori · Foto e dati delle attività: schede Google dei rispettivi titolari · Contatti integrati da OpenStreetMap (© contributori OSM, ODbL).</p>
-      </div>
+      
     </div>
     <div class="eyebrow" style="margin:44px 0 16px">I temi del territorio</div>
     <div class="temi">
@@ -829,6 +828,16 @@
         <a class="btn btn-primary" href="https://www.edizioni03.com/ecomm_files/preview.asp?i=507" target="_blank" rel="noopener">Acquista il libro ↗</a>
       </div>
     </div>
+    <div class="eyebrow" style="margin:44px 0 0;text-align:center">Bibliografia storica</div>
+    <div class="libri-grid">
+<div class="libro mini"><div><span class="lk">La collana del Centro di Documentazione</span><h3>Annuario Storico della Valpolicella</h3><p>La collana periodica del Centro di Documentazione per la Storia della Valpolicella: dal 1982 studi, documenti e ricerche su ogni angolo della valle.</p><a class="btn btn-primary" href="https://veronastoria.it/ojs/index.php/ASValp" target="_blank" rel="noopener">Acquista il libro ↗</a></div></div>
+<div class="libro mini"><div><span class="lk">Il classico</span><h3>La Valpolicella — Giuseppe Silvestri</h3><p>L’opera classica sul territorio: storia, arte e poesia della valle in un libro che resta il punto di partenza di ogni biblioteca valpolicellese.</p><a class="btn btn-primary" href="https://www.maremagnum.com/en/libri/la-valpolicella-nella-storia-nell-arte-nella-poesia/135244379" target="_blank" rel="noopener">Acquista il libro ↗</a></div></div>
+<div class="libro mini"><div><span class="lk">Gli studi</span><h3>Ville, pievi e insediamenti — a cura di P. Brugnoli</h3><p>Gli studi di Pierpaolo Brugnoli e del Centro di Documentazione su ville, pievi e insediamenti della valle.</p><a class="btn btn-primary" href="https://veronastoria.it" target="_blank" rel="noopener">Acquista il libro ↗</a></div></div>
+<div class="libro mini"><div><span class="lk">L’archeologia</span><h3>La villa romana di Negrar e la viticoltura antica</h3><p>I contributi e le relazioni di scavo sulla villa dei mosaici di Negrar e sulla viticoltura romana in Valpolicella.</p><a class="btn btn-primary" href="https://veronastoria.it/ojs/index.php/ASValp" target="_blank" rel="noopener">Acquista il libro ↗</a></div></div>
+<div class="libro mini"><div><span class="lk">Le mappe</span><h3>Atlante toponomastico della Valpolicella</h3><p>La cartografia storica e l’atlante dei nomi di luogo della Valpolicella Classica.</p><a class="btn btn-primary" href="https://veronastoria.it" target="_blank" rel="noopener">Acquista il libro ↗</a></div></div>
+    </div>
+    <p class="mono" style="margin-top:14px;font-size:.74rem;color:var(--ink-soft);text-align:center">↳ Crediti delle immagini e dei dati: Fotografie d’ambiente: Magnific / Freepik (wirestock, muhammad.abdullah) · Immagini dei luoghi: Wikipedia / Wikimedia Commons, con licenza dei rispettivi autori · Foto e dati delle attività: schede Google dei rispettivi titolari · Contatti integrati da OpenStreetMap (© contributori OSM, ODbL).</p>
+
   </div>
 </section></main>
 
